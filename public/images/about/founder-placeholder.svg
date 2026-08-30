@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1100" viewBox="0 0 900 1100">
+  <defs>
+    <linearGradient id="gabout" x1="0" y1="0" x2="900" y2="1100" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f3ecdc"/>
+      <stop offset="1" stop-color="#e7ddc4"/>
+    </linearGradient>
+    <pattern id="pabout" width="64" height="64" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1.4" fill="rgba(255,255,255,0.14)"/>
+    </pattern>
+  </defs>
+  <rect width="900" height="1100" fill="url(#gabout)"/>
+  <rect width="900" height="1100" fill="url(#pabout)"/>
+  <circle cx="738" cy="198" r="462" fill="rgba(255,255,255,0.06)"/>
+  <circle cx="108" cy="1012" r="330" fill="rgba(0,0,0,0.08)"/>
+  <text x="50%" y="52%" font-family="Georgia, 'Times New Roman', serif" font-size="252.00000000000003" fill="rgba(251,248,242,0.92)" text-anchor="middle" dominant-baseline="middle">AJH</text>
+  <text x="50%" y="1072" font-family="Arial, sans-serif" font-size="15" letter-spacing="2" fill="rgba(251,248,242,0.55)" text-anchor="middle">REPLACE WITH PHOTO</text>
+</svg>
