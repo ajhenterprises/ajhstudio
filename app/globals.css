@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/* AJH Studio Design Tokens                                            */
+/* A small, deliberate palette: one dominant dark, one brand teal,     */
+/* one warm clay CTA color, one brass accent, and warm neutrals.       */
+/* ------------------------------------------------------------------ */
+@theme {
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* Core brand colors */
+  --color-ink: #17221f;
+  --color-ink-soft: #223330;
+  --color-primary: #1f4c49;
+  --color-primary-hover: #163634;
+  --color-secondary: #aa5832;
+  --color-secondary-hover: #8b4829;
+  --color-accent: #d9a94c;
+  --color-accent-hover: #c2913a;
+
+  /* Neutrals */
+  --color-sand: #f3ecdc;
+  --color-background: #fbf8f2;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f6f0e3;
+  --color-text: #1c231f;
+  --color-muted: #6e6a5c;
+  --color-border: #e4dcc7;
+
+  /* CTA */
+  --color-cta: #aa5832;
+  --color-cta-hover: #8b4829;
+  --color-cta-foreground: #fbf8f2;
+
+  /* Radius philosophy: soft but not bubbly */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-xl: 22px;
+
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-fade-in: fade-in 0.6s ease-out forwards;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: var(--color-ink);
+    letter-spacing: -0.01em;
+  }
+
+  a {
+    text-underline-offset: 3px;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .prose-ajh {
+    color: var(--color-text);
+  }
+
+  .prose-ajh :where(h2) {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    margin-top: 2.5em;
+    margin-bottom: 0.7em;
+    color: var(--color-ink);
+  }
+
+  .prose-ajh :where(h3) {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    margin-top: 2em;
+    margin-bottom: 0.6em;
+    color: var(--color-ink);
+  }
+
+  .prose-ajh :where(p) {
+    line-height: 1.8;
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+    color: var(--color-text);
+  }
+
+  .prose-ajh :where(a) {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: 2px;
+  }
+
+  .prose-ajh :where(ul, ol) {
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+    padding-left: 1.4em;
+    line-height: 1.8;
+  }
+
+  .prose-ajh :where(li) {
+    margin-top: 0.4em;
+  }
+
+  .prose-ajh :where(blockquote) {
+    border-left: 3px solid var(--color-accent);
+    padding-left: 1.2em;
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--color-ink);
+    margin: 1.8em 0;
+  }
+
+  .prose-ajh :where(strong) {
+    color: var(--color-ink);
+  }
+
+  .prose-ajh :where(img) {
+    border-radius: var(--radius-lg);
+  }
+
+  .prose-ajh :where(code) {
+    background: var(--color-surface-alt);
+    padding: 0.15em 0.4em;
+    border-radius: var(--radius-sm);
+    font-size: 0.9em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
