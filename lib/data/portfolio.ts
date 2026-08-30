@@ -18,7 +18,7 @@ export const portfolioProjects: PortfolioProject[] = [
     description:
       "A warm, image-forward site for a small coastal coffee roaster, built to make ordering and finding the shop effortless.",
     category: "Local Business",
-    image: "/images/work/harbor-and-oak.svg",
+    image: "/images/work/harbor-and-oak.jpg",
     services: ["Website Design", "Hosting", "Copywriting"],
     featured: true,
   },
@@ -28,7 +28,7 @@ export const portfolioProjects: PortfolioProject[] = [
     description:
       "A clear, welcoming site that makes it easy for newcomers to find service times, ministries, and how to get involved.",
     category: "Ministry",
-    image: "/images/work/grace-point-fellowship.svg",
+    image: "/images/work/grace-point-fellowship.jpg",
     services: ["Website Design", "Hosting", "Content"],
     featured: true,
   },
@@ -38,7 +38,7 @@ export const portfolioProjects: PortfolioProject[] = [
     description:
       "A redesign that replaced a decade-old site with a fast, professional presence built around client trust.",
     category: "Professional Services",
-    image: "/images/work/bishop-law-group.svg",
+    image: "/images/work/bishop-law-group.jpg",
     services: ["Website Redesign", "Hosting", "SEO Foundations"],
     featured: true,
   },
@@ -48,7 +48,7 @@ export const portfolioProjects: PortfolioProject[] = [
     description:
       "A simple, editorial storefront site for a boutique retailer, built to showcase products and drive foot traffic.",
     category: "Retail",
-    image: "/images/work/the-mercantile.svg",
+    image: "/images/work/the-mercantile.jpg",
     services: ["Website Design", "Copywriting"],
     featured: false,
   },
@@ -58,7 +58,7 @@ export const portfolioProjects: PortfolioProject[] = [
     description:
       "A calm, reassuring site for a private counseling practice, with clear paths to schedule a first appointment.",
     category: "Healthcare",
-    image: "/images/work/riverside-counseling.svg",
+    image: "/images/work/riverside-counseling.jpg",
     services: ["Website Design", "Hosting", "Content"],
     featured: false,
   },
@@ -68,7 +68,7 @@ export const portfolioProjects: PortfolioProject[] = [
     description:
       "A listings-friendly site built for a small residential real estate team, with an emphasis on speed and clarity.",
     category: "Real Estate",
-    image: "/images/work/lowcountry-realty-group.svg",
+    image: "/images/work/lowcountry-realty-group.jpg",
     services: ["Website Design", "Hosting", "Maintenance"],
     featured: false,
   },

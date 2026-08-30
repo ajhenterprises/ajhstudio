@@ -49,7 +49,7 @@ export default function AboutPage() {
           <Reveal>
             <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl border border-border">
               <Image
-                src="/images/about/founder-placeholder.svg"
+                src="/images/about/founder-placeholder.jpg"
                 alt="Placeholder for a personal photo — replace with a real photo"
                 fill
                 sizes="(min-width: 1024px) 33vw, 80vw"

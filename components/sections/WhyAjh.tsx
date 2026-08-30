@@ -37,7 +37,7 @@ export default function WhyAjh() {
         <SectionHeading
           eyebrow="Why AJH Studio"
           light
-          title="A studio built around actually helping you."
+          title="A studio built around helping, not just billing."
           description="Not a large agency, and not a freelancer disappearing between projects — a small studio that gives your project real attention."
         />
         <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">

@@ -28,7 +28,7 @@ export default function BlogIndexPage() {
       <PageHero
         eyebrow="The Journal"
         title="Notes on websites, hosting, and content."
-        description="Practical, straightforward writing about building and maintaining a website that actually works for your business."
+        description="Practical, straightforward writing about building and maintaining a website that works for your business."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Blog" }]}
       />
 
@@ -61,8 +61,8 @@ export default function BlogIndexPage() {
       </section>
 
       <FinalCta
-        title="Have a project in mind?"
-        description="Whether it's a new website, better content, or both — let's talk about what you need."
+        title="Need more than reading material?"
+        description="If it's time to fix your website or your content, that's what AJH Studio is for."
       />
     </>
   );

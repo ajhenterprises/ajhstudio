@@ -12,7 +12,7 @@ export default function FeaturedWork() {
     <section className="py-20 sm:py-24 lg:py-28">
       <Container>
         <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-end">
-          <SectionHeading eyebrow="Selected Work" title="A few projects we've enjoyed building." />
+          <SectionHeading eyebrow="Selected Work" title="A glimpse at the kind of work AJH Studio does." />
           <Button href="/work" variant="outline" className="shrink-0">
             View All Work
           </Button>

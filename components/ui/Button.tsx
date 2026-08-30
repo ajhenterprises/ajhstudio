@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type Variant = "primary" | "secondary" | "outline" | "ghost";
+type Variant = "primary" | "secondary" | "outline" | "outline-light" | "ghost";
 type Size = "md" | "lg";
 
 const base =
@@ -13,6 +13,8 @@ const variants: Record<Variant, string> = {
     "bg-cta text-cta-foreground hover:bg-cta-hover shadow-[0_1px_0_rgba(0,0,0,0.05)]",
   secondary: "bg-ink text-background hover:bg-ink-soft",
   outline: "border border-border bg-transparent text-ink hover:border-ink hover:bg-surface-alt",
+  "outline-light":
+    "border border-background/25 bg-transparent text-background hover:border-background hover:bg-background/10",
   ghost: "bg-transparent text-ink hover:bg-surface-alt",
 };
 

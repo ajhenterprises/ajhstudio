@@ -42,7 +42,7 @@ export default function FinalCta({
             {primaryLabel}
           </Button>
           {secondaryLabel && secondaryHref && (
-            <Button href={secondaryHref} variant="outline" size="lg" className="border-background/25 text-background hover:border-background hover:bg-background/10">
+            <Button href={secondaryHref} variant="outline-light" size="lg">
               {secondaryLabel}
             </Button>
           )}

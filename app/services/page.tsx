@@ -3,7 +3,6 @@ import { Check } from "lucide-react";
 import PageHero from "@/components/sections/PageHero";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
-import Button from "@/components/ui/Button";
 import ServiceCard from "@/components/cards/ServiceCard";
 import FinalCta from "@/components/sections/FinalCta";
 import Reveal from "@/components/ui/Reveal";
@@ -28,7 +27,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="Two services. One studio. No runaround."
-        description="AJH Studio focuses on the two things that make the biggest difference for your online presence: a website that actually works, and content that says what it needs to say."
+        description="AJH Studio focuses on the two things that make the biggest difference for your online presence: a website that works well, and content that says what it needs to say."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
       />
 
@@ -66,7 +65,7 @@ export default function ServicesPage() {
               </div>
               <div>
                 <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-muted">
-                  {service.ongoing ? "What's included" : "What's included"}
+                  What&apos;s included
                 </h3>
                 <ul className="mt-4 space-y-3">
                   {service.included.map((item) => (
@@ -98,17 +97,14 @@ export default function ServicesPage() {
       ))}
 
       <section className="border-t border-border bg-surface-alt py-16 sm:py-20">
-        <Container className="flex flex-col items-center gap-5 text-center">
+        <Container className="flex flex-col items-center gap-3 text-center">
           <h2 className="max-w-xl text-balance font-display text-2xl text-ink sm:text-3xl">
-            Every project is different. Let&apos;s talk about what you need.
+            On pricing
           </h2>
           <p className="max-w-lg text-muted">
             We don&apos;t publish flat-rate pricing because every website and every project is
             different. Reach out and we&apos;ll talk through your specific goals and timeline.
           </p>
-          <Button href="/contact" size="lg">
-            Start a Conversation
-          </Button>
         </Container>
       </section>
 

@@ -101,7 +101,7 @@ seoDescription: "Optional — a more SEO-specific description. Falls back to exc
 author: "AJH Studio Team"
 category: "Websites"
 tags: ["Website Development", "Planning"]
-image: "/images/blog/my-new-post.svg"
+image: "/images/blog/my-new-post.jpg"
 imageAlt: "Description of the featured image for screen readers"
 featured: false
 ---
@@ -127,7 +127,7 @@ Edit `lib/data/portfolio.ts` and add an entry to the `portfolioProjects` array:
   name: "Project Name",
   description: "A short description of the project.",
   category: "Local Business",
-  image: "/images/work/project-slug.svg",
+  image: "/images/work/project-slug.jpg",
   url: "https://clientsite.com", // optional — omit if there's no live link
   services: ["Website Design", "Hosting"],
   featured: true, // shows on the homepage; false = only on /work
@@ -144,7 +144,7 @@ Edit `lib/data/services.ts`. Each service supports a short description (used in 
 
 ### Images
 
-Placeholder SVG graphics ship in `public/images/work/`, `public/images/blog/`, and `public/images/about/` so the design can be evaluated before real photography exists. Replace them with real photos or screenshots — keep the same file paths, or update the `image` field in the relevant data file / MDX frontmatter to point at your new file. Recommended: JPG/PNG/WebP, roughly 1200×900 for portfolio and blog images, 900×1100 for the About page photo.
+Placeholder JPG graphics ship in `public/images/work/`, `public/images/blog/`, and `public/images/about/` so the design can be evaluated before real photography exists. Replace them with real photos or screenshots — keep the same file paths, or update the `image` field in the relevant data file / MDX frontmatter to point at your new file. Recommended: JPG/PNG/WebP, roughly 1200×900 for portfolio and blog images, 900×1100 for the About page photo.
 
 ## Contact Form Setup
 

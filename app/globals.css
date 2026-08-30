@@ -14,8 +14,8 @@
   --color-ink-soft: #223330;
   --color-primary: #1f4c49;
   --color-primary-hover: #163634;
-  --color-secondary: #bd6238;
-  --color-secondary-hover: #9e4f2c;
+  --color-secondary: #aa5832;
+  --color-secondary-hover: #8b4829;
   --color-accent: #d9a94c;
   --color-accent-hover: #c2913a;
 
@@ -29,8 +29,8 @@
   --color-border: #e4dcc7;
 
   /* CTA */
-  --color-cta: #bd6238;
-  --color-cta-hover: #9e4f2c;
+  --color-cta: #aa5832;
+  --color-cta-hover: #8b4829;
   --color-cta-foreground: #fbf8f2;
 
   /* Radius philosophy: soft but not bubbly */
