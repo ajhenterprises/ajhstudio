@@ -146,6 +146,10 @@ Edit `lib/data/services.ts`. Each service supports a short description (used in 
 
 Placeholder JPG graphics ship in `public/images/work/`, `public/images/blog/`, and `public/images/about/` so the design can be evaluated before real photography exists. Replace them with real photos or screenshots — keep the same file paths, or update the `image` field in the relevant data file / MDX frontmatter to point at your new file. Recommended: JPG/PNG/WebP, roughly 1200×900 for portfolio and blog images, 900×1100 for the About page photo.
 
+### Website Discovery questionnaire link
+
+The `/website-discovery` page is the marketing entry point for the AJH Studio CRM's Website Branding & Discovery Questionnaire — the questionnaire itself lives in the CRM, not this site. Both "Start Website Discovery" buttons on that page read the destination URL from a single place: `siteConfig.websiteDiscoveryUrl` in `lib/site-config.ts`. Once the CRM's public questionnaire URL is finalized, update that one value and both CTAs (and any future links you add elsewhere) pick it up automatically.
+
 ## Contact Form Setup
 
 The contact form is a real, working form — not a static mockup. Submissions are sent by email using [Resend](https://resend.com/), through a serverless API route at `app/api/contact/route.ts`. There is no database; nothing is stored, submissions are only emailed.

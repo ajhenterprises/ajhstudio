@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/testimonials",
     "/blog",
     "/contact",
+    "/website-discovery",
   ].map((route) => ({
     url: `${siteConfig.url}${route}`,
     lastModified: new Date(),

@@ -7,6 +7,11 @@ export const siteConfig = {
   url: "https://www.ajhstudio.com",
   email: "hello@ajhstudio.com",
   crmUrl: "https://crm.ajhstudio.com",
+  // TODO: Replace with the live public URL for the AJH Studio CRM's Website
+  // Branding & Discovery Questionnaire once that route is deployed. This is
+  // the ONLY place this URL should be defined — the /website-discovery page
+  // reads it from here rather than hard-coding it.
+  websiteDiscoveryUrl: "https://crm.ajhstudio.com/discovery",
   social: {
     instagram: "https://instagram.com/ajhstudio",
     linkedin: "https://linkedin.com/company/ajhstudio",

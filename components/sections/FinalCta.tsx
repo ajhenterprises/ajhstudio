@@ -31,7 +31,7 @@ export default function FinalCta({
       />
       <Container className="relative flex flex-col items-center gap-6 text-center">
         <Eyebrow light>{eyebrow}</Eyebrow>
-        <h2 className="max-w-2xl text-balance font-display text-[2.25rem] leading-[1.15] sm:text-[2.75rem]">
+        <h2 className="max-w-2xl text-balance font-display text-[2.25rem] leading-[1.15] text-background sm:text-[2.75rem]">
           {title}
         </h2>
         {description && (
