@@ -6,7 +6,11 @@ export const siteConfig = {
     "AJH Studio designs and builds websites, hosts and maintains them, and writes the words that go on them — one point of contact for businesses, organizations, ministries, and individuals.",
   url: "https://www.ajhstudio.com",
   email: "hello@ajhstudio.com",
-  crmUrl: "https://crm.ajhstudio.com",
+  // TODO: switch both of these back to https://crm.ajhstudio.com once that
+  // custom domain is pointed at the CRM's Vercel deployment -- using the
+  // Vercel URL directly in the meantime so these links actually work today.
+  crmUrl: "https://ajh-business-hq.vercel.app",
+  questionnaireUrl: "https://ajh-business-hq.vercel.app/website-questionnaire",
   social: {
     instagram: "https://instagram.com/ajhstudio",
     linkedin: "https://linkedin.com/company/ajhstudio",

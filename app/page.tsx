@@ -29,8 +29,12 @@ export default function HomePage() {
       <BlogPreview />
       <FinalCta
         title="Have a project in mind?"
-        description="Whether you need a new website, a better website, help with your content, or someone to keep everything running — let's talk."
-        primaryLabel="Start a Conversation"
+        description="Whether you need a new website, a better website, help with your content, or someone to keep everything running — tell us about it."
+        primaryLabel="Start Your Project"
+        primaryHref={siteConfig.questionnaireUrl}
+        primaryExternal
+        secondaryLabel="Send Us a Message"
+        secondaryHref="/contact"
       />
     </>
   );

@@ -1,6 +1,7 @@
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import Eyebrow from "@/components/ui/Eyebrow";
+import { siteConfig } from "@/lib/site-config";
 
 export default function Hero() {
   return (
@@ -26,8 +27,8 @@ export default function Hero() {
             individuals who want a site that works without becoming a second job.
           </p>
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-            <Button href="/contact" size="lg">
-              Let&apos;s Talk
+            <Button href={siteConfig.questionnaireUrl} size="lg" external>
+              Start Your Project
             </Button>
             <Button href="/services" variant="outline" size="lg">
               Explore Services
