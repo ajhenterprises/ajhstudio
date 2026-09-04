@@ -62,8 +62,11 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="hidden lg:block">
-          <Button href={siteConfig.navCta.href} size="md">
+        <div className="hidden items-center gap-3 lg:flex">
+          <Button href={siteConfig.questionnaireUrl} size="md" external>
+            Start Your Project
+          </Button>
+          <Button href={siteConfig.navCta.href} size="md" variant="outline">
             {siteConfig.navCta.label}
           </Button>
         </div>

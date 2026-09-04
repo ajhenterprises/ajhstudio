@@ -110,10 +110,18 @@ export default function MobileNav({ pathname }: { pathname: string }) {
           ))}
         </nav>
 
-        <div className="px-6 pb-10 sm:px-8">
+        <div className="flex flex-col gap-3 px-6 pb-10 sm:px-8">
+          <a
+            href={siteConfig.questionnaireUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex w-full items-center justify-center rounded-full bg-cta px-6 py-4 text-center font-medium text-cta-foreground transition-colors hover:bg-cta-hover"
+          >
+            Start Your Project
+          </a>
           <Link
             href={siteConfig.navCta.href}
-            className="flex w-full items-center justify-center rounded-full bg-cta px-6 py-4 text-center font-medium text-cta-foreground transition-colors hover:bg-cta-hover"
+            className="flex w-full items-center justify-center rounded-full border border-background/25 px-6 py-4 text-center font-medium text-background transition-colors hover:border-background hover:bg-background/10"
           >
             {siteConfig.navCta.label}
           </Link>

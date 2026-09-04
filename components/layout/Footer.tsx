@@ -107,12 +107,22 @@ export default function Footer() {
             <p className="mt-4 text-sm leading-relaxed text-background/70">
               Tell us what you&apos;re working on and we&apos;ll get back to you.
             </p>
-            <Link
-              href="/contact"
-              className="mt-4 inline-flex items-center gap-2 rounded-full bg-cta px-5 py-2.5 text-sm font-medium text-cta-foreground transition-colors hover:bg-cta-hover"
-            >
-              Let&apos;s Talk
-            </Link>
+            <div className="mt-4 flex flex-wrap items-center gap-3">
+              <a
+                href={siteConfig.questionnaireUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-cta px-5 py-2.5 text-sm font-medium text-cta-foreground transition-colors hover:bg-cta-hover"
+              >
+                Start Your Project
+              </a>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-full border border-background/25 px-5 py-2.5 text-sm font-medium text-background transition-colors hover:border-background hover:bg-background/10"
+              >
+                Let&apos;s Talk
+              </Link>
+            </div>
           </div>
         </div>
 
