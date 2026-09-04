@@ -92,7 +92,7 @@ export default function WebsiteDiscoveryPage() {
             </p>
 
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-              <Button href={siteConfig.websiteDiscoveryUrl} size="lg">
+              <Button href={siteConfig.questionnaireUrl} size="lg" external>
                 Start Website Discovery
               </Button>
               <Button href="/contact" variant="outline" size="lg">
@@ -154,7 +154,8 @@ export default function WebsiteDiscoveryPage() {
         title="Start your website discovery."
         description="It takes about 15–25 minutes, and it's the fastest way to get a project moving."
         primaryLabel="Start Website Discovery"
-        primaryHref={siteConfig.websiteDiscoveryUrl}
+        primaryHref={siteConfig.questionnaireUrl}
+        primaryExternal
         secondaryLabel="Have Questions? Let's Talk"
         secondaryHref="/contact"
       />

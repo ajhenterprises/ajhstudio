@@ -8,6 +8,7 @@ export default function FinalCta({
   description,
   primaryLabel = "Start a Conversation",
   primaryHref = "/contact",
+  primaryExternal = false,
   secondaryLabel,
   secondaryHref,
 }: {
@@ -16,6 +17,7 @@ export default function FinalCta({
   description?: React.ReactNode;
   primaryLabel?: string;
   primaryHref?: string;
+  primaryExternal?: boolean;
   secondaryLabel?: string;
   secondaryHref?: string;
 }) {
@@ -38,7 +40,7 @@ export default function FinalCta({
           <p className="max-w-xl text-lg leading-relaxed text-background/75">{description}</p>
         )}
         <div className="mt-2 flex flex-col gap-4 sm:flex-row">
-          <Button href={primaryHref} size="lg">
+          <Button href={primaryHref} size="lg" external={primaryExternal}>
             {primaryLabel}
           </Button>
           {secondaryLabel && secondaryHref && (

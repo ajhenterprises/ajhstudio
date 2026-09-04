@@ -148,7 +148,7 @@ Placeholder JPG graphics ship in `public/images/work/`, `public/images/blog/`, a
 
 ### Website Discovery questionnaire link
 
-The `/website-discovery` page is the marketing entry point for the AJH Studio CRM's Website Branding & Discovery Questionnaire — the questionnaire itself lives in the CRM, not this site. Both "Start Website Discovery" buttons on that page read the destination URL from a single place: `siteConfig.websiteDiscoveryUrl` in `lib/site-config.ts`. Once the CRM's public questionnaire URL is finalized, update that one value and both CTAs (and any future links you add elsewhere) pick it up automatically.
+The `/website-discovery` page is the marketing entry point for the AJH Studio CRM's Website Branding & Discovery Questionnaire — the questionnaire itself lives in the CRM, not this site. Both "Start Website Discovery" buttons on that page read the destination URL from a single place: `siteConfig.questionnaireUrl` in `lib/site-config.ts`. Once the CRM's public questionnaire URL is finalized, update that one value and both CTAs (and any future links you add elsewhere) pick it up automatically.
 
 ## Contact Form Setup
 
