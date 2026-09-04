@@ -31,8 +31,9 @@ export default function WorkPage() {
       <section className="py-16 sm:py-20 lg:py-24">
         <Container>
           <p className="mb-10 max-w-2xl text-sm text-muted">
-            These are illustrative examples built to show the kind of work AJH Studio does —
-            real client projects will replace them here as they launch.
+            Projects marked &ldquo;Example Project&rdquo; below are illustrative — built to show
+            the kind of work AJH Studio does while the studio&apos;s list of real, completed
+            projects grows. Everything else is real client work.
           </p>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {portfolioProjects.map((project, i) => (

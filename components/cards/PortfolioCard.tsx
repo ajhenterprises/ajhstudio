@@ -26,7 +26,11 @@ export default function PortfolioCard({
       <div className={cn("relative overflow-hidden", large ? "aspect-[4/3]" : "aspect-[4/3]")}>
         <Image
           src={project.image}
-          alt={`${project.name} website preview`}
+          alt={
+            project.isExample
+              ? `Illustrative graphic for the ${project.name} example project`
+              : `${project.name} website preview`
+          }
           fill
           sizes={large ? "(min-width: 1024px) 66vw, 100vw" : "(min-width: 1024px) 33vw, 100vw"}
           className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
@@ -34,6 +38,11 @@ export default function PortfolioCard({
         <div className="absolute left-4 top-4 rounded-full bg-background/90 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-ink backdrop-blur-sm">
           {project.category}
         </div>
+        {project.isExample && (
+          <div className="absolute right-4 top-4 rounded-full bg-background/90 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-muted backdrop-blur-sm">
+            Example Project
+          </div>
+        )}
       </div>
       <div className="flex flex-1 flex-col gap-3 p-6 sm:p-7">
         <div className="flex items-start justify-between gap-3">

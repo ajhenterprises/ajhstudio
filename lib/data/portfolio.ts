@@ -7,11 +7,26 @@ export type PortfolioProject = {
   url?: string;
   services: string[];
   featured: boolean;
+  // Set true only for fictional/example entries used to show range before
+  // enough real client work exists. Leave unset (or false) for real,
+  // completed AJH Studio projects.
+  isExample?: boolean;
 };
 
 // Add new projects here. Each project needs an image at /public/images/work/.
 // Replace the placeholder SVGs with real screenshots or photography when available.
 export const portfolioProjects: PortfolioProject[] = [
+  {
+    slug: "jubilee-city-church",
+    name: "Jubilee City Church",
+    description:
+      "A clear, welcoming site for a non-denominational church in Daphne, Alabama, built to help newcomers find service times and get plugged in quickly.",
+    category: "Ministry",
+    image: "/images/work/jubilee-city-church.jpg",
+    url: "https://jubileecity.church",
+    services: ["Website Design", "Hosting", "Maintenance", "Copywriting", "Content"],
+    featured: true,
+  },
   {
     slug: "harbor-and-oak",
     name: "Harbor & Oak Coffee Co.",
@@ -21,16 +36,7 @@ export const portfolioProjects: PortfolioProject[] = [
     image: "/images/work/harbor-and-oak.jpg",
     services: ["Website Design", "Hosting", "Copywriting"],
     featured: true,
-  },
-  {
-    slug: "grace-point-fellowship",
-    name: "Grace Point Fellowship",
-    description:
-      "A clear, welcoming site that makes it easy for newcomers to find service times, ministries, and how to get involved.",
-    category: "Ministry",
-    image: "/images/work/grace-point-fellowship.jpg",
-    services: ["Website Design", "Hosting", "Content"],
-    featured: true,
+    isExample: true,
   },
   {
     slug: "bishop-law-group",
@@ -41,6 +47,7 @@ export const portfolioProjects: PortfolioProject[] = [
     image: "/images/work/bishop-law-group.jpg",
     services: ["Website Redesign", "Hosting", "SEO Foundations"],
     featured: true,
+    isExample: true,
   },
   {
     slug: "the-mercantile",
@@ -51,6 +58,7 @@ export const portfolioProjects: PortfolioProject[] = [
     image: "/images/work/the-mercantile.jpg",
     services: ["Website Design", "Copywriting"],
     featured: false,
+    isExample: true,
   },
   {
     slug: "riverside-counseling",
@@ -61,6 +69,7 @@ export const portfolioProjects: PortfolioProject[] = [
     image: "/images/work/riverside-counseling.jpg",
     services: ["Website Design", "Hosting", "Content"],
     featured: false,
+    isExample: true,
   },
   {
     slug: "lowcountry-realty-group",
@@ -71,6 +80,7 @@ export const portfolioProjects: PortfolioProject[] = [
     image: "/images/work/lowcountry-realty-group.jpg",
     services: ["Website Design", "Hosting", "Maintenance"],
     featured: false,
+    isExample: true,
   },
 ];
 
