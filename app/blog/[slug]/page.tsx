@@ -200,7 +200,7 @@ export default async function BlogPostPage({
 
       <FinalCta
         title="Ready to put this into practice?"
-        description="AJH Studio can help you build it, write it, or both."
+        description="I can help you build it, write it, or both."
       />
     </>
   );

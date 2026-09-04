@@ -83,7 +83,7 @@ export default function ContactForm() {
         <CheckCircle2 className="size-10 text-primary" aria-hidden="true" />
         <h3 className="font-display text-2xl text-ink">Message sent.</h3>
         <p className="max-w-sm text-muted">
-          Thanks for reaching out. We&apos;ll review your message and get back to you soon.
+          Thanks for reaching out. I&apos;ll review your message and get back to you soon.
         </p>
         <button
           type="button"
@@ -195,7 +195,7 @@ export default function ContactForm() {
           onChange={(e) => update("message", e.target.value)}
           aria-invalid={Boolean(errors.message)}
           aria-describedby={errors.message ? `${formId}-message-error` : undefined}
-          placeholder="Tell us a bit about your project or what you need help with."
+          placeholder="Tell me a bit about your project or what you need help with."
           className={cn(
             "mt-2 w-full resize-y rounded-lg border bg-surface px-4 py-3 text-text outline-none transition-colors",
             errors.message ? "border-red-400" : "border-border focus:border-primary"

@@ -5,16 +5,17 @@ import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import FinalCta from "@/components/sections/FinalCta";
 import Reveal from "@/components/ui/Reveal";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "AJH Studio is a small studio built around helping people communicate clearly and build better online experiences.",
+    "Aaron Joseph Hall is the founder of AJH Enterprises, working across communication, technology, and leadership.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About | AJH Studio",
+    title: "About | AJH Enterprises",
     description:
-      "AJH Studio is a small studio built around helping people communicate clearly and build better online experiences.",
+      "Aaron Joseph Hall is the founder of AJH Enterprises, working across communication, technology, and leadership.",
     url: "/about",
   },
 };
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
 const values = [
   {
     title: "Clarity over cleverness",
-    description: "The goal is always to be understood — in design, in writing, and in how a project is run.",
+    description: "The goal is always to be understood — in a website, in writing, and in how a project is run.",
   },
   {
     title: "Real relationships",
@@ -30,7 +31,7 @@ const values = [
   },
   {
     title: "Built to last",
-    description: "A website should hold up over time, not just look good on launch day.",
+    description: "A website — or a piece of writing, or a leadership decision — should hold up over time.",
   },
 ];
 
@@ -39,8 +40,8 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About"
-        title="A small studio, built around real conversations."
-        description="AJH Studio exists to help people communicate clearly and build a better online presence — without needing to become web experts themselves."
+        title="Aaron Joseph Hall."
+        description="I'm the founder of AJH Enterprises. I work across communication, websites and technology, and leadership — and I built this company to bring all of it under one roof."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
       />
 
@@ -50,7 +51,7 @@ export default function AboutPage() {
             <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl border border-border">
               <Image
                 src="/images/about/founder-placeholder.jpg"
-                alt="Placeholder for a personal photo — replace with a real photo"
+                alt="Placeholder for a personal photo of Aaron Joseph Hall — replace with a real photo"
                 fill
                 sizes="(min-width: 1024px) 33vw, 80vw"
                 className="object-cover"
@@ -60,17 +61,18 @@ export default function AboutPage() {
 
           <Reveal delay={100} className="flex flex-col gap-6">
             <span className="w-fit rounded-full border border-border bg-surface-alt px-3 py-1 text-xs font-semibold uppercase tracking-wide text-muted">
-              Editable — replace with your own introduction
+              Editable — replace with a fuller personal introduction
             </span>
-            <h2 className="font-display text-3xl text-ink sm:text-4xl">Hi, I&apos;m [Your Name].</h2>
+            <h2 className="font-display text-3xl text-ink sm:text-4xl">Hi, I&apos;m Aaron.</h2>
             <p className="text-lg leading-relaxed text-text">
-              [This is where your personal introduction goes. Share who you are, what led you to
-              start AJH Studio, and what you want visitors to know about working with you. Keep
-              it warm and direct — this is the most personal page on the site.]
+              I started {siteConfig.name} to bring together the work I actually do: building
+              websites and technology, writing and communicating ideas clearly, and helping
+              people and organizations lead well. Rather than treat those as separate careers,
+              AJH Enterprises is the umbrella that holds all of it together.
             </p>
             <p className="text-lg leading-relaxed text-text">
-              [Add a paragraph about your background — relevant experience, what you focused on
-              before AJH Studio, and what shaped the way you approach websites and content today.]
+              [Add a paragraph about your background — your experience in ministry, real
+              estate, and leadership, and what shaped the way you approach this work today.]
             </p>
           </Reveal>
         </Container>
@@ -80,20 +82,28 @@ export default function AboutPage() {
         <Container className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal>
             <SectionHeading
-              eyebrow="Why AJH Studio"
-              title="[Add the story behind why you started the studio.]"
+              eyebrow="Person, Company, Products"
+              title="Aaron Joseph Hall, AJH Enterprises, and what I build."
             />
           </Reveal>
           <Reveal delay={100} className="flex flex-col gap-6 text-lg leading-relaxed text-text">
             <p>
-              [Write a few paragraphs about why AJH Studio exists — the gap you saw, the kind of
-              clients you wanted to help, or the frustration that started it all. This section
-              should feel personal and specific to your own experience.]
+              <strong className="text-ink">Aaron Joseph Hall</strong> is me — the person behind
+              the work, writing the blog, and doing the actual communication, technology, and
+              leadership work described on this site.
             </p>
             <p>
-              [Consider closing with your philosophy on how you approach a project — what you
-              believe makes a website or a piece of writing actually work for the people using
-              it.]
+              <strong className="text-ink">{siteConfig.name}</strong> is the company: the
+              umbrella under which client projects, writing, and products are built and
+              operated.
+            </p>
+            <p>
+              <strong className="text-ink">Products</strong> like{" "}
+              <a href="/products" className="text-primary underline underline-offset-4">
+                The Ministry Study and the AJH Real Estate CRM
+              </a>{" "}
+              are individual tools built under that umbrella — each with its own name and its
+              own purpose.
             </p>
           </Reveal>
         </Container>
@@ -121,7 +131,7 @@ export default function AboutPage() {
 
       <FinalCta
         title="Let's talk about your project."
-        description="If AJH Studio sounds like the right fit, the next step is a conversation."
+        description="If this sounds like the right fit, the next step is a conversation."
       />
     </>
   );

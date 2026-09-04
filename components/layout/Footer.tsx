@@ -5,16 +5,17 @@ import Container from "@/components/ui/Container";
 import { siteConfig } from "@/lib/site-config";
 
 const serviceLinks = [
-  { label: "Website Development & Hosting", href: "/services#website" },
-  { label: "Content & Copywriting", href: "/services#content" },
+  { label: "Communication", href: "/services#communication" },
+  { label: "Websites & Technology", href: "/services#websites-technology" },
+  { label: "Leadership", href: "/services#leadership" },
 ];
 
 const companyLinks = [
-  { label: "Work", href: "/work" },
-  { label: "About", href: "/about" },
-  { label: "Testimonials", href: "/testimonials" },
+  { label: "Services", href: "/services" },
+  { label: "Websites", href: "/websites" },
+  { label: "Products", href: "/products" },
   { label: "Blog", href: "/blog" },
-  { label: "Website Discovery", href: "/website-discovery" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -32,13 +33,14 @@ export default function Footer() {
               </span>
               <span className="font-display text-lg font-semibold">{siteConfig.name}</span>
             </Link>
+            <p className="mt-3 text-sm font-medium text-background/60">{siteConfig.tagline}</p>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-background/70">
               {siteConfig.description}
             </p>
             <div className="mt-6 flex items-center gap-3">
               <a
                 href={`mailto:${siteConfig.email}`}
-                aria-label="Email AJH Studio"
+                aria-label="Email AJH Enterprises"
                 className="flex size-9 items-center justify-center rounded-full border border-background/20 text-background/80 transition-colors hover:border-accent hover:text-accent"
               >
                 <Mail className="size-4" aria-hidden="true" />
@@ -47,7 +49,7 @@ export default function Footer() {
                 href={siteConfig.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="AJH Studio on Instagram"
+                aria-label="AJH Enterprises on Instagram"
                 className="flex size-9 items-center justify-center rounded-full border border-background/20 text-background/80 transition-colors hover:border-accent hover:text-accent"
               >
                 <InstagramGlyph className="size-4" />
@@ -56,7 +58,7 @@ export default function Footer() {
                 href={siteConfig.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="AJH Studio on LinkedIn"
+                aria-label="AJH Enterprises on LinkedIn"
                 className="flex size-9 items-center justify-center rounded-full border border-background/20 text-background/80 transition-colors hover:border-accent hover:text-accent"
               >
                 <LinkedinGlyph className="size-4" />
@@ -66,7 +68,7 @@ export default function Footer() {
 
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-background/50">
-              Studio
+              Company
             </h3>
             <ul className="mt-4 space-y-3">
               {companyLinks.map((link) => (
@@ -102,10 +104,10 @@ export default function Footer() {
 
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-background/50">
-              Have a project in mind?
+              Thinking about a website?
             </h3>
             <p className="mt-4 text-sm leading-relaxed text-background/70">
-              Tell us what you&apos;re working on and we&apos;ll get back to you.
+              Start the Website Questionnaire and tell me what you&apos;re building.
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-3">
               <a
@@ -114,13 +116,13 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-cta px-5 py-2.5 text-sm font-medium text-cta-foreground transition-colors hover:bg-cta-hover"
               >
-                Start Your Project
+                Website Questionnaire
               </a>
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-full border border-background/25 px-5 py-2.5 text-sm font-medium text-background transition-colors hover:border-background hover:bg-background/10"
               >
-                Let&apos;s Talk
+                Contact
               </Link>
             </div>
           </div>
@@ -128,16 +130,16 @@ export default function Footer() {
 
         <div className="mt-14 border-t border-background/10 pt-8">
           <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-background/50">
-            The kind of projects we take on
+            The kind of website projects I take on
           </h3>
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-background/60">
-            AJH Studio focuses on marketing and content-driven websites — the kind most
-            businesses, organizations, and ministries need. We don&apos;t take on projects that
+            AJH Enterprises focuses on marketing and content-driven websites — the kind most
+            churches, businesses, and organizations need. I don&apos;t take on projects that
             require a complex custom database, a full e-commerce store, or a custom web
-            application. If that&apos;s what you&apos;re building, let us know — we&apos;re glad
+            application. If that&apos;s what you&apos;re building, let me know — I&apos;m glad
             to point you toward someone who specializes in that kind of work.{" "}
             <Link href="/services" className="text-background/70 underline underline-offset-2 hover:text-accent">
-              See what we do instead
+              See what I do instead
             </Link>
             .
           </p>
@@ -160,7 +162,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="text-background/30 transition-colors hover:text-background/60"
             >
-              My AJH Studio CRM
+              Internal Login
             </a>
           </div>
         </div>

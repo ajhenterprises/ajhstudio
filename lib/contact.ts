@@ -1,9 +1,7 @@
 export const projectTypes = [
-  "New Website",
-  "Website Redesign",
-  "Website Hosting / Maintenance",
-  "Copywriting",
-  "Content",
+  "Communication / Copywriting",
+  "Leadership / Speaking",
+  "Products",
   "Something Else",
 ] as const;
 
@@ -42,9 +40,9 @@ export function validateContactForm(data: ContactFormData): ContactFormErrors {
   }
 
   if (!data.message.trim()) {
-    errors.message = "Please add a short message so we know what you need.";
+    errors.message = "Please add a short message so I know what you need.";
   } else if (data.message.trim().length < 10) {
-    errors.message = "Please add a little more detail so we can help.";
+    errors.message = "Please add a little more detail so I can help.";
   }
 
   return errors;

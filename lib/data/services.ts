@@ -1,67 +1,100 @@
 export type Service = {
-  slug: "website" | "content";
+  slug: "communication" | "websites-technology" | "leadership";
   name: string;
+  tagline: string;
   shortDescription: string;
   longDescription: string;
   whoItsFor: string[];
   included: string[];
-  ongoing?: string[];
-  cta: { label: string; href: string };
+  // Either a normal internal href, or useQuestionnaire: true to point the
+  // CTA at siteConfig.questionnaireUrl (kept out of this file so the URL
+  // has one source of truth).
+  cta: { label: string; href?: string; useQuestionnaire?: boolean };
 };
 
 export const services: Service[] = [
   {
-    slug: "website",
-    name: "Website Development & Hosting",
+    slug: "communication",
+    name: "Communication",
+    tagline: "Clear words. Better stories. Stronger messages.",
     shortDescription:
-      "Design and build of a fast, modern website, plus ongoing hosting and upkeep so it stays online, secure, and up to date — from a first launch to a redesign of an existing site.",
+      "Copywriting, content, messaging, storytelling, and communication strategy — the words that make everything else work.",
     longDescription:
-      "Whether you need a brand-new website or a redesign of one that's showing its age, AJH Studio handles the design, the build, and what comes after launch. You get a site built around how people actually use it — clear, fast, and easy to navigate on any device — and a plan for keeping it that way.",
+      "Most organizations know what they do but struggle to say it clearly. This is the work of finding the clear version of your message and putting it in front of the right people — for a website, an email, a talk, or a brand.",
     whoItsFor: [
-      "Small businesses that need a professional site without an in-house web team",
-      "Organizations and ministries that need something reliable and easy to update",
-      "Anyone whose current website is outdated, slow, or hard to manage",
-      "Businesses that want one point of contact instead of juggling a designer, a host, and a developer",
+      "Businesses and organizations that know what they do but struggle to put it into words",
+      "Teams that need a consistent voice across a website, emails, and content",
+      "Anyone launching something new who needs the words written, not just the design",
+      "Leaders who want a second set of eyes to sharpen an existing message",
     ],
     included: [
-      "Custom website design built around your business",
-      "Mobile-responsive layouts that work on every device",
-      "Performance-focused development",
-      "SEO foundations built in from the start",
-      "Secure, reliable hosting",
-      "Website redesigns for existing sites",
+      "Copywriting",
+      "Website copy",
+      "Brand messaging",
+      "Content strategy",
+      "Content creation",
+      "Storytelling",
+      "Communication strategy",
+      "Speaking",
     ],
-    ongoing: [
-      "Hosting and uptime monitoring",
-      "Security updates and backups",
-      "Content and copy updates",
-      "Small design changes as your business grows",
-      "A person to call when something needs to change",
-    ],
-    cta: { label: "Explore Website Services", href: "/services#website" },
+    cta: { label: "Start a Conversation", href: "/contact" },
   },
   {
-    slug: "content",
-    name: "Content & Copywriting",
+    slug: "websites-technology",
+    name: "Websites & Technology",
+    tagline: "Websites that actually work.",
     shortDescription:
-      "Writing for the site itself, emails, and blog posts — copy that sounds like you and says what it needs to say.",
+      "Modern websites for churches, businesses, organizations, and entrepreneurs who need something clear, useful, and easy to manage.",
     longDescription:
-      "A well-built website still needs the right words. AJH Studio writes and edits the copy that makes your site clear and your message land — for the pages themselves, for the emails you send, and for the blog posts that keep people coming back.",
+      "I build practical websites for real people and organizations — not a giant web agency, just websites that do their job well. That includes new builds, redesigns of sites that have fallen behind, and the ongoing hosting and support that keeps a site running after launch.",
     whoItsFor: [
-      "Businesses that know what they do but struggle to put it into words",
-      "Organizations that need a consistent voice across their site and emails",
-      "Anyone launching a new site who needs the copy written, not just the design",
-      "Teams that want a second set of eyes to edit and sharpen existing content",
+      "Churches and ministries that need a clear, welcoming site",
+      "Small businesses and entrepreneurs who need a professional site without an in-house team",
+      "Organizations whose current site is outdated, slow, or hard to manage",
+      "Anyone who wants one person to build it, host it, and keep it working",
     ],
     included: [
-      "Website copy for new or existing pages",
-      "Landing pages built around a specific offer or goal",
-      "Blog posts written in your voice",
-      "Email copy and campaigns",
-      "Editing and proofreading of existing content",
-      "Help defining a clear brand voice and message",
+      "Website design",
+      "Website development",
+      "Custom websites",
+      "Web applications",
+      "Landing pages",
+      "Website redesigns",
+      "Mobile-responsive websites",
+      "Website strategy",
+      "Content structure",
+      "Basic SEO",
+      "Integrations",
+      "Custom functionality",
+      "Technology consulting",
+      "Product development",
     ],
-    cta: { label: "Explore Content Services", href: "/services#content" },
+    cta: { label: "Start the Website Questionnaire", useQuestionnaire: true },
+  },
+  {
+    slug: "leadership",
+    name: "Leadership",
+    tagline: "Helping people lead with clarity and purpose.",
+    shortDescription:
+      "Leadership development, speaking, consulting, and strategic conversations — grounded in real experience, not generic frameworks.",
+    longDescription:
+      "This grows out of real experience leading people and organizations, including in ministry — not a corporate leadership framework applied from the outside. It's conversations, speaking, and consulting aimed at helping people and teams lead with more clarity.",
+    whoItsFor: [
+      "Pastors and ministry leaders navigating real leadership challenges",
+      "Teams that need help getting clear on direction and roles",
+      "Organizations looking for an outside perspective on a specific decision",
+      "Anyone who wants a straightforward, honest conversation about leading well",
+    ],
+    included: [
+      "Leadership development",
+      "Leadership consulting",
+      "Speaking",
+      "Strategic conversations",
+      "Ministry leadership",
+      "Team development",
+      "Organizational clarity",
+    ],
+    cta: { label: "Start a Conversation", href: "/contact" },
   },
 ];
 

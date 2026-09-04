@@ -26,7 +26,7 @@ export default function TermsPage() {
               revisions, ownership of deliverables, hosting terms, and cancellation policies.
             </p>
             <p>
-              Because AJH Studio provides ongoing services like hosting and maintenance, consider
+              Because AJH Enterprises provides ongoing services like hosting and maintenance, consider
               including terms specific to those engagements, separate from one-time project work.
             </p>
             <p>

@@ -7,14 +7,13 @@ export type PortfolioProject = {
   url?: string;
   services: string[];
   featured: boolean;
-  // Set true only for fictional/example entries used to show range before
+  // Set true only for a fictional/example entry used to show range before
   // enough real client work exists. Leave unset (or false) for real,
-  // completed AJH Studio projects.
+  // completed website projects — every entry here should be a real one.
   isExample?: boolean;
 };
 
 // Add new projects here. Each project needs an image at /public/images/work/.
-// Replace the placeholder SVGs with real screenshots or photography when available.
 export const portfolioProjects: PortfolioProject[] = [
   {
     slug: "jubilee-city-church",
@@ -26,50 +25,6 @@ export const portfolioProjects: PortfolioProject[] = [
     url: "https://jubileecity.church",
     services: ["Website Design", "Hosting", "Maintenance", "Copywriting", "Content"],
     featured: true,
-  },
-  {
-    slug: "harbor-and-oak",
-    name: "Harbor & Oak Coffee Co.",
-    description:
-      "A warm, image-forward site for a small coastal coffee roaster, built to make ordering and finding the shop effortless.",
-    category: "Local Business",
-    image: "/images/work/harbor-and-oak.jpg",
-    services: ["Website Design", "Hosting", "Copywriting"],
-    featured: true,
-    isExample: true,
-  },
-  {
-    slug: "bishop-law-group",
-    name: "Bishop Law Group",
-    description:
-      "A redesign that replaced a decade-old site with a fast, professional presence built around client trust.",
-    category: "Professional Services",
-    image: "/images/work/bishop-law-group.jpg",
-    services: ["Website Redesign", "Hosting", "SEO Foundations"],
-    featured: true,
-    isExample: true,
-  },
-  {
-    slug: "the-mercantile",
-    name: "The Mercantile on Main",
-    description:
-      "A simple, editorial storefront site for a boutique retailer, built to showcase products and drive foot traffic.",
-    category: "Retail",
-    image: "/images/work/the-mercantile.jpg",
-    services: ["Website Design", "Copywriting"],
-    featured: false,
-    isExample: true,
-  },
-  {
-    slug: "riverside-counseling",
-    name: "Riverside Counseling",
-    description:
-      "A calm, reassuring site for a private counseling practice, with clear paths to schedule a first appointment.",
-    category: "Healthcare",
-    image: "/images/work/riverside-counseling.jpg",
-    services: ["Website Design", "Hosting", "Content"],
-    featured: false,
-    isExample: true,
   },
   {
     slug: "sold-with-hall",

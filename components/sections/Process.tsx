@@ -6,7 +6,7 @@ const steps = [
   {
     number: "01",
     title: "Talk",
-    description: "We start with a conversation about what you need and what your site should do.",
+    description: "I start with a conversation about what you need and what your site should do.",
   },
   {
     number: "02",

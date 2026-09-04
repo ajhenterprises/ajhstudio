@@ -1,6 +1,7 @@
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import Eyebrow from "@/components/ui/Eyebrow";
+import { siteConfig } from "@/lib/site-config";
 
 export default function FinalCta({
   eyebrow = "Start Here",
@@ -9,6 +10,10 @@ export default function FinalCta({
   primaryLabel = "Start a Conversation",
   primaryHref = "/contact",
   primaryExternal = false,
+  // Shortcut: when true, the primary button points at the Website
+  // Questionnaire (siteConfig.questionnaireUrl) and opens in a new tab,
+  // overriding primaryHref/primaryExternal.
+  useQuestionnaire = false,
   secondaryLabel,
   secondaryHref,
 }: {
@@ -18,9 +23,13 @@ export default function FinalCta({
   primaryLabel?: string;
   primaryHref?: string;
   primaryExternal?: boolean;
+  useQuestionnaire?: boolean;
   secondaryLabel?: string;
   secondaryHref?: string;
 }) {
+  const resolvedHref = useQuestionnaire ? siteConfig.questionnaireUrl : primaryHref;
+  const resolvedExternal = useQuestionnaire ? true : primaryExternal;
+
   return (
     <section className="relative overflow-hidden bg-ink py-20 text-background sm:py-28">
       <div
@@ -40,7 +49,7 @@ export default function FinalCta({
           <p className="max-w-xl text-lg leading-relaxed text-background/75">{description}</p>
         )}
         <div className="mt-2 flex flex-col gap-4 sm:flex-row">
-          <Button href={primaryHref} size="lg" external={primaryExternal}>
+          <Button href={resolvedHref} size="lg" external={resolvedExternal}>
             {primaryLabel}
           </Button>
           {secondaryLabel && secondaryHref && (

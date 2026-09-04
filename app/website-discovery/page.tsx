@@ -12,12 +12,12 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Website Project Discovery",
   description:
-    "Start your AJH Studio website project with a short discovery questionnaire — tell us about your business, your goals, and your vision so we can build a plan around you.",
+    "Start your website project with a short discovery questionnaire — tell me about your business, your goals, and your vision so I can build a plan around you.",
   alternates: { canonical: "/website-discovery" },
   openGraph: {
-    title: "Website Project Discovery | AJH Studio",
+    title: "Website Project Discovery | AJH Enterprises",
     description:
-      "Start your AJH Studio website project with a short discovery questionnaire — tell us about your business, your goals, and your vision so we can build a plan around you.",
+      "Start your website project with a short discovery questionnaire — tell me about your business, your goals, and your vision so I can build a plan around you.",
     url: "/website-discovery",
   },
 };
@@ -26,36 +26,36 @@ const steps = [
   {
     number: "01",
     icon: Building2,
-    title: "Tell Us About Your Business",
+    title: "Tell Me About Your Business",
     description:
-      "Help us understand who you are, what you do, who you serve, and what makes you different.",
+      "Help me understand who you are, what you do, who you serve, and what makes you different.",
   },
   {
     number: "02",
     icon: Target,
     title: "Define Your Goals",
-    description: "Tell us what you want your website to accomplish and what success looks like.",
+    description: "Tell me what you want your website to accomplish and what success looks like.",
   },
   {
     number: "03",
     icon: Palette,
     title: "Share Your Vision",
     description:
-      "Tell us about your brand, visual preferences, websites you love, and the experience you want visitors to have.",
+      "Tell me about your brand, visual preferences, websites you love, and the experience you want visitors to have.",
   },
   {
     number: "04",
     icon: ListChecks,
-    title: "Tell Us What You Need",
+    title: "Tell Me What You Need",
     description:
-      "Let us know about pages, functionality, integrations, content, SEO, and other requirements.",
+      "Let me know about pages, functionality, integrations, content, SEO, and other requirements.",
   },
   {
     number: "05",
     icon: Route,
-    title: "We'll Turn It Into a Plan",
+    title: "I'll Turn It Into a Plan",
     description:
-      "AJH Studio will review your responses and use them to develop the creative direction and project plan for your website.",
+      "I'll review your responses and use them to develop the creative direction and project plan for your website.",
   },
 ];
 
@@ -75,20 +75,20 @@ export default function WebsiteDiscoveryPage() {
               Let&apos;s build a website that works.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
-              Before we design anything, we want to understand your business, your audience,
+              Before I design anything, I want to understand your business, your audience,
               your goals, and what you want your website to accomplish.
             </p>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">
-              Every website project starts with discovery. Our Website Branding &amp; Discovery
-              Questionnaire gives us the information we need to understand your vision, identify
+              Every website project starts with discovery. The Website Branding &amp; Discovery
+              Questionnaire gives me the information I need to understand your vision, identify
               what matters most, and build a website intentionally around your goals.
             </p>
 
             <p className="mt-6 max-w-xl border-l-2 border-accent pl-4 text-sm leading-relaxed text-muted">
-              A quick note on scope: AJH Studio focuses on marketing and content-driven
-              websites. We don&apos;t take on projects that require a complex custom database,
-              a full e-commerce store, or a custom web application. If that&apos;s what
-              you&apos;re building, reach out and we&apos;ll point you in the right direction.
+              A quick note on scope: I focus on marketing and content-driven websites. I
+              don&apos;t take on projects that require a complex custom database, a full
+              e-commerce store, or a custom web application. If that&apos;s what you&apos;re
+              building, reach out and I&apos;ll point you in the right direction.
             </p>
 
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -113,7 +113,7 @@ export default function WebsiteDiscoveryPage() {
           <SectionHeading
             eyebrow="What to Expect"
             title="Five short sections. One clear plan."
-            description="The questionnaire walks you through everything AJH Studio needs to know before design begins."
+            description="The questionnaire walks you through everything I need to know before design begins."
           />
           <div className="mt-14 flex flex-col gap-10">
             {steps.map((step, i) => (
@@ -144,7 +144,7 @@ export default function WebsiteDiscoveryPage() {
           </h2>
           <p className="max-w-lg text-muted">
             Just answer the questions as best you can. If you&apos;re unsure about something,
-            that&apos;s okay — we&apos;ll help guide you.
+            that&apos;s okay — I&apos;ll help guide you.
           </p>
         </Container>
       </section>
@@ -154,8 +154,7 @@ export default function WebsiteDiscoveryPage() {
         title="Start your website discovery."
         description="It takes about 15–25 minutes, and it's the fastest way to get a project moving."
         primaryLabel="Start Website Discovery"
-        primaryHref={siteConfig.questionnaireUrl}
-        primaryExternal
+        useQuestionnaire
         secondaryLabel="Have Questions? Let's Talk"
         secondaryHref="/contact"
       />
