@@ -72,15 +72,15 @@ export const portfolioProjects: PortfolioProject[] = [
     isExample: true,
   },
   {
-    slug: "lowcountry-realty-group",
-    name: "Lowcountry Realty Group",
+    slug: "sold-with-hall",
+    name: "Sold With Hall",
     description:
-      "A listings-friendly site built for a small residential real estate team, with an emphasis on speed and clarity.",
+      "A personal-brand site for a REALTOR® serving Baldwin and Mobile counties, Alabama, built to make it easy for buyers and sellers to connect.",
     category: "Real Estate",
-    image: "/images/work/lowcountry-realty-group.jpg",
-    services: ["Website Design", "Hosting", "Maintenance"],
-    featured: false,
-    isExample: true,
+    image: "/images/work/sold-with-hall.jpg",
+    url: "https://soldwithhall.com",
+    services: ["Website Design", "Hosting", "Maintenance", "Copywriting", "Content"],
+    featured: true,
   },
 ];
 
