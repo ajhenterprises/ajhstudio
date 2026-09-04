@@ -126,7 +126,24 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-4 border-t border-background/10 pt-8 text-xs text-background/50 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 border-t border-background/10 pt-8">
+          <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-background/50">
+            The kind of projects we take on
+          </h3>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-background/60">
+            AJH Studio focuses on marketing and content-driven websites — the kind most
+            businesses, organizations, and ministries need. We don&apos;t take on projects that
+            require a complex custom database, a full e-commerce store, or a custom web
+            application. If that&apos;s what you&apos;re building, let us know — we&apos;re glad
+            to point you toward someone who specializes in that kind of work.{" "}
+            <Link href="/services" className="text-background/70 underline underline-offset-2 hover:text-accent">
+              See what we do instead
+            </Link>
+            .
+          </p>
+        </div>
+
+        <div className="mt-8 flex flex-col gap-4 border-t border-background/10 pt-8 text-xs text-background/50 sm:flex-row sm:items-center sm:justify-between">
           <p>
             &copy; {year} {siteConfig.legalName}. All rights reserved.
           </p>
