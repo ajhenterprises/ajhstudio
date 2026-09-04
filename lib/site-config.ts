@@ -10,6 +10,10 @@ export const siteConfig = {
   // custom domain is pointed at the CRM's Vercel deployment -- using the
   // Vercel URL directly in the meantime so these links actually work today.
   crmUrl: "https://ajh-business-hq.vercel.app",
+  // The AJH Studio CRM's public Website Branding & Discovery Questionnaire.
+  // This is the ONLY place this URL should be defined — every CTA that
+  // starts the discovery process (the /website-discovery page, the homepage
+  // hero and closing CTA) reads it from here rather than hard-coding it.
   questionnaireUrl: "https://ajh-business-hq.vercel.app/website-questionnaire",
   social: {
     instagram: "https://instagram.com/ajhstudio",
