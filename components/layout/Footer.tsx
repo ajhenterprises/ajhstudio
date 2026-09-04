@@ -14,6 +14,7 @@ const companyLinks = [
   { label: "About", href: "/about" },
   { label: "Testimonials", href: "/testimonials" },
   { label: "Blog", href: "/blog" },
+  { label: "Website Discovery", href: "/website-discovery" },
   { label: "Contact", href: "/contact" },
 ];
 
