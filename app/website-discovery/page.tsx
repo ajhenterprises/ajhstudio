@@ -84,6 +84,13 @@ export default function WebsiteDiscoveryPage() {
               what matters most, and build a website intentionally around your goals.
             </p>
 
+            <p className="mt-6 max-w-xl border-l-2 border-accent pl-4 text-sm leading-relaxed text-muted">
+              A quick note on scope: AJH Studio focuses on marketing and content-driven
+              websites. We don&apos;t take on projects that require a complex custom database,
+              a full e-commerce store, or a custom web application. If that&apos;s what
+              you&apos;re building, reach out and we&apos;ll point you in the right direction.
+            </p>
+
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
               <Button href={siteConfig.websiteDiscoveryUrl} size="lg">
                 Start Website Discovery

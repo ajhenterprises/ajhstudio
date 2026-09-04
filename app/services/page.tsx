@@ -97,14 +97,26 @@ export default function ServicesPage() {
       ))}
 
       <section className="border-t border-border bg-surface-alt py-16 sm:py-20">
-        <Container className="flex flex-col items-center gap-3 text-center">
-          <h2 className="max-w-xl text-balance font-display text-2xl text-ink sm:text-3xl">
-            On pricing
-          </h2>
-          <p className="max-w-lg text-muted">
-            We don&apos;t publish flat-rate pricing because every website and every project is
-            different. Reach out and we&apos;ll talk through your specific goals and timeline.
-          </p>
+        <Container className="grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-16">
+          <div className="flex flex-col gap-3">
+            <h2 className="text-balance font-display text-2xl text-ink">On pricing</h2>
+            <p className="text-muted">
+              We don&apos;t publish flat-rate pricing because every website and every project is
+              different. Reach out and we&apos;ll talk through your specific goals and timeline.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3">
+            <h2 className="text-balance font-display text-2xl text-ink">
+              The kind of projects we take on
+            </h2>
+            <p className="text-muted">
+              AJH Studio focuses on marketing and content-driven websites — the kind most
+              businesses, organizations, and ministries need. We don&apos;t take on projects
+              that require a complex custom database, a full e-commerce store, or a custom web
+              application. If that&apos;s what you&apos;re building, let us know — we&apos;re
+              glad to point you toward someone who specializes in that kind of work.
+            </p>
+          </div>
         </Container>
       </section>
 
