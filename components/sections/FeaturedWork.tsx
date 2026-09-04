@@ -12,9 +12,9 @@ export default function FeaturedWork() {
     <section className="py-20 sm:py-24 lg:py-28">
       <Container>
         <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-end">
-          <SectionHeading eyebrow="Selected Work" title="A glimpse at the kind of work AJH Studio does." />
-          <Button href="/work" variant="outline" className="shrink-0">
-            View All Work
+          <SectionHeading eyebrow="Websites I've Built" title="Real websites, built for real clients." />
+          <Button href="/websites" variant="outline" className="shrink-0">
+            See All Websites
           </Button>
         </div>
         <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">

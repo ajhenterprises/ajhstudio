@@ -8,12 +8,12 @@ import { getAllPosts, getFeaturedPost } from "@/lib/blog";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Notes on websites, hosting, and content — practical, straightforward writing from AJH Studio.",
+    "Notes on websites, communication, and leadership — practical, straightforward writing from Aaron Joseph Hall.",
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "Blog | AJH Studio",
+    title: "Blog | AJH Enterprises",
     description:
-      "Notes on websites, hosting, and content — practical, straightforward writing from AJH Studio.",
+      "Notes on websites, communication, and leadership — practical, straightforward writing from Aaron Joseph Hall.",
     url: "/blog",
   },
 };
@@ -27,8 +27,8 @@ export default function BlogIndexPage() {
     <>
       <PageHero
         eyebrow="The Journal"
-        title="Notes on websites, hosting, and content."
-        description="Practical, straightforward writing about building and maintaining a website that works for your business."
+        title="Notes on websites, communication, and leadership."
+        description="Practical, straightforward writing from Aaron Joseph Hall about building websites, communicating clearly, and leading well."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Blog" }]}
       />
 
@@ -62,7 +62,7 @@ export default function BlogIndexPage() {
 
       <FinalCta
         title="Need more than reading material?"
-        description="If it's time to fix your website or your content, that's what AJH Studio is for."
+        description="If it's time to fix your website, sharpen your message, or talk through a leadership question, let's talk."
       />
     </>
   );

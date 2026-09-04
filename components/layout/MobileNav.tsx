@@ -117,14 +117,8 @@ export default function MobileNav({ pathname }: { pathname: string }) {
             rel="noopener noreferrer"
             className="flex w-full items-center justify-center rounded-full bg-cta px-6 py-4 text-center font-medium text-cta-foreground transition-colors hover:bg-cta-hover"
           >
-            Start Your Project
+            Start a Website Project
           </a>
-          <Link
-            href={siteConfig.navCta.href}
-            className="flex w-full items-center justify-center rounded-full border border-background/25 px-6 py-4 text-center font-medium text-background transition-colors hover:border-background hover:bg-background/10"
-          >
-            {siteConfig.navCta.label}
-          </Link>
         </div>
       </div>
     </div>

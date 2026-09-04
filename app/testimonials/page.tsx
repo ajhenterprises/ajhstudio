@@ -8,11 +8,11 @@ import { testimonials, getFeaturedTestimonial } from "@/lib/data/testimonials";
 
 export const metadata: Metadata = {
   title: "Testimonials",
-  description: "What clients have to say about working with AJH Studio.",
+  description: "What clients have to say about working with AJH Enterprises.",
   alternates: { canonical: "/testimonials" },
   openGraph: {
-    title: "Testimonials | AJH Studio",
-    description: "What clients have to say about working with AJH Studio.",
+    title: "Testimonials | AJH Enterprises",
+    description: "What clients have to say about working with AJH Enterprises.",
     url: "/testimonials",
   },
 };
@@ -26,7 +26,7 @@ export default function TestimonialsPage() {
       <PageHero
         eyebrow="Client Experience"
         title="Good work should speak for itself."
-        description="AJH Studio cares about the relationship as much as the result. Here's what it's been like for people to work with the studio — from the first conversation through launch and beyond."
+        description="I care about the relationship as much as the result. Here's what it's been like for people to work with me — from the first conversation through launch and beyond."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Testimonials" }]}
       />
 
@@ -61,7 +61,7 @@ export default function TestimonialsPage() {
       <FinalCta
         eyebrow="Get Started"
         title="Have a project of your own?"
-        description="We'd love to hear what you're working on."
+        description="I'd love to hear what you're working on."
         primaryLabel="Let's Talk"
       />
     </>

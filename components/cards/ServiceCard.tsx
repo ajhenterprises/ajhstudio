@@ -1,8 +1,11 @@
 import { Check } from "lucide-react";
 import type { Service } from "@/lib/data/services";
 import Button from "@/components/ui/Button";
+import { siteConfig } from "@/lib/site-config";
 
 export default function ServiceCard({ service }: { service: Service }) {
+  const href = service.cta.useQuestionnaire ? siteConfig.questionnaireUrl : (service.cta.href ?? "/contact");
+
   return (
     <div
       id={service.slug}
@@ -10,6 +13,9 @@ export default function ServiceCard({ service }: { service: Service }) {
     >
       <div>
         <h3 className="font-display text-2xl text-ink sm:text-[1.75rem]">{service.name}</h3>
+        <p className="mt-2 text-sm font-medium uppercase tracking-wide text-secondary">
+          {service.tagline}
+        </p>
         <p className="mt-4 text-[1.05rem] leading-relaxed text-muted">
           {service.shortDescription}
         </p>
@@ -23,8 +29,8 @@ export default function ServiceCard({ service }: { service: Service }) {
         </ul>
       </div>
       <div>
-        <Button href="/contact" variant="outline">
-          Start a Conversation
+        <Button href={href} variant="outline" external={service.cta.useQuestionnaire}>
+          {service.cta.label}
         </Button>
       </div>
     </div>

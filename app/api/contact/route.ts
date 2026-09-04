@@ -52,7 +52,7 @@ export async function POST(request: Request) {
       "Contact form is not fully configured. Missing RESEND_API_KEY, CONTACT_TO_EMAIL, or CONTACT_FROM_EMAIL."
     );
     return NextResponse.json(
-      { ok: false, error: "The contact form isn't configured yet. Please email us directly." },
+      { ok: false, error: "The contact form isn't configured yet. Please email me directly." },
       { status: 500 }
     );
   }
@@ -65,8 +65,8 @@ export async function POST(request: Request) {
 
   const html = `
     <div style="font-family: sans-serif; line-height: 1.6; color: #1c231f;">
-      <h2 style="margin-bottom: 4px;">New website inquiry</h2>
-      <p style="color: #6e6a5c; margin-top: 0;">Submitted via ajhstudio.com contact form</p>
+      <h2 style="margin-bottom: 4px;">New inquiry</h2>
+      <p style="color: #6e6a5c; margin-top: 0;">Submitted via ajhenterprises.com contact form</p>
       <table cellpadding="0" cellspacing="0" style="margin-top: 16px;">
         <tr><td style="padding: 4px 12px 4px 0; font-weight: 600;">Name</td><td>${escapeHtml(data.name)}</td></tr>
         <tr><td style="padding: 4px 12px 4px 0; font-weight: 600;">Email</td><td>${escapeHtml(data.email)}</td></tr>
@@ -91,7 +91,7 @@ export async function POST(request: Request) {
     if (result.error) {
       console.error("Resend error:", result.error);
       return NextResponse.json(
-        { ok: false, error: "We couldn't send your message. Please try again or email us directly." },
+        { ok: false, error: "I couldn't send your message. Please try again or email me directly." },
         { status: 502 }
       );
     }
@@ -100,7 +100,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("Contact form send failed:", error);
     return NextResponse.json(
-      { ok: false, error: "We couldn't send your message. Please try again or email us directly." },
+      { ok: false, error: "I couldn't send your message. Please try again or email me directly." },
       { status: 500 }
     );
   }
