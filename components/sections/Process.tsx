@@ -5,23 +5,23 @@ import Reveal from "@/components/ui/Reveal";
 const steps = [
   {
     number: "01",
-    title: "Talk",
-    description: "I start with a conversation about what you need and what your site should do.",
+    title: "Discover",
+    description: "You share your goals, audience, content, and vision through a guided questionnaire.",
   },
   {
     number: "02",
-    title: "Build",
-    description: "The website, content, or project comes together — with you in the loop along the way.",
+    title: "Plan",
+    description: "I turn your answers into a clear scope, page plan, creative direction, and proposal.",
   },
   {
     number: "03",
-    title: "Launch",
-    description: "Everything gets tested and readied, then goes live.",
+    title: "Build",
+    description: "Your project takes shape with clear review points and no mystery about what comes next.",
   },
   {
     number: "04",
-    title: "Support",
-    description: "Ongoing hosting, updates, and a person to call when something needs to change.",
+    title: "Launch & Support",
+    description: "Everything is tested and launched, with ongoing help available as your work grows.",
   },
 ];
 

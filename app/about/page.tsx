@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import PageHero from "@/components/sections/PageHero";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -48,21 +47,16 @@ export default function AboutPage() {
       <section className="py-16 sm:py-20 lg:py-24">
         <Container className="grid grid-cols-1 gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <Reveal>
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl border border-border">
-              <Image
-                src="/images/about/founder-placeholder.jpg"
-                alt="Placeholder for a personal photo of Aaron Joseph Hall — replace with a real photo"
-                fill
-                sizes="(min-width: 1024px) 33vw, 80vw"
-                className="object-cover"
-              />
+            <div className="relative mx-auto flex aspect-[4/5] w-full max-w-sm flex-col justify-between overflow-hidden rounded-2xl bg-ink p-8 text-background">
+              <span className="font-display text-7xl text-accent">AJH</span>
+              <div>
+                <p className="font-display text-2xl text-background">Aaron Joseph Hall</p>
+                <p className="mt-2 text-sm leading-relaxed text-background/65">Founder, writer, pastor, speaker, and builder of useful things.</p>
+              </div>
             </div>
           </Reveal>
 
           <Reveal delay={100} className="flex flex-col gap-6">
-            <span className="w-fit rounded-full border border-border bg-surface-alt px-3 py-1 text-xs font-semibold uppercase tracking-wide text-muted">
-              Editable — replace with a fuller personal introduction
-            </span>
             <h2 className="font-display text-3xl text-ink sm:text-4xl">Hi, I&apos;m Aaron.</h2>
             <p className="text-lg leading-relaxed text-text">
               I started {siteConfig.name} to bring together the work I actually do: building
@@ -71,8 +65,10 @@ export default function AboutPage() {
               AJH Enterprises is the umbrella that holds all of it together.
             </p>
             <p className="text-lg leading-relaxed text-text">
-              [Add a paragraph about your background — your experience in ministry, real
-              estate, and leadership, and what shaped the way you approach this work today.]
+              I&apos;m a pastor, church planter, writer, speaker, consultant, REALTOR®, husband,
+              and dad. Those roles have taught me how to listen carefully, explain complicated
+              things clearly, and build practical solutions around real people—not abstract
+              ideas. That same approach guides every client project I take on.
             </p>
           </Reveal>
         </Container>

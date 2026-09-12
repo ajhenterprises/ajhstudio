@@ -1,6 +1,7 @@
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import Eyebrow from "@/components/ui/Eyebrow";
+import { ArrowRight, Check } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 
 export default function Hero() {
@@ -18,22 +19,28 @@ export default function Hero() {
       <Container className="relative grid grid-cols-1 items-center gap-16 py-20 sm:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 lg:py-32">
         <div>
           <Eyebrow>{siteConfig.tagline}</Eyebrow>
-          <h1 className="mt-5 text-balance font-display text-[2.75rem] leading-[1.08] text-ink sm:text-[3.5rem] lg:text-[4rem]">
-            I build useful things, communicate meaningful ideas, and help people lead well.
+          <h1 className="mt-5 text-balance font-display text-[2.75rem] leading-[1.04] text-ink sm:text-[3.75rem] lg:text-[4.5rem]">
+            Build what you&apos;ve been called to build.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
-            I&apos;m Aaron Joseph Hall, founder of {siteConfig.name}. I work across
-            communication, websites and technology, and leadership — building websites that
-            actually work, writing words that connect, and helping churches, businesses, and
-            leaders move forward with clarity.
+            AJH Enterprises helps churches, businesses, organizations, and leaders turn good
+            ideas into clear websites, meaningful communication, and practical next steps.
           </p>
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
             <Button href="/services" size="lg">
-              Explore What I Do
+              Explore Services
             </Button>
             <Button href={siteConfig.questionnaireUrl} variant="outline" size="lg" external>
-              Start a Website Project
+              Start Your Website Project
             </Button>
+          </div>
+          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted">
+            {["Personal guidance", "Mobile-first websites", "Ongoing support"].map((item) => (
+              <span key={item} className="flex items-center gap-2">
+                <Check className="size-4 text-primary" aria-hidden="true" />
+                {item}
+              </span>
+            ))}
           </div>
         </div>
 
@@ -51,16 +58,16 @@ export default function Hero() {
             />
             <div className="relative flex h-full flex-col justify-between p-8">
               <span className="w-fit rounded-full bg-background/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-background/80 backdrop-blur-sm">
-                What I Do
+                One company. Room to grow.
               </span>
               <div className="space-y-4">
-                {["Communication", "Websites & Technology", "Leadership"].map((item) => (
+                {["Websites that work", "Words that connect", "Leadership with clarity"].map((item) => (
                   <div
                     key={item}
                     className="flex items-center justify-between rounded-xl border border-background/15 bg-background/5 px-4 py-3.5 backdrop-blur-sm"
                   >
                     <span className="text-sm font-medium text-background">{item}</span>
-                    <span className="size-2 rounded-full bg-accent" aria-hidden="true" />
+                    <ArrowRight className="size-4 text-accent" aria-hidden="true" />
                   </div>
                 ))}
               </div>

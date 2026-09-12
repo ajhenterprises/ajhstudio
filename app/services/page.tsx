@@ -82,8 +82,10 @@ export default function ServicesPage() {
           <div className="flex flex-col gap-3">
             <h2 className="text-balance font-display text-2xl text-ink">On pricing</h2>
             <p className="text-muted">
-              I don&apos;t publish flat-rate pricing because every project is different. Reach
-              out and I&apos;ll talk through your specific goals and timeline.
+              Starter website projects begin at $500, with hosting and ongoing website care
+              available from $50 per month. Your questionnaire helps me confirm the scope and
+              give you a clear proposal before work begins. Communication and leadership work
+              is quoted around the specific need.
             </p>
           </div>
           <div className="flex flex-col gap-3">

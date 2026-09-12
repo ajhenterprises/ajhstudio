@@ -2,6 +2,9 @@
 
 The production website for **AJH Enterprises, LLC** — Communication • Technology • Leadership. Founder-led by Aaron Joseph Hall. Built as a static-first Next.js site: no database, no CMS, no AI functionality, all content lives in code and Markdown/MDX files in this repo.
 
+Both Claude and Codex can safely contribute to this project. See `AI_WORKFLOW.md` for the
+shared brand, architecture, branch, and verification rules used by either tool.
+
 ## Tech Stack
 
 - [Next.js](https://nextjs.org/) (App Router) + TypeScript
