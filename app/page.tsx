@@ -4,6 +4,8 @@ import WhatIDo from "@/components/sections/WhatIDo";
 import FeaturedWork from "@/components/sections/FeaturedWork";
 import BlogPreview from "@/components/sections/BlogPreview";
 import FinalCta from "@/components/sections/FinalCta";
+import Process from "@/components/sections/Process";
+import WebsiteOffer from "@/components/sections/WebsiteOffer";
 
 export const metadata: Metadata = {
   title: "AJH Enterprises | Communication • Technology • Leadership",
@@ -17,7 +19,9 @@ export default function HomePage() {
     <>
       <Hero />
       <WhatIDo />
+      <WebsiteOffer />
       <FeaturedWork />
+      <Process />
       <BlogPreview />
       <FinalCta
         title="Have a project in mind?"

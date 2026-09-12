@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Building2, Target, Palette, ListChecks, Route, Clock, HelpCircle } from "lucide-react";
+import { Building2, Target, Palette, ListChecks, Route, Clock, HelpCircle, Check, ShieldCheck } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import Eyebrow from "@/components/ui/Eyebrow";
@@ -59,6 +59,15 @@ const steps = [
   },
 ];
 
+const prepare = [
+  "A short description of your organization and who you serve",
+  "The main action you want website visitors to take",
+  "Any current logo, colors, photos, or brand files you have",
+  "Examples of websites you like—and what you like about them",
+  "A rough list of pages, features, or forms you may need",
+  "Your preferred timeline and any important launch date",
+];
+
 export default function WebsiteDiscoveryPage() {
   return (
     <>
@@ -84,6 +93,15 @@ export default function WebsiteDiscoveryPage() {
               what matters most, and build a website intentionally around your goals.
             </p>
 
+            <div className="mt-7 grid max-w-xl grid-cols-1 gap-3 sm:grid-cols-3">
+              {["Save your progress", "Upload brand files", "Review before submitting"].map((item) => (
+                <span key={item} className="flex items-center gap-2 text-sm text-ink">
+                  <Check className="size-4 shrink-0 text-primary" aria-hidden="true" />
+                  {item}
+                </span>
+              ))}
+            </div>
+
             <p className="mt-6 max-w-xl border-l-2 border-accent pl-4 text-sm leading-relaxed text-muted">
               A quick note on scope: I focus on marketing and content-driven websites. I
               don&apos;t take on projects that require a complex custom database, a full
@@ -104,7 +122,34 @@ export default function WebsiteDiscoveryPage() {
               <Clock className="size-4 text-secondary" aria-hidden="true" />
               <span>Estimated completion time: 15–25 minutes</span>
             </div>
+            <p className="mt-3 text-sm text-muted">
+              Starter website projects begin at $500. Optional hosting and ongoing website
+              care begins at $50 per month.
+            </p>
           </div>
+        </Container>
+      </section>
+
+      <section className="border-t border-border bg-ink py-16 text-background sm:py-20">
+        <Container className="grid grid-cols-1 gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+          <div>
+            <Eyebrow light>Before You Begin</Eyebrow>
+            <h2 className="mt-4 text-balance font-display text-3xl text-background sm:text-4xl">
+              A little preparation makes this easier.
+            </h2>
+            <p className="mt-5 max-w-lg leading-relaxed text-background/70">
+              You do not need polished answers. Bring what you have, skip what you do not know,
+              and I&apos;ll help clarify the rest during project planning.
+            </p>
+          </div>
+          <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {prepare.map((item) => (
+              <li key={item} className="flex gap-3 rounded-xl border border-background/15 bg-background/[0.05] p-4 text-sm leading-relaxed text-background/85">
+                <Check className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden="true" />
+                {item}
+              </li>
+            ))}
+          </ul>
         </Container>
       </section>
 
@@ -146,6 +191,10 @@ export default function WebsiteDiscoveryPage() {
             Just answer the questions as best you can. If you&apos;re unsure about something,
             that&apos;s okay — I&apos;ll help guide you.
           </p>
+          <div className="mt-3 flex max-w-xl items-start gap-3 rounded-xl border border-border bg-surface p-4 text-left text-sm leading-relaxed text-muted">
+            <ShieldCheck className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden="true" />
+            <span>Your answers are used to evaluate and plan your project. Submitting the questionnaire does not obligate you to hire AJH Enterprises.</span>
+          </div>
         </Container>
       </section>
 

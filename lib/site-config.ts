@@ -2,11 +2,11 @@ export const siteConfig = {
   name: "AJH Enterprises",
   legalName: "AJH Enterprises, LLC",
   founder: "Aaron Joseph Hall",
-  tagline: "Communication • Technology • Leadership",
+  tagline: "Build What You’ve Been Called to Build.",
   description:
     "AJH Enterprises builds websites and technology, creates meaningful content, and helps people communicate and lead well.",
   coreMessage:
-    "I build useful things, communicate meaningful ideas, and help people lead well.",
+    "Clear strategy, thoughtful design, and practical support for the work that matters to you.",
   url: "https://www.ajhenterprises.com",
   email: "hello@ajhenterprises.com",
   // TODO: switch both of these back to https://crm.ajhenterprises.com once
