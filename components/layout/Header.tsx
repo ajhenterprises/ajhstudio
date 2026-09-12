@@ -7,6 +7,7 @@ import { siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 import Button from "@/components/ui/Button";
 import MobileNav from "./MobileNav";
+import Logo from "@/components/ui/Logo";
 
 export default function Header() {
   const pathname = usePathname();
@@ -22,23 +23,15 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full border-b transition-colors duration-300",
+        "sticky top-0 z-50 w-full border-b transition-all duration-300",
         scrolled
-          ? "border-border bg-background/90 backdrop-blur-md"
-          : "border-transparent bg-background/0"
+          ? "border-border/80 bg-background/95 shadow-[0_8px_30px_-24px_rgba(20,33,29,0.45)] backdrop-blur-md"
+          : "border-transparent bg-background"
       )}
     >
       <div className="mx-auto flex w-full max-w-[1240px] items-center justify-between px-6 py-4 sm:px-8 lg:px-10">
-        <Link href="/" className="flex items-center gap-2.5" aria-label={`${siteConfig.name} home`}>
-          <span
-            className="flex size-9 items-center justify-center rounded-full bg-ink font-display text-base font-semibold text-background"
-            aria-hidden="true"
-          >
-            A
-          </span>
-          <span className="font-display text-lg font-semibold tracking-tight text-ink">
-            {siteConfig.name}
-          </span>
+        <Link href="/" className="rounded-xl" aria-label={`${siteConfig.name} home`}>
+          <Logo />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
@@ -50,10 +43,10 @@ export default function Header() {
                 href={item.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "rounded-full px-4 py-2 text-[0.95rem] font-medium transition-colors duration-150",
+                  "rounded-lg px-3.5 py-2 text-[0.92rem] font-medium transition-colors duration-150",
                   active
-                    ? "text-ink"
-                    : "text-muted hover:text-ink"
+                    ? "bg-surface-alt text-ink"
+                    : "text-muted hover:bg-surface-alt/70 hover:text-ink"
                 )}
               >
                 {item.label}

@@ -18,7 +18,7 @@ of truth.
 - Legal name: **AJH Enterprises, LLC**
 - Founder: **Aaron Joseph Hall**
 - Primary message: **Build What You’ve Been Called to Build.**
-- Current service pillars: Websites & Technology, Communication, and Leadership
+- Current service pillars: Websites & Technology and Communication
 - The company is an umbrella that may support additional services and products later.
 - Use clear, warm, practical language. Avoid generic agency jargon and exaggerated claims.
 

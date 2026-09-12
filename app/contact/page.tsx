@@ -9,12 +9,12 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Aaron Joseph Hall at AJH Enterprises about a website, communication, or leadership project.",
+    "Get in touch with Aaron Joseph Hall at AJH Enterprises about a website, technology, or communication project.",
   alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact | AJH Enterprises",
     description:
-      "Get in touch with Aaron Joseph Hall at AJH Enterprises about a website, communication, or leadership project.",
+      "Get in touch with Aaron Joseph Hall at AJH Enterprises about a website, technology, or communication project.",
     url: "/contact",
   },
 };
@@ -25,7 +25,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Let's talk."
-        description="Thinking about a website? Start the questionnaire below. For communication, leadership, or anything else, send a message and I'll follow up."
+        description="Thinking about a website? Start the questionnaire below. For communication, technology, or anything else, send a message and I'll follow up."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
       />
 
@@ -47,7 +47,7 @@ export default function ContactPage() {
             <div className="flex flex-col gap-4 rounded-2xl border border-border bg-surface p-8">
               <h2 className="font-display text-xl text-ink">Something else in mind?</h2>
               <p className="text-sm leading-relaxed text-muted">
-                Communication, speaking, leadership, a product question, or anything else —
+                Communication, technology, a product question, or anything else —
                 use the form below.
               </p>
             </div>

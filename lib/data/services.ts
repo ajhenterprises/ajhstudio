@@ -1,5 +1,5 @@
 export type Service = {
-  slug: "communication" | "websites-technology" | "leadership";
+  slug: "communication" | "websites-technology";
   name: string;
   tagline: string;
   shortDescription: string;
@@ -44,12 +44,13 @@ export const services: Service[] = [
     name: "Websites & Technology",
     tagline: "Websites that actually work.",
     shortDescription:
-      "Modern websites for churches, businesses, organizations, and entrepreneurs who need something clear, useful, and easy to manage.",
+      "Modern websites for businesses, entrepreneurs, nonprofits, community organizations, churches, and anyone who needs something clear, useful, and easy to manage.",
     longDescription:
       "I build practical websites for real people and organizations — not a giant web agency, just websites that do their job well. That includes new builds, redesigns of sites that have fallen behind, and the ongoing hosting and support that keeps a site running after launch.",
     whoItsFor: [
-      "Churches and ministries that need a clear, welcoming site",
       "Small businesses and entrepreneurs who need a professional site without an in-house team",
+      "Nonprofits, community groups, and professional organizations that need a clear, welcoming site",
+      "Churches, ministries, and mission-driven teams that want to serve people well online",
       "Organizations whose current site is outdated, slow, or hard to manage",
       "Anyone who wants one person to build it, host it, and keep it working",
     ],
@@ -69,31 +70,6 @@ export const services: Service[] = [
       "Hosting and website care",
     ],
     cta: { label: "Start the Website Questionnaire", useQuestionnaire: true },
-  },
-  {
-    slug: "leadership",
-    name: "Leadership",
-    tagline: "Helping people lead with clarity and purpose.",
-    shortDescription:
-      "Leadership development, speaking, consulting, and strategic conversations — grounded in real experience, not generic frameworks.",
-    longDescription:
-      "This grows out of real experience leading people and organizations, including in ministry — not a corporate leadership framework applied from the outside. It's conversations, speaking, and consulting aimed at helping people and teams lead with more clarity.",
-    whoItsFor: [
-      "Pastors and ministry leaders navigating real leadership challenges",
-      "Teams that need help getting clear on direction and roles",
-      "Organizations looking for an outside perspective on a specific decision",
-      "Anyone who wants a straightforward, honest conversation about leading well",
-    ],
-    included: [
-      "Leadership development",
-      "Leadership consulting",
-      "Speaking",
-      "Strategic conversations",
-      "Ministry leadership",
-      "Team development",
-      "Organizational clarity",
-    ],
-    cta: { label: "Start a Conversation", href: "/contact" },
   },
 ];
 

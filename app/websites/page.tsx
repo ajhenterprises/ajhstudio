@@ -14,12 +14,12 @@ import { getServiceBySlug } from "@/lib/data/services";
 export const metadata: Metadata = {
   title: "Websites",
   description:
-    "Modern, practical websites for churches, businesses, organizations, and entrepreneurs — built by AJH Enterprises.",
+    "Modern, practical websites for businesses, entrepreneurs, nonprofits, professional services, community groups, churches, and organizations.",
   alternates: { canonical: "/websites" },
   openGraph: {
     title: "Websites | AJH Enterprises",
     description:
-      "Modern, practical websites for churches, businesses, organizations, and entrepreneurs — built by AJH Enterprises.",
+      "Modern, practical websites for businesses, entrepreneurs, nonprofits, professional services, community groups, churches, and organizations.",
     url: "/websites",
   },
 };
@@ -32,7 +32,7 @@ export default function WebsitesPage() {
       <PageHero
         eyebrow="Websites & Technology"
         title="Websites that actually work."
-        description="I build modern websites for churches, businesses, organizations, entrepreneurs, and other people who need a website that's clear, useful, and easy to manage — not a giant web agency, just practical websites for real people and organizations."
+        description="I build modern websites for businesses, entrepreneurs, nonprofits, professional services, community groups, churches, and other organizations that need a website that's clear, useful, and easy to manage."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Websites" }]}
       />
 

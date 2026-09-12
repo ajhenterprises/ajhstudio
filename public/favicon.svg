@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#17221f"/>
-  <text x="50%" y="56%" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#fbf8f2" text-anchor="middle" dominant-baseline="middle">A</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 48 48" fill="none">
+  <rect width="48" height="48" rx="13" fill="#17322D"/>
+  <path d="M12 34L21.1 13H26.8L36 34" stroke="#FFFDF8" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16.2 27.5H31.8" stroke="#E0AD4F" stroke-width="3.1" stroke-linecap="round"/>
+  <path d="M34.7 13V34" stroke="#FFFDF8" stroke-width="3.1" stroke-linecap="round"/>
 </svg>

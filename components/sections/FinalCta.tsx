@@ -32,14 +32,9 @@ export default function FinalCta({
 
   return (
     <section className="relative overflow-hidden bg-ink py-20 text-background sm:py-28">
-      <div
-        className="pointer-events-none absolute -right-24 -top-24 size-96 rounded-full bg-primary/30 blur-3xl"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute -bottom-32 -left-16 size-80 rounded-full bg-secondary/20 blur-3xl"
-        aria-hidden="true"
-      />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-accent/70" aria-hidden="true" />
+      <div className="pointer-events-none absolute -right-24 top-8 size-64 rounded-full border border-background/10" aria-hidden="true" />
+      <div className="pointer-events-none absolute -right-10 top-22 size-36 rounded-full border border-background/10" aria-hidden="true" />
       <Container className="relative flex flex-col items-center gap-6 text-center">
         <Eyebrow light>{eyebrow}</Eyebrow>
         <h2 className="max-w-2xl text-balance font-display text-[2.25rem] leading-[1.15] text-background sm:text-[2.75rem]">

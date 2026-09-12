@@ -8,9 +8,9 @@ import Process from "@/components/sections/Process";
 import WebsiteOffer from "@/components/sections/WebsiteOffer";
 
 export const metadata: Metadata = {
-  title: "AJH Enterprises | Communication • Technology • Leadership",
+  title: "AJH Enterprises | Websites • Technology • Communication",
   description:
-    "AJH Enterprises builds websites and technology, creates meaningful content, and helps people communicate and lead well.",
+    "AJH Enterprises builds clear websites and practical technology and helps businesses and organizations communicate with the people they serve.",
   alternates: { canonical: "/" },
 };
 
@@ -25,7 +25,7 @@ export default function HomePage() {
       <BlogPreview />
       <FinalCta
         title="Have a project in mind?"
-        description="Whether it's a new website, help finding the right words, or a conversation about leading well — tell me about it."
+        description="Whether it's a new website, help finding the right words, or a practical digital project—tell me about it."
         primaryLabel="Start the Website Questionnaire"
         useQuestionnaire
         secondaryLabel="Send Me a Message"

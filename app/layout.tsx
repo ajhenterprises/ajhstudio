@@ -30,11 +30,10 @@ export const metadata: Metadata = {
     "website design",
     "communication",
     "copywriting",
-    "leadership",
-    "leadership consulting",
     "content strategy",
     "small business websites",
-    "church websites",
+    "nonprofit websites",
+    "organization websites",
   ],
   authors: [{ name: siteConfig.founder }],
   creator: siteConfig.founder,
@@ -77,7 +76,6 @@ const organizationJsonLd = {
   makesOffer: [
     { "@type": "Offer", itemOffered: { "@type": "Service", name: "Communication" } },
     { "@type": "Offer", itemOffered: { "@type": "Service", name: "Websites & Technology" } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Leadership" } },
   ],
 };
 

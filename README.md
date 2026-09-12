@@ -1,6 +1,6 @@
 # AJH Enterprises
 
-The production website for **AJH Enterprises, LLC** — Communication • Technology • Leadership. Founder-led by Aaron Joseph Hall. Built as a static-first Next.js site: no database, no CMS, no AI functionality, all content lives in code and Markdown/MDX files in this repo.
+The production website for **AJH Enterprises, LLC** — Websites • Technology • Communication. Founder-led by Aaron Joseph Hall. Built as a static-first Next.js site: no database, no CMS, no AI functionality, all content lives in code and Markdown/MDX files in this repo.
 
 Both Claude and Codex can safely contribute to this project. See `AI_WORKFLOW.md` for the
 shared brand, architecture, branch, and verification rules used by either tool.
@@ -60,7 +60,7 @@ npm run typecheck  # TypeScript, no emit
 ```
 app/                     Routes (App Router)
   page.tsx                 Home
-  services/page.tsx        Services (Communication, Websites & Technology, Leadership)
+  services/page.tsx        Services (Communication, Websites & Technology)
   websites/page.tsx          Websites I've Built (portfolio)
   products/page.tsx           Products (The Ministry Study, AJH Real Estate CRM)
   about/page.tsx                About
@@ -157,7 +157,7 @@ Edit `lib/data/testimonials.ts` and add an entry to the `testimonials` array. **
 
 ### Update services
 
-Edit `lib/data/services.ts`. Each of the three services (Communication, Websites & Technology, Leadership) supports a short description (used in homepage cards), a longer description, "who it's for," and "what's included" bullet points.
+Edit `lib/data/services.ts`. Each service supports a short description (used in homepage cards), a longer description, "who it's for," and "what's included" bullet points.
 
 ### Images
 

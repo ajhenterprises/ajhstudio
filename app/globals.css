@@ -10,28 +10,28 @@
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
 
   /* Core brand colors */
-  --color-ink: #17221f;
-  --color-ink-soft: #223330;
-  --color-primary: #1f4c49;
-  --color-primary-hover: #163634;
-  --color-secondary: #aa5832;
-  --color-secondary-hover: #8b4829;
-  --color-accent: #d9a94c;
-  --color-accent-hover: #c2913a;
+  --color-ink: #17322d;
+  --color-ink-soft: #23443d;
+  --color-primary: #28665b;
+  --color-primary-hover: #1e5048;
+  --color-secondary: #b65d35;
+  --color-secondary-hover: #944928;
+  --color-accent: #e0ad4f;
+  --color-accent-hover: #c89236;
 
   /* Neutrals */
-  --color-sand: #f3ecdc;
-  --color-background: #fbf8f2;
+  --color-sand: #f2ead9;
+  --color-background: #fffdf8;
   --color-surface: #ffffff;
-  --color-surface-alt: #f6f0e3;
-  --color-text: #1c231f;
-  --color-muted: #6e6a5c;
-  --color-border: #e4dcc7;
+  --color-surface-alt: #f7f1e6;
+  --color-text: #26332f;
+  --color-muted: #68716c;
+  --color-border: #e8dfce;
 
   /* CTA */
-  --color-cta: #aa5832;
-  --color-cta-hover: #8b4829;
-  --color-cta-foreground: #fbf8f2;
+  --color-cta: #b65d35;
+  --color-cta-hover: #944928;
+  --color-cta-foreground: #fffdf8;
 
   /* Radius philosophy: soft but not bubbly */
   --radius-sm: 4px;
@@ -78,6 +78,8 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    background-image: radial-gradient(circle at 12% 8%, rgba(224, 173, 79, 0.07), transparent 24rem);
+    background-attachment: fixed;
   }
 
   h1, h2, h3, h4 {

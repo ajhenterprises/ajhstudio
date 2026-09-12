@@ -1,6 +1,6 @@
 export const projectTypes = [
   "Communication / Copywriting",
-  "Leadership / Speaking",
+  "Website Strategy / Technology",
   "Products",
   "Something Else",
 ] as const;

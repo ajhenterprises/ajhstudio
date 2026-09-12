@@ -122,10 +122,6 @@ export default function WebsiteDiscoveryPage() {
               <Clock className="size-4 text-secondary" aria-hidden="true" />
               <span>Estimated completion time: 15–25 minutes</span>
             </div>
-            <p className="mt-3 text-sm text-muted">
-              Starter website projects begin at $500. Optional hosting and ongoing website
-              care begins at $50 per month.
-            </p>
           </div>
         </Container>
       </section>

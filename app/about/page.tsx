@@ -9,12 +9,12 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Aaron Joseph Hall is the founder of AJH Enterprises, working across communication, technology, and leadership.",
+    "Aaron Joseph Hall is the founder of AJH Enterprises, building clear communication, websites, and practical technology.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About | AJH Enterprises",
     description:
-      "Aaron Joseph Hall is the founder of AJH Enterprises, working across communication, technology, and leadership.",
+      "Aaron Joseph Hall is the founder of AJH Enterprises, building clear communication, websites, and practical technology.",
     url: "/about",
   },
 };
@@ -30,7 +30,7 @@ const values = [
   },
   {
     title: "Built to last",
-    description: "A website — or a piece of writing, or a leadership decision — should hold up over time.",
+    description: "A website, a piece of writing, or a practical solution should hold up over time.",
   },
 ];
 
@@ -40,7 +40,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About"
         title="Aaron Joseph Hall."
-        description="I'm the founder of AJH Enterprises. I work across communication, websites and technology, and leadership — and I built this company to bring all of it under one roof."
+        description="I'm the founder of AJH Enterprises. I work across communication, websites, and practical technology—and I built this company to bring that work under one roof."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
       />
 
@@ -60,9 +60,9 @@ export default function AboutPage() {
             <h2 className="font-display text-3xl text-ink sm:text-4xl">Hi, I&apos;m Aaron.</h2>
             <p className="text-lg leading-relaxed text-text">
               I started {siteConfig.name} to bring together the work I actually do: building
-              websites and technology, writing and communicating ideas clearly, and helping
-              people and organizations lead well. Rather than treat those as separate careers,
-              AJH Enterprises is the umbrella that holds all of it together.
+              websites and technology and writing and communicating ideas clearly. AJH
+              Enterprises is the umbrella that holds that client work and the products I build
+              together.
             </p>
             <p className="text-lg leading-relaxed text-text">
               I&apos;m a pastor, church planter, writer, speaker, consultant, REALTOR®, husband,
@@ -85,8 +85,8 @@ export default function AboutPage() {
           <Reveal delay={100} className="flex flex-col gap-6 text-lg leading-relaxed text-text">
             <p>
               <strong className="text-ink">Aaron Joseph Hall</strong> is me — the person behind
-              the work, writing the blog, and doing the actual communication, technology, and
-              leadership work described on this site.
+              the work, writing the blog, and doing the actual communication and technology
+              work described on this site.
             </p>
             <p>
               <strong className="text-ink">{siteConfig.name}</strong> is the company: the

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
+import Logo from "@/components/ui/Logo";
 
 export default function MobileNav({ pathname }: { pathname: string }) {
   const [open, setOpen] = useState(false);
@@ -83,7 +84,7 @@ export default function MobileNav({ pathname }: { pathname: string }) {
         )}
       >
         <div className="flex items-center justify-between px-6 py-4 sm:px-8">
-          <span className="font-display text-lg font-semibold">{siteConfig.name}</span>
+          <Logo light />
           <button
             type="button"
             onClick={() => setOpen(false)}
@@ -115,7 +116,7 @@ export default function MobileNav({ pathname }: { pathname: string }) {
             href={siteConfig.questionnaireUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex w-full items-center justify-center rounded-full bg-cta px-6 py-4 text-center font-medium text-cta-foreground transition-colors hover:bg-cta-hover"
+            className="flex w-full items-center justify-center rounded-xl bg-cta px-6 py-4 text-center font-medium text-cta-foreground transition-colors hover:bg-cta-hover"
           >
             Start a Website Project
           </a>

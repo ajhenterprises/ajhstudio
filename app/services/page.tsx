@@ -11,12 +11,12 @@ import { services } from "@/lib/data/services";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Communication, websites & technology, and leadership — the three ways AJH Enterprises helps people build and lead well.",
+    "Communication, websites, and technology services that help businesses and organizations connect with the people they serve.",
   alternates: { canonical: "/services" },
   openGraph: {
     title: "Services | AJH Enterprises",
     description:
-      "Communication, websites & technology, and leadership — the three ways AJH Enterprises helps people build and lead well.",
+      "Communication, websites, and technology services that help businesses and organizations connect with the people they serve.",
     url: "/services",
   },
 };
@@ -26,8 +26,8 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Services"
-        title="Three pillars. One person to talk to."
-        description="AJH Enterprises works across three things that tend to go together: clear communication, websites and technology that work, and leadership that's grounded in real experience."
+        title="Clear communication. Websites that work."
+        description="AJH Enterprises combines thoughtful communication with practical websites and technology—so your message is clear and your next step is easier."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
       />
 
@@ -80,12 +80,10 @@ export default function ServicesPage() {
       <section className="border-t border-border bg-surface-alt py-16 sm:py-20">
         <Container className="grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-16">
           <div className="flex flex-col gap-3">
-            <h2 className="text-balance font-display text-2xl text-ink">On pricing</h2>
+            <h2 className="text-balance font-display text-2xl text-ink">A proposal built around your project</h2>
             <p className="text-muted">
-              Starter website projects begin at $500, with hosting and ongoing website care
-              available from $50 per month. Your questionnaire helps me confirm the scope and
-              give you a clear proposal before work begins. Communication and leadership work
-              is quoted around the specific need.
+              Every project starts with a clear conversation about your goals, timeline, and
+              scope. You&apos;ll receive a straightforward proposal before work begins.
             </p>
           </div>
           <div className="flex flex-col gap-3">
@@ -94,7 +92,8 @@ export default function ServicesPage() {
             </h2>
             <p className="text-muted">
               For websites specifically, I focus on marketing and content-driven sites — the
-              kind most churches, businesses, and organizations need. I don&apos;t take on
+              kind most businesses, entrepreneurs, nonprofits, churches, and organizations
+              need. I don&apos;t take on
               projects that require a complex custom database, a full e-commerce store, or a
               custom web application. If that&apos;s what you&apos;re building, let me know —
               I&apos;m glad to point you toward someone who specializes in that kind of work.

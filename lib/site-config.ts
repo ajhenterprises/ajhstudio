@@ -4,7 +4,7 @@ export const siteConfig = {
   founder: "Aaron Joseph Hall",
   tagline: "Build What You’ve Been Called to Build.",
   description:
-    "AJH Enterprises builds websites and technology, creates meaningful content, and helps people communicate and lead well.",
+    "AJH Enterprises builds clear websites and practical technology and helps businesses and organizations communicate with the people they serve.",
   coreMessage:
     "Clear strategy, thoughtful design, and practical support for the work that matters to you.",
   url: "https://www.ajhenterprises.com",

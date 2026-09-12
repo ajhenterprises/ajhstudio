@@ -30,7 +30,8 @@ export default function WebsiteOffer() {
               Your website should make the next step obvious.
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-background/70">
-              I build clear, professional websites for churches, small businesses, and
+              I build clear, professional websites for small businesses, entrepreneurs,
+              nonprofits, professional services, community groups, churches, and other
               organizations that need to be understood, trusted, and easy to contact.
             </p>
             <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">

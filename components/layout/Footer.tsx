@@ -3,11 +3,11 @@ import { Mail } from "lucide-react";
 import { InstagramGlyph, LinkedinGlyph } from "@/components/ui/SocialIcons";
 import Container from "@/components/ui/Container";
 import { siteConfig } from "@/lib/site-config";
+import Logo from "@/components/ui/Logo";
 
 const serviceLinks = [
   { label: "Communication", href: "/services#communication" },
   { label: "Websites & Technology", href: "/services#websites-technology" },
-  { label: "Leadership", href: "/services#leadership" },
 ];
 
 const companyLinks = [
@@ -27,11 +27,8 @@ export default function Footer() {
       <Container className="py-16 lg:py-20">
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2.5">
-              <span className="flex size-9 items-center justify-center rounded-full bg-background font-display text-base font-semibold text-ink">
-                A
-              </span>
-              <span className="font-display text-lg font-semibold">{siteConfig.name}</span>
+            <Link href="/" className="inline-flex rounded-xl">
+              <Logo light />
             </Link>
             <p className="mt-3 text-sm font-medium text-background/60">{siteConfig.tagline}</p>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-background/70">
@@ -134,7 +131,8 @@ export default function Footer() {
           </h3>
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-background/60">
             AJH Enterprises focuses on marketing and content-driven websites — the kind most
-            churches, businesses, and organizations need. I don&apos;t take on projects that
+            businesses, entrepreneurs, nonprofits, churches, and organizations need. I
+            don&apos;t take on projects that
             require a complex custom database, a full e-commerce store, or a custom web
             application. If that&apos;s what you&apos;re building, let me know — I&apos;m glad
             to point you toward someone who specializes in that kind of work.{" "}
