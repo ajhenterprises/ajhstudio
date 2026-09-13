@@ -8,11 +8,10 @@ export const siteConfig = {
   coreMessage:
     "Clear strategy, thoughtful design, and practical support for the work that matters to you.",
   url: "https://www.ajhenterprises.com",
-  email: "hello@ajhenterprises.com",
-  // TODO: switch both of these back to https://crm.ajhenterprises.com once
-  // that custom domain is pointed at the CRM's Vercel deployment -- using
-  // the Vercel URL directly in the meantime so these links actually work.
-  crmUrl: "https://ajh-business-hq.vercel.app",
+  email: "aaron@ajhenterprises.com",
+  // The CRM's branded custom domain. Keep this as the single source of truth
+  // for the Internal Login link in the footer.
+  crmUrl: "https://crm.ajhenterprises.com",
   // The public Website Questionnaire — the first step for anyone exploring
   // a website project. This is the ONLY place this URL should be defined;
   // every CTA that starts the questionnaire (the /website-discovery page,
