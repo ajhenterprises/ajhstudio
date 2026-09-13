@@ -93,10 +93,11 @@ export default function ServicesPage() {
             <p className="text-muted">
               For websites specifically, I focus on marketing and content-driven sites — the
               kind most businesses, entrepreneurs, nonprofits, churches, and organizations
-              need. I don&apos;t take on
-              projects that require a complex custom database, a full e-commerce store, or a
-              custom web application. If that&apos;s what you&apos;re building, let me know —
-              I&apos;m glad to point you toward someone who specializes in that kind of work.
+              need. Depending on the scale, scope, and complexity, I may also be able to take
+              on a more custom project, including work with databases, e-commerce, or
+              app-like features. Reach out with what you&apos;re envisioning so I can learn more
+              and determine whether it&apos;s a project I can build. If it falls outside my scope,
+              I&apos;ll gladly point you toward someone who specializes in that kind of work.
             </p>
           </div>
         </Container>
