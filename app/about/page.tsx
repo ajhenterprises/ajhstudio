@@ -96,7 +96,7 @@ export default function AboutPage() {
             <p>
               <strong className="text-ink">Products</strong> like{" "}
               <a href="/products" className="text-primary underline underline-offset-4">
-                The Ministry Study and the AJH Real Estate CRM
+                The Ministry Study
               </a>{" "}
               are individual tools built under that umbrella — each with its own name and its
               own purpose.
