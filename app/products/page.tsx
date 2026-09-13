@@ -9,12 +9,12 @@ import { products } from "@/lib/data/products";
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Products AJH Enterprises builds and operates, including The Ministry Study and the AJH Real Estate CRM.",
+    "Products AJH Enterprises builds and operates, including The Ministry Study.",
   alternates: { canonical: "/products" },
   openGraph: {
     title: "Products | AJH Enterprises",
     description:
-      "Products AJH Enterprises builds and operates, including The Ministry Study and the AJH Real Estate CRM.",
+      "Products AJH Enterprises builds and operates, including The Ministry Study.",
     url: "/products",
   },
 };
