@@ -103,10 +103,12 @@ export default function WebsiteDiscoveryPage() {
             </div>
 
             <p className="mt-6 max-w-xl border-l-2 border-accent pl-4 text-sm leading-relaxed text-muted">
-              A quick note on scope: I focus on marketing and content-driven websites. I
-              don&apos;t take on projects that require a complex custom database, a full
-              e-commerce store, or a custom web application. If that&apos;s what you&apos;re
-              building, reach out and I&apos;ll point you in the right direction.
+              A quick note on scope: I focus on marketing and content-driven websites, but
+              custom projects may also be a fit depending on their scale, scope, and
+              complexity. If your project involves a database, e-commerce, or app-like
+              features, share the details here so I can better determine whether it&apos;s
+              something I can build. If it isn&apos;t the right fit, I&apos;ll point you in the right
+              direction.
             </p>
 
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
