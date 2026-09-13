@@ -62,7 +62,7 @@ app/                     Routes (App Router)
   page.tsx                 Home
   services/page.tsx        Services (Communication, Websites & Technology)
   websites/page.tsx          Websites I've Built (portfolio)
-  products/page.tsx           Products (The Ministry Study, AJH Real Estate CRM)
+  products/page.tsx           Products (The Ministry Study)
   about/page.tsx                About
   testimonials/page.tsx          Testimonials
   blog/page.tsx                    Blog index
@@ -94,7 +94,7 @@ lib/
 
 - **Aaron Joseph Hall** — the person. Founder, writer, and the voice behind the blog and this site.
 - **AJH Enterprises** — the company. The umbrella under which client work, writing, and products are built and operated.
-- **Products** — individual tools built under that umbrella, each with its own name: [The Ministry Study](https://theministrystudy.com) and the AJH Real Estate CRM. See `lib/data/products.ts`.
+- **Products** — individual tools built under that umbrella, each with its own name. The public product currently listed is [The Ministry Study](https://theministrystudy.com). See `lib/data/products.ts`.
 
 ## Adding Content
 
@@ -221,7 +221,7 @@ Colors, typography, spacing, and radii are defined as design tokens in `app/glob
 
 - No AI functionality anywhere (no AI chat, AI writing, AI agents, AI content generation, or AI API usage) — kept out on purpose to avoid AI usage costs and keep the architecture simple.
 - No database or CMS — content lives in code and MDX so there's nothing extra to host, patch, or pay for.
-- No complex custom databases, e-commerce, or custom web applications are taken on as client work (see the scope note on the Services and Website Questionnaire pages).
+- Marketing and content-driven websites are the primary focus. Custom projects may also be considered based on their scale, scope, and complexity; prospective clients should reach out so AJH Enterprises can determine whether the project is a good fit (see the scope notes on the Services and Website Questionnaire pages).
 
 ## License
 
