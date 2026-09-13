@@ -127,17 +127,17 @@ export default function Footer() {
 
         <div className="mt-14 border-t border-background/10 pt-8">
           <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-background/50">
-            The kind of website projects I take on
+            Website project scope
           </h3>
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-background/60">
             AJH Enterprises focuses on marketing and content-driven websites — the kind most
-            businesses, entrepreneurs, nonprofits, churches, and organizations need. I
-            don&apos;t take on projects that
-            require a complex custom database, a full e-commerce store, or a custom web
-            application. If that&apos;s what you&apos;re building, let me know — I&apos;m glad
-            to point you toward someone who specializes in that kind of work.{" "}
+            businesses, entrepreneurs, nonprofits, churches, and organizations need. Custom
+            projects may also be a fit depending on their scale, scope, and complexity. Reach
+            out with what you&apos;re building so I can determine whether it&apos;s something I can
+            take on. If it falls outside my scope, I&apos;ll gladly point you toward someone who
+            specializes in that kind of work.{" "}
             <Link href="/services" className="text-background/70 underline underline-offset-2 hover:text-accent">
-              See what I do instead
+              Learn more about services
             </Link>
             .
           </p>
