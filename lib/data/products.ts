@@ -20,14 +20,6 @@ export const products: Product[] = [
     url: "https://theministrystudy.com",
     ctaLabel: "Visit The Ministry Study",
   },
-  {
-    slug: "ajh-real-estate-crm",
-    name: "AJH Real Estate CRM",
-    description:
-      "An internal, productized tool built around real estate workflows — helping manage leads, clients, and listings in one place.",
-    category: "Real Estate Technology",
-    // Internal tool — no public URL yet.
-  },
 ];
 
 export function getProductBySlug(slug: string) {
