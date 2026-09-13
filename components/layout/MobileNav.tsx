@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
-import Logo from "@/components/ui/Logo";
 
 export default function MobileNav({ pathname }: { pathname: string }) {
   const [open, setOpen] = useState(false);
@@ -79,12 +78,11 @@ export default function MobileNav({ pathname }: { pathname: string }) {
         aria-label="Mobile navigation"
         ref={panelRef}
         className={cn(
-          "fixed inset-0 z-[60] flex flex-col bg-ink text-background transition-opacity duration-300",
+          "fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-ink text-background transition-opacity duration-300",
           open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         )}
       >
-        <div className="flex items-center justify-between px-6 py-4 sm:px-8">
-          <Logo light />
+        <div className="flex shrink-0 items-center justify-end border-b border-background/20 bg-ink px-6 py-4 sm:px-8">
           <button
             type="button"
             onClick={() => setOpen(false)}
@@ -95,14 +93,14 @@ export default function MobileNav({ pathname }: { pathname: string }) {
           </button>
         </div>
 
-        <nav className="flex flex-1 flex-col justify-center gap-2 px-6 sm:px-8" aria-label="Primary">
+        <nav className="flex shrink-0 flex-col px-6 py-4 sm:px-8" aria-label="Primary">
           {siteConfig.nav.map((item, i) => (
             <Link
               key={item.href}
               href={item.href}
               className={cn(
-                "border-b border-white/10 py-4 font-display text-3xl transition-colors",
-                pathname === item.href ? "text-accent" : "text-background hover:text-accent"
+                "flex min-h-16 shrink-0 items-center border-b border-background/15 py-4 font-display text-3xl leading-tight text-background transition-colors",
+                pathname === item.href ? "text-accent" : "hover:text-accent"
               )}
               style={{ transitionDelay: `${i * 20}ms` }}
             >
@@ -111,7 +109,7 @@ export default function MobileNav({ pathname }: { pathname: string }) {
           ))}
         </nav>
 
-        <div className="flex flex-col gap-3 px-6 pb-10 sm:px-8">
+        <div className="flex shrink-0 flex-col gap-3 border-t border-background/20 bg-ink px-6 pb-[calc(2.5rem+env(safe-area-inset-bottom))] pt-5 sm:px-8">
           <a
             href={siteConfig.questionnaireUrl}
             target="_blank"
