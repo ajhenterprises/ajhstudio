@@ -9,10 +9,10 @@ export function LogoMark({ className }: { className?: string }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect width="48" height="48" rx="13" fill="currentColor" />
-      <path d="M12 34L21.1 13H26.8L36 34" stroke="#FFFDF8" strokeWidth="3.1" strokeLinecap="round" strokeLinejoin="round" />
+      <rect width="48" height="48" rx="13" fill="#FFFDF8" />
+      <path d="M12 34L21.1 13H26.8L36 34" stroke="#17322D" strokeWidth="3.1" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M16.2 27.5H31.8" stroke="#D9A34A" strokeWidth="3.1" strokeLinecap="round" />
-      <path d="M34.7 13V34" stroke="#FFFDF8" strokeWidth="3.1" strokeLinecap="round" />
+      <path d="M34.7 13V34" stroke="#17322D" strokeWidth="3.1" strokeLinecap="round" />
     </svg>
   );
 }
