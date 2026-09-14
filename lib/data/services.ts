@@ -1,5 +1,5 @@
 export type Service = {
-  slug: "communication" | "websites-technology";
+  slug: "communication" | "websites-technology" | "seo" | "digital-services";
   name: string;
   tagline: string;
   shortDescription: string;
@@ -15,7 +15,7 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: "communication",
-    name: "Communication",
+    name: "Content",
     tagline: "Clear words. Better stories. Stronger messages.",
     shortDescription:
       "Copywriting, content, messaging, storytelling, and communication strategy — the words that make everything else work.",
@@ -35,13 +35,14 @@ export const services: Service[] = [
       "Content creation",
       "Storytelling",
       "Communication strategy",
-      "Speaking",
+      "Blog & article content",
+      "Website content management",
     ],
     cta: { label: "Start a Conversation", href: "/contact" },
   },
   {
     slug: "websites-technology",
-    name: "Websites & Technology",
+    name: "Websites",
     tagline: "Websites that actually work.",
     shortDescription:
       "Modern websites for businesses, entrepreneurs, nonprofits, community organizations, churches, and anyone who needs something clear, useful, and easy to manage.",
@@ -71,6 +72,23 @@ export const services: Service[] = [
     ],
     cta: { label: "Discuss Your Project", href: "/contact" },
   },
+  {
+    slug: "seo", name: "SEO", tagline: "Make your website easier to find and understand.",
+    shortDescription: "On-page SEO, content SEO, and search-friendly website structure built around your audience.",
+    longDescription: "Improve the foundations that help search engines understand your website and visitors find useful answers. Search performance depends on many factors; rankings are never guaranteed.",
+    whoItsFor: ["Businesses improving an existing website", "Teams publishing useful articles and service pages"],
+    included: ["On-page SEO", "Content SEO", "Search-friendly structure", "Page titles and descriptions", "Internal linking", "Content planning"],
+    cta: {label: "Discuss SEO", href: "/contact"},
+  },
+  {
+    slug: "digital-services", name: "Digital Services", tagline: "A practical plan for your online presence.",
+    shortDescription: "Social media content, digital strategy, and online presence consulting with personal guidance.",
+    longDescription: "Bring clarity to your next digital step. Get focused support for the content, channels, and priorities that make sense for your organization.",
+    whoItsFor: ["Entrepreneurs building their online presence", "Organizations looking for clear digital priorities"],
+    included: ["Social media content", "Digital strategy", "Online presence consulting", "Content planning"],
+    cta: {label: "Start a Conversation", href: "/contact"},
+  },
+
 ];
 
 export function getServiceBySlug(slug: string) {

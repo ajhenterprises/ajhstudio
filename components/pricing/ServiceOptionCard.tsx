@@ -78,8 +78,8 @@ export default function ServiceOptionCard({
       className={cn(
         "relative flex h-full flex-col rounded-2xl border bg-surface p-6 transition duration-200 sm:p-7",
         selected
-          ? "border-primary shadow-[0_18px_45px_-28px_rgba(40,102,91,0.55)] ring-1 ring-primary"
-          : "border-border hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-[0_18px_45px_-32px_rgba(23,50,45,0.4)]"
+          ? "border-primary shadow-card ring-1 ring-primary"
+          : "border-border hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-card"
       )}
     >
       {service.featured && (

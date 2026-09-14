@@ -9,7 +9,7 @@ export default function ServiceCard({ service }: { service: Service }) {
   return (
     <div
       id={service.slug}
-      className="flex scroll-mt-28 flex-col justify-between gap-8 rounded-2xl border border-border bg-surface p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(23,34,31,0.35)] sm:p-10"
+      className="flex scroll-mt-28 flex-col justify-between gap-8 rounded-2xl border border-border bg-surface p-8 transition-shadow duration-300 hover:shadow-card sm:p-10"
     >
       <div>
         <h3 className="font-display text-2xl text-ink sm:text-[1.75rem]">{service.name}</h3>

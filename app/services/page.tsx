@@ -1,3 +1,4 @@
+import { withBrandMetadata } from "@/lib/social";
 import type { Metadata } from "next";
 import { Check } from "lucide-react";
 import PageHero from "@/components/sections/PageHero";
@@ -8,18 +9,18 @@ import FinalCta from "@/components/sections/FinalCta";
 import Reveal from "@/components/ui/Reveal";
 import { services } from "@/lib/data/services";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withBrandMetadata({
   title: "Services",
   description:
     "Communication, websites, and technology services that help businesses and organizations connect with the people they serve.",
   alternates: { canonical: "/services" },
   openGraph: {
-    title: "Services | AJH Enterprises",
+    title: "Services | AJH Digital",
     description:
       "Communication, websites, and technology services that help businesses and organizations connect with the people they serve.",
     url: "/services",
   },
-};
+});
 
 export default function ServicesPage() {
   return (
@@ -27,7 +28,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="Clear communication. Websites that work."
-        description="AJH Enterprises combines thoughtful communication with practical websites and technology—so your message is clear and your next step is easier."
+        description="AJH Digital combines thoughtful communication with practical websites and technology—so your message is clear and your next step is easier."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
       />
 

@@ -1,4 +1,4 @@
-# AJH Enterprises — Claude and Codex Workflow
+# AJH Digital — Claude and Codex Workflow
 
 This repository is intentionally compatible with both Claude and Codex. Neither tool owns the
 project. Git, the files in this repository, and the current accepted client brief are the source
@@ -14,11 +14,11 @@ of truth.
 
 ## Brand rules
 
-- Public brand: **AJH Enterprises**
-- Legal name: **AJH Enterprises, LLC**
+- Public brand: **AJH Digital**
+- Legal name: **AJH Digital**
 - Founder: **Aaron Joseph Hall**
-- Primary message: **Build What You’ve Been Called to Build.**
-- Current service pillars: Websites & Technology and Communication
+- Primary message: **Websites. Content. Digital Growth.**
+- Current service pillars: Websites, Content, SEO, and Digital Services
 - The company is an umbrella that may support additional services and products later.
 - Use clear, warm, practical language. Avoid generic agency jargon and exaggerated claims.
 
@@ -51,3 +51,7 @@ npm run build
 
 Also review the changed pages at mobile and desktop widths whenever a browser runtime is
 available. Report what changed, what was verified, and any remaining setup required.
+
+## AJH Digital production branding
+
+Use the supplied artwork in `public/brand`; never redraw the mark. `lib/brand.json` supplies palette values; prebuild generates CSS tokens. Wrap new page metadata in `withBrandMetadata` so page titles/descriptions automatically generate matching social images. Blog imagery follows MDX metadata automatically. Keep legalName separate from the public name. The old canonical remains active until HTTPS on the new domain is verified; then set NEXT_PUBLIC_SITE_URL to https://ajhdigital.com. Preserve sender environment configuration when updating the public contact email.

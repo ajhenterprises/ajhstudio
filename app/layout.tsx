@@ -1,23 +1,20 @@
-import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { socialImage } from "@/lib/social";
+import brand from "@/lib/brand.json";
+import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieNotice from "@/components/CookieNotice";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-fraunces",
-  axes: ["opsz", "SOFT", "WONK"],
-  display: "swap",
-});
-
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
 });
+
+export const viewport: Viewport = { themeColor: brand.navy };
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -45,13 +42,13 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: `${siteConfig.name} | ${siteConfig.tagline}`,
     description: siteConfig.description,
-    images: [{ url: "/images/og-default.jpg", width: 1200, height: 630, alt: siteConfig.name }],
+    images: [{ url: socialImage(siteConfig.name, siteConfig.description), width: 1200, height: 630, alt: siteConfig.name }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.name} | ${siteConfig.tagline}`,
     description: siteConfig.description,
-    images: ["/images/og-default.jpg"],
+    images: [socialImage(siteConfig.name, siteConfig.description)],
   },
   alternates: {
     canonical: "/",
@@ -60,23 +57,25 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.svg",
+    icon: [{ url: "/favicon.ico" }, { url: "/favicon.svg", type: "image/svg+xml" }],
+    apple: "/brand/icon-180.png",
   },
 };
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: siteConfig.legalName,
-  alternateName: siteConfig.name,
+  name: siteConfig.name,
+  legalName: siteConfig.legalName,
+  logo: `${siteConfig.url}${siteConfig.logo.email}`,
   url: siteConfig.url,
   description: siteConfig.description,
   email: siteConfig.email,
   founder: { "@type": "Person", name: siteConfig.founder },
   sameAs: [siteConfig.social.instagram, siteConfig.social.linkedin],
   makesOffer: [
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Communication" } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Websites & Technology" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Content & SEO" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Websites & Digital Services" } },
   ],
 };
 
@@ -93,7 +92,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
+    <html lang="en" className={inter.variable}>
       <body className="flex min-h-screen flex-col bg-background text-text antialiased">
         <script
           type="application/ld+json"

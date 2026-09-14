@@ -19,20 +19,20 @@ export default function PortfolioCard({
     <Wrapper
       {...wrapperProps}
       className={cn(
-        "group flex flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(23,34,31,0.4)]",
+        "group flex flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-shadow duration-300 hover:shadow-card",
         project.url && "cursor-pointer"
       )}
     >
-      <div className={cn("relative overflow-hidden", large ? "aspect-[4/3]" : "aspect-[4/3]")}>
+      <div className={cn("relative overflow-hidden border-b border-border", large ? "aspect-[4/3]" : "aspect-[4/3]")}>
         <Image
           src={project.image}
           alt={
             project.isExample
               ? `Illustrative graphic for the ${project.name} example project`
-              : `${project.name} website preview`
+              : `${project.name} — AJH Digital portfolio graphic`
           }
           fill
-          sizes={large ? "(min-width: 1024px) 66vw, 100vw" : "(min-width: 1024px) 33vw, 100vw"}
+          sizes={large ? "(min-width: 1024px) 66vw, 100vw" : "(min-width: 640px) 50vw, 100vw"}
           className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
         />
         <div className="absolute left-4 top-4 rounded-full bg-background/90 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-ink backdrop-blur-sm">

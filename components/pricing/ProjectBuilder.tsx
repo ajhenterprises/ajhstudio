@@ -124,7 +124,7 @@ export default function ProjectBuilder({ services }: { services: ProjectService[
         <div className="mx-auto max-w-3xl px-6 text-center sm:px-8">
           <CheckCircle2 className="mx-auto size-12 text-primary" aria-hidden="true" />
           <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-secondary">Request received</p>
-          <h2 className="mt-3 font-display text-3xl text-ink sm:text-4xl">Thanks for reaching out to AJH Enterprises.</h2>
+          <h2 className="mt-3 font-display text-3xl text-ink sm:text-4xl">Thanks for reaching out to AJH Digital.</h2>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-muted">
             Your project request has been received. I&apos;ll review your selections and contact you to discuss your project, confirm scope, and provide final pricing.
           </p>
@@ -205,7 +205,7 @@ export default function ProjectBuilder({ services }: { services: ProjectService[
                   {status === "submitting" ? <Loader2 className="size-4 animate-spin" aria-hidden="true" /> : <ArrowRight className="size-4" aria-hidden="true" />}
                   {status === "submitting" ? "Sending Your Request…" : "Request Your Project"}
                 </button>
-                <p className="mt-4 text-xs leading-relaxed text-muted">Submitting this request does not obligate you to hire AJH Enterprises and does not guarantee final pricing.</p>
+                <p className="mt-4 text-xs leading-relaxed text-muted">Submitting this request does not obligate you to hire AJH Digital and does not guarantee final pricing.</p>
               </form>
               <div className="lg:sticky lg:top-28">
                 <ProjectSummary selectedIds={selectedIds} onRemove={(service) => toggleService(service)} compact />
@@ -234,7 +234,7 @@ export default function ProjectBuilder({ services }: { services: ProjectService[
 function ProjectSummary({ selectedIds, onRemove, onContinue, compact = false }: { selectedIds: string[]; onRemove: (service: ProjectService) => void; onContinue?: () => void; compact?: boolean }) {
   const estimate = calculateProjectEstimate(selectedIds);
   return (
-    <div className={cn("rounded-2xl border border-border bg-background p-6 shadow-[0_20px_60px_-42px_rgba(23,50,45,0.7)]", compact && "shadow-none")}>
+    <div className={cn("rounded-2xl border border-border bg-background p-6 shadow-card", compact && "shadow-none")}>
       <p className="text-xs font-bold uppercase tracking-[0.18em] text-secondary">Your Project</p>
       <h3 className="mt-2 font-display text-2xl text-ink">Project Summary</h3>
       {estimate.services.length === 0 ? (

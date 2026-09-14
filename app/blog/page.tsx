@@ -1,3 +1,4 @@
+import { withBrandMetadata } from "@/lib/social";
 import type { Metadata } from "next";
 import PageHero from "@/components/sections/PageHero";
 import Container from "@/components/ui/Container";
@@ -5,18 +6,18 @@ import BlogCard from "@/components/cards/BlogCard";
 import FinalCta from "@/components/sections/FinalCta";
 import { getAllPosts, getFeaturedPost } from "@/lib/blog";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withBrandMetadata({
   title: "Blog",
   description:
     "Notes on websites, communication, and building useful things—practical, straightforward writing from Aaron Joseph Hall.",
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "Blog | AJH Enterprises",
+    title: "Blog | AJH Digital",
     description:
       "Notes on websites, communication, and building useful things—practical, straightforward writing from Aaron Joseph Hall.",
     url: "/blog",
   },
-};
+});
 
 export default function BlogIndexPage() {
   const posts = getAllPosts();

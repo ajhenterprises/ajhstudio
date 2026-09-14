@@ -1,6 +1,6 @@
-# AJH Enterprises
+# AJH Digital
 
-The production website for **AJH Enterprises, LLC** — Websites • Technology • Communication. Founder-led by Aaron Joseph Hall. Built as a static-first Next.js site: no database, no CMS, no AI functionality, all content lives in code and Markdown/MDX files in this repo.
+The production website for **AJH Digital** — Websites • Technology • Communication. Founder-led by Aaron Joseph Hall. Built as a static-first Next.js site: no database, no CMS, no AI functionality, all content lives in code and Markdown/MDX files in this repo.
 
 Both Claude and Codex can safely contribute to this project. See `AI_WORKFLOW.md` for the
 shared brand, architecture, branch, and verification rules used by either tool.
@@ -95,7 +95,7 @@ lib/
 ## Brand Structure
 
 - **Aaron Joseph Hall** — the person. Founder, writer, and the voice behind the blog and this site.
-- **AJH Enterprises** — the company. The umbrella under which client work, writing, and products are built and operated.
+- **AJH Digital** — the company. The umbrella under which client work, writing, and products are built and operated.
 - **Products** — individual tools built under that umbrella, each with its own name. The public product currently listed is [The Ministry Study](https://theministrystudy.com). See `lib/data/products.ts`.
 
 ## Adding Content
@@ -184,13 +184,13 @@ The contact form is a real, working form — not a static mockup. Submissions ar
 | `RESEND_API_KEY` | Your Resend API key. Create one at [resend.com/api-keys](https://resend.com/api-keys). |
 | `CONTACT_FROM_EMAIL` | The "from" address submissions are sent from. Must be on a domain you've verified in Resend. |
 
-Contact and project inquiries are delivered to `aaron@ajhenterprises.com`. The project-request route also sends the prospective client a branded confirmation receipt. Neither route exposes the Resend key to the browser.
+Contact and project inquiries are delivered to `AJHDigitalLLC@gmail.com`. The project-request route also sends the prospective client a branded confirmation receipt. Neither route exposes the Resend key to the browser.
 
 ### Configuring in Vercel
 
 1. In your Vercel project, go to **Settings → Environment Variables**.
 2. Add `RESEND_API_KEY` and `CONTACT_FROM_EMAIL` (for Production, and Preview if you want previews to send real email).
-3. In [Resend](https://resend.com/), verify the domain you intend to send from (e.g. `ajhenterprises.com`) and generate an API key.
+3. In [Resend](https://resend.com/), verify the domain you intend to send from (e.g. `ajhdigital.com`) and generate an API key.
 4. Redeploy so the new environment variables take effect.
 
 Until these variables are set, the form still validates and submits, but the API route returns a clear error asking the visitor to email you directly — it never throws an unhandled error.
@@ -228,8 +228,8 @@ Colors, typography, spacing, and radii are defined as design tokens in `app/glob
 
 - No AI functionality anywhere (no AI chat, AI writing, AI agents, AI content generation, or AI API usage) — kept out on purpose to avoid AI usage costs and keep the architecture simple.
 - No database or CMS — content lives in code and MDX so there's nothing extra to host, patch, or pay for.
-- Marketing and content-driven websites are the primary focus. Custom projects may also be considered based on their scale, scope, and complexity; prospective clients should reach out so AJH Enterprises can determine whether the project is a good fit (see the scope notes on the Services and Website Questionnaire pages).
+- Marketing and content-driven websites are the primary focus. Custom projects may also be considered based on their scale, scope, and complexity; prospective clients should reach out so AJH Digital can determine whether the project is a good fit (see the scope notes on the Services and Website Questionnaire pages).
 
 ## License
 
-Private, unlicensed — all rights reserved by AJH Enterprises, LLC.
+Private, unlicensed — all rights reserved by AJH Digital.

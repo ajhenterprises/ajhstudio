@@ -1,3 +1,4 @@
+import { withBrandMetadata } from "@/lib/social";
 import type { Metadata } from "next";
 import PageHero from "@/components/sections/PageHero";
 import Container from "@/components/ui/Container";
@@ -6,18 +7,18 @@ import FinalCta from "@/components/sections/FinalCta";
 import Reveal from "@/components/ui/Reveal";
 import { products } from "@/lib/data/products";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withBrandMetadata({
   title: "Products",
   description:
-    "Products AJH Enterprises builds and operates, including The Ministry Study.",
+    "Products AJH Digital builds and operates, including The Ministry Study.",
   alternates: { canonical: "/products" },
   openGraph: {
-    title: "Products | AJH Enterprises",
+    title: "Products | AJH Digital",
     description:
-      "Products AJH Enterprises builds and operates, including The Ministry Study.",
+      "Products AJH Digital builds and operates, including The Ministry Study.",
     url: "/products",
   },
-};
+});
 
 export default function ProductsPage() {
   return (
@@ -25,7 +26,7 @@ export default function ProductsPage() {
       <PageHero
         eyebrow="Products"
         title="Things I build and operate."
-        description="Alongside client work, AJH Enterprises builds its own products — tools built to solve a specific, real problem. This list will grow over time."
+        description="Alongside client work, AJH Digital builds its own products — tools built to solve a specific, real problem. This list will grow over time."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Products" }]}
       />
 

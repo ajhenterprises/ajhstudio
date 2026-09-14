@@ -1,3 +1,4 @@
+import { socialImage } from "./social";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -44,6 +45,8 @@ export function getAllPosts(): PostMeta[] {
 
     return {
       ...frontmatter,
+      image: socialImage(frontmatter.title, frontmatter.excerpt, frontmatter.category, slug),
+      imageAlt: `${frontmatter.title} — AJH Digital`,
       slug,
       readingTime: readingTime(content).text,
     };
@@ -62,6 +65,8 @@ export function getPostBySlug(slug: string): Post | null {
 
   return {
     ...frontmatter,
+      image: socialImage(frontmatter.title, frontmatter.excerpt, frontmatter.category, slug),
+      imageAlt: `${frontmatter.title} — AJH Digital`,
     slug,
     content,
     readingTime: readingTime(content).text,

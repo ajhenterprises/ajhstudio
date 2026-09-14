@@ -12,7 +12,7 @@ export default function FeaturedWork() {
     <section className="py-20 sm:py-24 lg:py-28">
       <Container>
         <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-end">
-          <SectionHeading eyebrow="Websites I've Built" title="Real websites, built for real clients." />
+          <SectionHeading eyebrow="Websites I've Built" title="AJH Digital Work: Real websites, built for real clients." />
           <Button href="/websites" variant="outline" className="shrink-0">
             See All Websites
           </Button>

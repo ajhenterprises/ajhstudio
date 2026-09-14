@@ -1,3 +1,4 @@
+import { withBrandMetadata } from "@/lib/social";
 import type { Metadata } from "next";
 import PageHero from "@/components/sections/PageHero";
 import Container from "@/components/ui/Container";
@@ -6,16 +7,16 @@ import FinalCta from "@/components/sections/FinalCta";
 import Reveal from "@/components/ui/Reveal";
 import { testimonials, getFeaturedTestimonial } from "@/lib/data/testimonials";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withBrandMetadata({
   title: "Testimonials",
-  description: "What clients have to say about working with AJH Enterprises.",
+  description: "What clients have to say about working with AJH Digital.",
   alternates: { canonical: "/testimonials" },
   openGraph: {
-    title: "Testimonials | AJH Enterprises",
-    description: "What clients have to say about working with AJH Enterprises.",
+    title: "Testimonials | AJH Digital",
+    description: "What clients have to say about working with AJH Digital.",
     url: "/testimonials",
   },
-};
+});
 
 export default function TestimonialsPage() {
   const featured = getFeaturedTestimonial();

@@ -1,13 +1,14 @@
+import { withBrandMetadata } from "@/lib/social";
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/sections/PageHero";
 import { siteConfig } from "@/lib/site-config";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withBrandMetadata({
   title: "Affiliate Disclosure",
-  description: "How affiliate links and compensated recommendations are disclosed by AJH Enterprises.",
+  description: "How affiliate links and compensated recommendations are disclosed by AJH Digital.",
   alternates: { canonical: "/affiliate-disclosure" },
-};
+});
 
 export default function AffiliateDisclosurePage() {
   return (
@@ -15,7 +16,7 @@ export default function AffiliateDisclosurePage() {
       <PageHero
         eyebrow="Legal"
         title="Affiliate Disclosure"
-        description="How AJH Enterprises handles affiliate links, commissions, and product recommendations."
+        description="How AJH Digital handles affiliate links, commissions, and product recommendations."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Affiliate Disclosure" }]}
       />
       <section className="py-16 sm:py-20">
@@ -23,7 +24,7 @@ export default function AffiliateDisclosurePage() {
           <div className="prose-ajh">
             <p><strong>Effective date:</strong> September 14, 2026</p>
             <p>
-              AJH Enterprises believes readers should understand when content may result in
+              AJH Digital believes readers should understand when content may result in
               compensation. Some pages, articles, emails, or social posts may contain affiliate
               links. If you click an affiliate link and make a qualifying purchase or take another
               qualifying action, {siteConfig.legalName} may earn a commission or referral fee at
@@ -50,7 +51,7 @@ export default function AffiliateDisclosurePage() {
             <p>
               Affiliate commissions generally do not increase the price you pay, but prices,
               availability, promotions, terms, and product details are controlled by the third
-              party and may change without notice. AJH Enterprises is not the seller unless
+              party and may change without notice. AJH Digital is not the seller unless
               expressly stated and is not responsible for a third party&apos;s fulfillment,
               billing, returns, support, privacy, or performance.
             </p>
@@ -64,7 +65,7 @@ export default function AffiliateDisclosurePage() {
 
             <h2>Amazon and other programs</h2>
             <p>
-              AJH Enterprises may participate in affiliate programs operated by Amazon or other
+              AJH Digital may participate in affiliate programs operated by Amazon or other
               merchants and platforms. If participation in a program requires additional wording,
               that wording may appear on this page or with the relevant content. References to a
               company or program do not imply ownership, partnership, or endorsement beyond the

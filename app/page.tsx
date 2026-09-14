@@ -1,3 +1,4 @@
+import { withBrandMetadata } from "@/lib/social";
 import type { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
 import WhatIDo from "@/components/sections/WhatIDo";
@@ -7,12 +8,12 @@ import FinalCta from "@/components/sections/FinalCta";
 import Process from "@/components/sections/Process";
 import WebsiteOffer from "@/components/sections/WebsiteOffer";
 
-export const metadata: Metadata = {
-  title: "AJH Enterprises | Websites • Technology • Communication",
+export const metadata: Metadata = withBrandMetadata({
+  title: "AJH Digital | Websites. Content. Digital Growth.",
   description:
-    "AJH Enterprises builds clear websites and practical technology and helps businesses and organizations communicate with the people they serve.",
+    "Websites, content, SEO, and practical digital support for businesses, churches, organizations, entrepreneurs, and professionals.",
   alternates: { canonical: "/" },
-};
+});
 
 export default function HomePage() {
   return (

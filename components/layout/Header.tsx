@@ -25,7 +25,7 @@ export default function Header() {
       className={cn(
         "sticky top-0 z-50 w-full border-b transition-all duration-300",
         scrolled
-          ? "border-border/80 bg-background/95 shadow-[0_8px_30px_-24px_rgba(20,33,29,0.45)] backdrop-blur-md"
+          ? "border-border/80 bg-background/95 shadow-card backdrop-blur-md"
           : "border-transparent bg-background"
       )}
     >
@@ -34,7 +34,7 @@ export default function Header() {
           <Logo />
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-1 xl:flex" aria-label="Primary">
           {siteConfig.nav.map((item) => {
             const active = pathname === item.href;
             return (
@@ -55,9 +55,9 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-3 xl:flex">
           <Button href="/contact" size="md">
-            Discuss Your Project
+            Start Your Project
           </Button>
         </div>
 

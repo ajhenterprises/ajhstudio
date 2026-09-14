@@ -1,3 +1,5 @@
+import { siteConfig } from "@/lib/site-config";
+import brand from "@/lib/brand.json";
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { validateContactForm, type ContactFormData } from "@/lib/contact";
@@ -44,7 +46,7 @@ export async function POST(request: Request) {
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  const toEmail = "aaron@ajhenterprises.com";
+  const toEmail = siteConfig.email;
   const fromEmail = process.env.CONTACT_FROM_EMAIL;
 
   if (!apiKey || !fromEmail) {
@@ -64,9 +66,9 @@ export async function POST(request: Request) {
   }`;
 
   const html = `
-    <div style="font-family: sans-serif; line-height: 1.6; color: #1c231f;">
-      <h2 style="margin-bottom: 4px;">New inquiry</h2>
-      <p style="color: #6e6a5c; margin-top: 0;">Submitted via ajhenterprises.com contact form</p>
+    <div style="font-family: sans-serif; line-height: 1.6; color: ${brand.navy};">
+      <img src="${siteConfig.url}${siteConfig.logo.email}" alt="${siteConfig.name}" width="280" style="max-width:100%;height:auto"/><h2 style="margin-bottom: 4px;">New inquiry</h2>
+      <p style="color: ${brand.gray}; margin-top: 0;">Submitted via ${siteConfig.name} contact form</p>
       <table cellpadding="0" cellspacing="0" style="margin-top: 16px;">
         <tr><td style="padding: 4px 12px 4px 0; font-weight: 600;">Name</td><td>${escapeHtml(data.name)}</td></tr>
         <tr><td style="padding: 4px 12px 4px 0; font-weight: 600;">Email</td><td>${escapeHtml(data.email)}</td></tr>

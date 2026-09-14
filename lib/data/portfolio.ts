@@ -21,7 +21,7 @@ export const portfolioProjects: PortfolioProject[] = [
     description:
       "A growing Bible study and commentary platform with the World English Bible, verse-by-verse resources, articles, devotionals, sermons, topics, and search.",
     category: "Publishing",
-    image: "/images/work/hall-bible-commentary.jpg",
+    image: "/images/work/hall-bible-commentary-ajh-digital.webp",
     url: "https://www.hallbiblecommentary.com/",
     services: ["Website Design", "Development", "Content Architecture", "Search", "PWA"],
     featured: true,
@@ -32,7 +32,7 @@ export const portfolioProjects: PortfolioProject[] = [
     description:
       "A clear, welcoming site for a non-denominational church in Daphne, Alabama, built to help newcomers find service times and get plugged in quickly.",
     category: "Ministry",
-    image: "/images/work/jubilee-city-church.jpg",
+    image: "/images/work/jubilee-city-church-ajh-digital.webp",
     url: "https://jubileecity.church",
     services: ["Website Design", "Hosting", "Maintenance", "Copywriting", "Content"],
     featured: true,
@@ -43,7 +43,7 @@ export const portfolioProjects: PortfolioProject[] = [
     description:
       "A personal-brand site for a REALTOR® serving Baldwin and Mobile counties, Alabama, built to make it easy for buyers and sellers to connect.",
     category: "Real Estate",
-    image: "/images/work/sold-with-hall.jpg",
+    image: "/images/work/sold-with-hall-ajh-digital.webp",
     url: "https://soldwithhall.com",
     services: ["Website Design", "Hosting", "Maintenance", "Copywriting", "Content"],
     featured: true,

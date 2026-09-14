@@ -46,7 +46,7 @@ export async function generateMetadata({
       publishedTime: post.date,
       authors: [post.author],
       tags: post.tags,
-      images: [{ url: post.image, width: 1200, height: 800, alt: post.imageAlt }],
+      images: [{ url: post.image, width: 1200, height: 630, alt: post.imageAlt }],
     },
     twitter: {
       card: "summary_large_image",
@@ -77,7 +77,7 @@ export default async function BlogPostPage({
     datePublished: post.date,
     dateModified: post.date,
     author: { "@type": "Organization", name: post.author },
-    publisher: { "@type": "Organization", name: siteConfig.legalName },
+    publisher: { "@type": "Organization", name: siteConfig.name },
     image: `${siteConfig.url}${post.image}`,
     mainEntityOfPage: `${siteConfig.url}/blog/${post.slug}`,
   };
@@ -121,7 +121,7 @@ export default async function BlogPostPage({
 
           <aside className="mt-8 rounded-xl border border-accent/40 bg-accent/10 px-5 py-4 text-sm leading-relaxed text-text">
             <strong>Affiliate disclosure:</strong> This post may contain affiliate links. If you
-            make a purchase through one, AJH Enterprises may earn a commission at no additional
+            make a purchase through one, AJH Digital may earn a commission at no additional
             cost to you.{" "}
             <Link
               href="/affiliate-disclosure"

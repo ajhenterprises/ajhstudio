@@ -63,7 +63,7 @@ export default function MobileNav({ pathname }: { pathname: string }) {
   }, [open]);
 
   return (
-    <div className="lg:hidden">
+    <div className="xl:hidden">
       <button
         ref={toggleRef}
         type="button"
@@ -84,9 +84,10 @@ export default function MobileNav({ pathname }: { pathname: string }) {
             aria-modal="true"
             aria-label="Mobile navigation"
             aria-hidden={!open}
+            inert={!open}
             ref={panelRef}
             className={cn(
-              "fixed inset-0 z-[100] flex h-[100dvh] flex-col overflow-y-auto overscroll-contain bg-ink text-background transition-opacity duration-300 lg:hidden",
+              "fixed inset-0 z-[100] flex h-[100dvh] flex-col overflow-y-auto overscroll-contain bg-ink text-background transition-opacity duration-300 xl:hidden",
               open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
             )}
           >

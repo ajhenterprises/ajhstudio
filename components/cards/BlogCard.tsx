@@ -15,7 +15,7 @@ export default function BlogCard({
     <Link
       href={`/blog/${post.slug}`}
       className={cn(
-        "group flex flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(23,34,31,0.4)]",
+        "group flex flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-shadow duration-300 hover:shadow-card",
         large && "sm:flex-row"
       )}
     >

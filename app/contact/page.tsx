@@ -1,3 +1,4 @@
+import { withBrandMetadata } from "@/lib/social";
 import type { Metadata } from "next";
 import { Mail, Clock, MessageSquare } from "lucide-react";
 import PageHero from "@/components/sections/PageHero";
@@ -5,18 +6,18 @@ import Container from "@/components/ui/Container";
 import ContactForm from "@/components/ContactForm";
 import { siteConfig } from "@/lib/site-config";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withBrandMetadata({
   title: "Contact",
   description:
-    "Get in touch with Aaron Joseph Hall at AJH Enterprises about a website, technology, or communication project.",
+    "Get in touch with Aaron Joseph Hall at AJH Digital about a website, technology, or communication project.",
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact | AJH Enterprises",
+    title: "Contact | AJH Digital",
     description:
-      "Get in touch with Aaron Joseph Hall at AJH Enterprises about a website, technology, or communication project.",
+      "Get in touch with Aaron Joseph Hall at AJH Digital about a website, technology, or communication project.",
     url: "/contact",
   },
-};
+});
 
 export default function ContactPage() {
   return (

@@ -1,3 +1,4 @@
+import { withBrandMetadata } from "@/lib/social";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Check } from "lucide-react";
@@ -11,18 +12,18 @@ import Reveal from "@/components/ui/Reveal";
 import { portfolioProjects } from "@/lib/data/portfolio";
 import { getServiceBySlug } from "@/lib/data/services";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withBrandMetadata({
   title: "Websites",
   description:
     "Modern, practical websites for businesses, entrepreneurs, nonprofits, professional services, community groups, churches, and organizations.",
   alternates: { canonical: "/websites" },
   openGraph: {
-    title: "Websites | AJH Enterprises",
+    title: "Websites | AJH Digital",
     description:
       "Modern, practical websites for businesses, entrepreneurs, nonprofits, professional services, community groups, churches, and organizations.",
     url: "/websites",
   },
-};
+});
 
 export default function WebsitesPage() {
   const service = getServiceBySlug("websites-technology");
@@ -69,7 +70,7 @@ export default function WebsitesPage() {
 
       <section className="border-t border-border bg-surface-alt py-16 sm:py-20 lg:py-24">
         <Container>
-          <SectionHeading eyebrow="Websites I've Built" title="Real websites, real clients." />
+          <SectionHeading eyebrow="AJH Digital Work" title="Real websites, real projects." />
           <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2">
             {portfolioProjects.map((project, i) => (
               <Reveal key={project.slug} delay={i * 100}>

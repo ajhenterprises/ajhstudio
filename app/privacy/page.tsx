@@ -1,13 +1,14 @@
+import { withBrandMetadata } from "@/lib/social";
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/sections/PageHero";
 import { siteConfig } from "@/lib/site-config";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withBrandMetadata({
   title: "Privacy Policy",
-  description: "How AJH Enterprises collects, uses, and protects personal information.",
+  description: "How AJH Digital collects, uses, and protects personal information.",
   alternates: { canonical: "/privacy" },
-};
+});
 
 export default function PrivacyPage() {
   return (
@@ -15,7 +16,7 @@ export default function PrivacyPage() {
       <PageHero
         eyebrow="Legal"
         title="Privacy Policy"
-        description="A clear explanation of the information AJH Enterprises collects and how it is handled."
+        description="A clear explanation of the information AJH Digital collects and how it is handled."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Privacy Policy" }]}
       />
       <section className="py-16 sm:py-20">
@@ -23,9 +24,9 @@ export default function PrivacyPage() {
           <div className="prose-ajh">
             <p><strong>Effective date:</strong> September 14, 2026</p>
             <p>
-              {siteConfig.legalName} (“AJH Enterprises,” “we,” “us,” or “our”) respects your
+              {siteConfig.legalName} (“AJH Digital,” “we,” “us,” or “our”) respects your
               privacy. This Privacy Policy explains what information we collect through{" "}
-              <a href={siteConfig.url}>{siteConfig.url.replace("https://www.", "")}</a>, how we
+              <a href={siteConfig.url}>{siteConfig.url.replace(/^https?:\/\/(www\.)?/, "")}</a>, how we
               use it, and the choices available to you.
             </p>
 
@@ -54,8 +55,7 @@ export default function PrivacyPage() {
             <h2>Cookies and similar technologies</h2>
             <p>
               This site may use cookies or similar browser storage that are necessary for core
-              functionality, security, and remembering your cookie-notice preference. AJH
-              Enterprises does not currently use advertising cookies on this site. If analytics,
+              functionality, security, and remembering your cookie-notice preference. AJH Digital does not currently use advertising cookies on this site. If analytics,
               advertising, or other non-essential tracking is added later, this policy and the
               site&apos;s consent choices will be updated as appropriate.
             </p>

@@ -1,13 +1,14 @@
+import { withBrandMetadata } from "@/lib/social";
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/sections/PageHero";
 import { siteConfig } from "@/lib/site-config";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withBrandMetadata({
   title: "Terms of Service",
-  description: "Terms governing use of the AJH Enterprises website.",
+  description: "Terms governing use of the AJH Digital website.",
   alternates: { canonical: "/terms" },
-};
+});
 
 export default function TermsPage() {
   return (
@@ -15,7 +16,7 @@ export default function TermsPage() {
       <PageHero
         eyebrow="Legal"
         title="Terms of Service"
-        description="The terms that govern your use of the AJH Enterprises website."
+        description="The terms that govern your use of the AJH Digital website."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Terms of Service" }]}
       />
       <section className="py-16 sm:py-20">
@@ -25,13 +26,13 @@ export default function TermsPage() {
             <p>
               These Terms of Service (“Terms”) govern your access to and use of{" "}
               <a href={siteConfig.url}>{siteConfig.url.replace("https://www.", "")}</a>, operated
-              by {siteConfig.legalName} (“AJH Enterprises,” “we,” “us,” or “our”). By using this
+              by {siteConfig.legalName} (“AJH Digital,” “we,” “us,” or “our”). By using this
               website, you agree to these Terms. If you do not agree, please do not use the site.
             </p>
 
             <h2>Website information only</h2>
             <p>
-              The public website introduces AJH Enterprises, describes available services and
+              The public website introduces AJH Digital, describes available services and
               products, publishes educational content, and allows visitors to make inquiries.
               Website content is general information and is not legal, tax, financial, medical,
               brokerage, or other professional advice. See our{" "}
@@ -68,7 +69,7 @@ export default function TermsPage() {
             <h2>Managed website updates</h2>
             <p>
               Any advertised unlimited-update benefit applies only to websites actively hosted
-              and managed by AJH Enterprises and is subject to reasonable use. It does not apply
+              and managed by AJH Digital and is subject to reasonable use. It does not apply
               to websites built and handed off to a client or managed elsewhere. Requests are
               evaluated case by case. Redesigns, new functionality, large content additions,
               urgent or unusually frequent work, or work outside the managed website may require
@@ -78,7 +79,7 @@ export default function TermsPage() {
             <h2>Intellectual property</h2>
             <p>
               Unless otherwise stated, the website and its original design, text, graphics,
-              branding, downloads, and other content are owned by or licensed to AJH Enterprises
+              branding, downloads, and other content are owned by or licensed to AJH Digital
               and are protected by applicable intellectual-property laws. You may view and share
               links to public pages for personal, noncommercial purposes. You may not copy,
               republish, sell, scrape, frame, distribute, modify, or create derivative works from
@@ -98,7 +99,7 @@ export default function TermsPage() {
             <h2>Third-party websites and services</h2>
             <p>
               Links, integrations, recommendations, or references to third-party websites do not
-              make AJH Enterprises responsible for their content, availability, security,
+              make AJH Digital responsible for their content, availability, security,
               practices, pricing, or performance. Your use of a third-party service is governed by
               that provider&apos;s terms. Some links may be affiliate links; see our{" "}
               <Link href="/affiliate-disclosure">Affiliate Disclosure</Link>.
@@ -115,7 +116,7 @@ export default function TermsPage() {
 
             <h2>Limitation of liability</h2>
             <p>
-              To the fullest extent permitted by law, AJH Enterprises and its owner, contractors,
+              To the fullest extent permitted by law, AJH Digital and its owner, contractors,
               and service providers will not be liable for indirect, incidental, special,
               consequential, exemplary, or punitive damages, or for lost profits, revenue, data,
               opportunities, or goodwill arising from use of—or inability to use—the public site.

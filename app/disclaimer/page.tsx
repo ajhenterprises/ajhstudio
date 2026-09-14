@@ -1,13 +1,14 @@
+import { withBrandMetadata } from "@/lib/social";
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/sections/PageHero";
 import { siteConfig } from "@/lib/site-config";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withBrandMetadata({
   title: "Disclaimer",
-  description: "Important disclaimers for AJH Enterprises website content and services.",
+  description: "Important disclaimers for AJH Digital website content and services.",
   alternates: { canonical: "/disclaimer" },
-};
+});
 
 export default function DisclaimerPage() {
   return (
@@ -65,7 +66,7 @@ export default function DisclaimerPage() {
 
             <h2>Affiliate relationships</h2>
             <p>
-              Some links may be affiliate links, meaning AJH Enterprises may receive a commission
+              Some links may be affiliate links, meaning AJH Digital may receive a commission
               if you purchase through them at no additional cost to you. Affiliate relationships
               do not change the price you pay and do not guarantee a product or service is right
               for you. Read the full <Link href="/affiliate-disclosure">Affiliate Disclosure</Link>.

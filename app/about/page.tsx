@@ -1,3 +1,4 @@
+import { withBrandMetadata } from "@/lib/social";
 import type { Metadata } from "next";
 import PageHero from "@/components/sections/PageHero";
 import Container from "@/components/ui/Container";
@@ -6,18 +7,18 @@ import FinalCta from "@/components/sections/FinalCta";
 import Reveal from "@/components/ui/Reveal";
 import { siteConfig } from "@/lib/site-config";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withBrandMetadata({
   title: "About",
   description:
-    "Aaron Joseph Hall is the founder of AJH Enterprises, building clear communication, websites, and practical technology.",
+    "Aaron Joseph Hall is the founder of AJH Digital, building clear communication, websites, and practical technology.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About | AJH Enterprises",
+    title: "About | AJH Digital",
     description:
-      "Aaron Joseph Hall is the founder of AJH Enterprises, building clear communication, websites, and practical technology.",
+      "Aaron Joseph Hall is the founder of AJH Digital, building clear communication, websites, and practical technology.",
     url: "/about",
   },
-};
+});
 
 const values = [
   {
@@ -40,7 +41,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About"
         title="Aaron Joseph Hall."
-        description="I'm the founder of AJH Enterprises. I work across communication, websites, and practical technology—and I built this company to bring that work under one roof."
+        description="I'm the founder of AJH Digital. I work across communication, websites, and practical technology—and I built this company to bring that work under one roof."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
       />
 
@@ -60,8 +61,7 @@ export default function AboutPage() {
             <h2 className="font-display text-3xl text-ink sm:text-4xl">Hi, I&apos;m Aaron.</h2>
             <p className="text-lg leading-relaxed text-text">
               I started {siteConfig.name} to bring together the work I actually do: building
-              websites and technology and writing and communicating ideas clearly. AJH
-              Enterprises is the umbrella that holds that client work and the products I build
+              websites and technology and writing and communicating ideas clearly. AJH Digital is the umbrella that holds that client work and the products I build
               together.
             </p>
             <p className="text-lg leading-relaxed text-text">
@@ -79,7 +79,7 @@ export default function AboutPage() {
           <Reveal>
             <SectionHeading
               eyebrow="Person, Company, Products"
-              title="Aaron Joseph Hall, AJH Enterprises, and what I build."
+              title="Aaron Joseph Hall, AJH Digital, and what I build."
             />
           </Reveal>
           <Reveal delay={100} className="flex flex-col gap-6 text-lg leading-relaxed text-text">

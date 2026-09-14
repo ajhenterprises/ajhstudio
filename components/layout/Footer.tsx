@@ -1,3 +1,4 @@
+import InstallApp from "@/components/InstallApp";
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import { InstagramGlyph, LinkedinGlyph } from "@/components/ui/SocialIcons";
@@ -6,8 +7,10 @@ import { siteConfig } from "@/lib/site-config";
 import Logo from "@/components/ui/Logo";
 
 const serviceLinks = [
-  { label: "Communication", href: "/services#communication" },
-  { label: "Websites & Technology", href: "/services#websites-technology" },
+  { label: "SEO", href: "/services#seo" },
+  { label: "Digital Services", href: "/services#digital-services" },
+  { label: "Content", href: "/services#communication" },
+  { label: "Websites", href: "/services#websites-technology" },
 ];
 
 const companyLinks = [
@@ -31,6 +34,7 @@ export default function Footer() {
             <Link href="/" className="inline-flex rounded-xl">
               <Logo light />
             </Link>
+            <InstallApp />
             <p className="mt-3 text-sm font-medium text-background/60">{siteConfig.tagline}</p>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-background/70">
               {siteConfig.description}
@@ -38,7 +42,7 @@ export default function Footer() {
             <div className="mt-6 flex items-center gap-3">
               <a
                 href={`mailto:${siteConfig.email}`}
-                aria-label="Email AJH Enterprises"
+                aria-label="Email AJH Digital"
                 className="flex size-9 items-center justify-center rounded-full border border-background/20 text-background/80 transition-colors hover:border-accent hover:text-accent"
               >
                 <Mail className="size-4" aria-hidden="true" />
@@ -47,7 +51,7 @@ export default function Footer() {
                 href={siteConfig.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="AJH Enterprises on Instagram"
+                aria-label="AJH Digital on Instagram"
                 className="flex size-9 items-center justify-center rounded-full border border-background/20 text-background/80 transition-colors hover:border-accent hover:text-accent"
               >
                 <InstagramGlyph className="size-4" />
@@ -56,7 +60,7 @@ export default function Footer() {
                 href={siteConfig.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="AJH Enterprises on LinkedIn"
+                aria-label="AJH Digital on LinkedIn"
                 className="flex size-9 items-center justify-center rounded-full border border-background/20 text-background/80 transition-colors hover:border-accent hover:text-accent"
               >
                 <LinkedinGlyph className="size-4" />
@@ -123,7 +127,7 @@ export default function Footer() {
             Website project scope
           </h3>
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-background/60">
-            AJH Enterprises focuses on marketing and content-driven websites — the kind most
+            AJH Digital focuses on marketing and content-driven websites — the kind most
             businesses, entrepreneurs, nonprofits, churches, and organizations need. Custom
             projects may also be a fit depending on their scale, scope, and complexity. Reach
             out with what you&apos;re building so I can determine whether it&apos;s something I can
@@ -138,7 +142,7 @@ export default function Footer() {
 
         <div className="mt-8 flex flex-col gap-4 border-t border-background/10 pt-8 text-xs text-background/50 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            &copy; {year} {siteConfig.legalName}. All rights reserved.
+            &copy; {year} {siteConfig.name}. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <Link href="/privacy" className="transition-colors hover:text-background/80">
