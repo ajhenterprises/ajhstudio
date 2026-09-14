@@ -27,7 +27,7 @@ export const projectServices: ProjectService[] = [
     longDescription: "Includes strategy, content structure, design, development, forms, mobile optimization, and launch support for a standard website project.",
     category: "Websites",
     pricingType: "one-time",
-    oneTimePrice: 599,
+    oneTimePrice: 499,
     featured: true,
     active: true,
     displayOrder: 10,
@@ -36,7 +36,7 @@ export const projectServices: ProjectService[] = [
   {
     id: "website-hosting-care",
     name: "Website Hosting & Care",
-    shortDescription: "Managed hosting, SSL, routine maintenance, support, and content updates within the agreed allowance.",
+    shortDescription: "Managed hosting, SSL, routine maintenance, support, and unlimited routine updates for websites managed by AJH Enterprises, subject to reasonable use.",
     category: "Websites",
     pricingType: "monthly",
     monthlyPrice: 159,

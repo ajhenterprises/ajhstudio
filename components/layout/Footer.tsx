@@ -105,22 +105,14 @@ export default function Footer() {
               Thinking about a website?
             </h3>
             <p className="mt-4 text-sm leading-relaxed text-background/70">
-              Start the Website Questionnaire and tell me what you&apos;re building.
+              Tell me what you&apos;re building and I&apos;ll follow up personally.
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-3">
-              <a
-                href={siteConfig.questionnaireUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-cta px-5 py-2.5 text-sm font-medium text-cta-foreground transition-colors hover:bg-cta-hover"
-              >
-                Website Questionnaire
-              </a>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-full border border-background/25 px-5 py-2.5 text-sm font-medium text-background transition-colors hover:border-background hover:bg-background/10"
+                className="inline-flex items-center gap-2 rounded-full bg-cta px-5 py-2.5 text-sm font-medium text-cta-foreground transition-colors hover:bg-cta-hover"
               >
-                Contact
+                Discuss Your Project
               </Link>
             </div>
           </div>

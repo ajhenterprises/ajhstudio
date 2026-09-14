@@ -105,11 +105,9 @@ export default function ServicesPage() {
 
       <FinalCta
         title="Ready to get started?"
-        description="If it's a website, start the questionnaire. For everything else, send a message."
-        primaryLabel="Start the Website Questionnaire"
-        useQuestionnaire
-        secondaryLabel="Send a Message"
-        secondaryHref="/contact"
+        description="Tell me what you're building and I'll follow up personally to discuss the next step."
+        primaryLabel="Discuss Your Project"
+        primaryHref="/contact"
       />
     </>
   );

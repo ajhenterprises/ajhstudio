@@ -56,8 +56,8 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Button href={siteConfig.questionnaireUrl} size="md" external>
-            Start a Website Project
+          <Button href="/contact" size="md">
+            Discuss Your Project
           </Button>
         </div>
 

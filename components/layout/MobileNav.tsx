@@ -110,14 +110,12 @@ export default function MobileNav({ pathname }: { pathname: string }) {
         </nav>
 
         <div className="flex shrink-0 flex-col gap-3 border-t border-background/20 bg-ink px-6 pb-[calc(2.5rem+env(safe-area-inset-bottom))] pt-5 sm:px-8">
-          <a
-            href={siteConfig.questionnaireUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/contact"
             className="flex w-full items-center justify-center rounded-xl bg-cta px-6 py-4 text-center font-medium text-cta-foreground transition-colors hover:bg-cta-hover"
           >
-            Start a Website Project
-          </a>
+            Discuss Your Project
+          </Link>
         </div>
       </div>
     </div>

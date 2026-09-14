@@ -6,12 +6,12 @@ const steps = [
   {
     number: "01",
     title: "Discover",
-    description: "You share your goals, audience, content, and vision through a guided questionnaire.",
+    description: "You share your goals, audience, content, and vision in an initial conversation.",
   },
   {
     number: "02",
     title: "Plan",
-    description: "I turn your answers into a clear scope, page plan, creative direction, and proposal.",
+    description: "I turn what I learn into a clear scope, page plan, creative direction, and proposal.",
   },
   {
     number: "03",

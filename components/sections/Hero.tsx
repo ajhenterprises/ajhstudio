@@ -22,8 +22,8 @@ export default function Hero() {
             <Button href="/services" size="lg">
               Explore Services
             </Button>
-            <Button href={siteConfig.questionnaireUrl} variant="outline" size="lg" external>
-              Start Your Website Project
+            <Button href="/contact" variant="outline" size="lg">
+              Discuss Your Project
             </Button>
           </div>
           <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted">

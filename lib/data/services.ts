@@ -69,7 +69,7 @@ export const services: Service[] = [
       "Technology consulting",
       "Hosting and website care",
     ],
-    cta: { label: "Start the Website Questionnaire", useQuestionnaire: true },
+    cta: { label: "Discuss Your Project", href: "/contact" },
   },
 ];
 

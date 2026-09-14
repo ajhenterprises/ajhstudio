@@ -26,10 +26,8 @@ export default function HomePage() {
       <FinalCta
         title="Have a project in mind?"
         description="Whether it's a new website, help finding the right words, or a practical digital project—tell me about it."
-        primaryLabel="Start the Website Questionnaire"
-        useQuestionnaire
-        secondaryLabel="Send Me a Message"
-        secondaryHref="/contact"
+        primaryLabel="Discuss Your Project"
+        primaryHref="/contact"
       />
     </>
   );

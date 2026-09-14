@@ -43,7 +43,7 @@ export default function WebsiteOffer() {
               ))}
             </ul>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Button href="/website-discovery" size="lg">See How It Works</Button>
+              <Button href="/contact" size="lg">Discuss Your Project</Button>
               <Button href="/websites" variant="outline" size="lg" className="border-background/30 text-background hover:bg-background/10">
                 View Website Work
               </Button>

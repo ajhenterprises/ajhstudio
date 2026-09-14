@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Mail, Clock, MessageSquare } from "lucide-react";
 import PageHero from "@/components/sections/PageHero";
 import Container from "@/components/ui/Container";
-import Button from "@/components/ui/Button";
 import ContactForm from "@/components/ContactForm";
 import { siteConfig } from "@/lib/site-config";
 
@@ -25,7 +24,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Let's talk."
-        description="Thinking about a website? Start the questionnaire below. For communication, technology, or anything else, send a message and I'll follow up."
+        description="Tell me about your website, communication, or technology project and I'll follow up personally."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
       />
 
@@ -35,14 +34,9 @@ export default function ContactPage() {
             <div className="flex flex-col gap-4 rounded-2xl border border-border bg-surface p-8">
               <h2 className="font-display text-xl text-ink">Have a website project?</h2>
               <p className="text-sm leading-relaxed text-muted">
-                Before we talk, tell me a little about what you&apos;re building, what you
-                need, and what you&apos;re hoping the website will accomplish.
+                Use the contact form below to share what you&apos;re building, what you need,
+                and what you&apos;re hoping the website will accomplish.
               </p>
-              <div>
-                <Button href={siteConfig.questionnaireUrl} external>
-                  Start the Website Questionnaire
-                </Button>
-              </div>
             </div>
             <div className="flex flex-col gap-4 rounded-2xl border border-border bg-surface p-8">
               <h2 className="font-display text-xl text-ink">Something else in mind?</h2>

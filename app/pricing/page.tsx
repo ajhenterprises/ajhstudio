@@ -8,7 +8,7 @@ import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Website Pricing & Services",
-  description: "Start with a $599 website setup and $159/month website care plan, then build a project around the services your business or organization needs.",
+  description: "Start with a $499 website setup and $159/month website care plan, then build a project around the services your business or organization needs.",
   alternates: { canonical: "/pricing" },
   openGraph: {
     title: "Website Pricing & Services | AJH Enterprises",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Website Pricing & Services | AJH Enterprises",
-    description: "Start with a $599 website setup and $159/month website care plan, then build your project.",
+    description: "Start with a $499 website setup and $159/month website care plan, then build your project.",
     images: ["/images/og-default.jpg"],
   },
 };
@@ -30,7 +30,7 @@ const included = [
   "Content structure and clear calls to action",
   "Managed hosting and SSL security",
   "Routine maintenance and ongoing support",
-  "Content updates within the agreed allowance",
+  "Unlimited routine updates for websites managed by AJH Enterprises, subject to reasonable use",
   "Analytics and basic technical SEO foundations",
   "Launch support and practical guidance",
 ];
@@ -44,9 +44,9 @@ const steps = [
 ];
 
 const faqs = [
-  ["What is included in the $599 setup fee?", "The standard setup covers strategy, content structure, custom design, responsive development, forms, foundational SEO setup, and launch support for a typical marketing or content-driven website. The final proposal confirms the exact page count and scope."],
-  ["What does the $159/month cover?", "It covers managed hosting, SSL, routine maintenance, website care, ongoing support, and content updates within the allowance confirmed in your proposal."],
-  ["Can my price increase?", "Yes, when a project requires more pages, content, integrations, specialized functionality, or complexity than the standard package. The $599 setup and $159/month remain the clear starting price, and any adjustment is discussed before work begins."],
+  ["What is included in the $499 setup fee?", "The standard setup covers strategy, content structure, custom design, responsive development, forms, foundational SEO setup, and launch support for a typical marketing or content-driven website. The final proposal confirms the exact page count and scope."],
+  ["What does the $159/month cover?", "For websites hosted and managed by AJH Enterprises, it covers managed hosting, SSL, routine maintenance, website care, ongoing support, and unlimited routine content updates under a reasonable-use policy. This does not apply to websites that are built and handed off to a client or managed elsewhere. Update requests are evaluated case by case based on frequency, complexity, turnaround, and scope. Substantial redesigns, new functionality, large content additions, or unusually heavy request volume may require an additional charge, which will be discussed before the work begins."],
+  ["Can my price increase?", "Yes. $499 setup and $159/month are base starting prices, not guaranteed quotes. Pricing may change with or without notice and may increase when a project requires more pages, content, integrations, specialized functionality, or complexity. Your final scope and pricing will be confirmed in writing before work begins."],
   ["Are there contracts?", "Every accepted project uses a written proposal and service agreement so scope, responsibilities, pricing, and ongoing service terms are clear before work begins."],
   ["Can you redesign an existing website?", "Yes. Select Website Redesign and share your current URL. I’ll review what should be kept, improved, rebuilt, or migrated."],
   ["Can you build custom functionality?", "Possibly. Database, e-commerce, CRM, API, and app-like projects are considered according to their scale, scope, and complexity. Share what you need so I can determine whether it is a good fit."],
@@ -66,7 +66,7 @@ const serviceJsonLd = {
   offers: {
     "@type": "Offer",
     priceSpecification: [
-      { "@type": "UnitPriceSpecification", price: "599", priceCurrency: "USD", name: "Website setup" },
+      { "@type": "UnitPriceSpecification", price: "499", priceCurrency: "USD", name: "Website setup" },
       { "@type": "UnitPriceSpecification", price: "159", priceCurrency: "USD", unitText: "MONTH", name: "Website care and hosting" },
     ],
   },
@@ -89,11 +89,11 @@ export default function PricingPage() {
           <div className="rounded-3xl border border-background/15 bg-background/[0.06] p-7 backdrop-blur-sm sm:p-9">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-background/60">Standard Website Package</p>
             <div className="mt-5 flex flex-wrap items-end gap-x-5 gap-y-2">
-              <div><span className="font-display text-5xl text-background sm:text-6xl">$599</span><span className="ml-2 text-background/65">setup</span></div>
+              <div><span className="font-display text-5xl text-background sm:text-6xl">$499</span><span className="ml-2 text-background/65">setup</span></div>
               <span className="pb-2 font-display text-3xl text-accent">+</span>
               <div><span className="font-display text-5xl text-background sm:text-6xl">$159</span><span className="ml-2 text-background/65">/month</span></div>
             </div>
-            <p className="mt-6 border-t border-background/15 pt-6 text-sm leading-relaxed text-background/70">Pricing shown represents standard project pricing. Final pricing may increase depending on scope, size, complexity, integrations, custom functionality, content requirements, or other specific project needs.</p>
+            <p className="mt-6 border-t border-background/15 pt-6 text-sm leading-relaxed text-background/70">$499 setup and $159/month are base starting prices and may change with or without notice. Final pricing may increase depending on scope, size, complexity, integrations, custom functionality, content requirements, or other project needs. Your final scope and pricing will be confirmed before work begins.</p>
           </div>
         </Container>
       </section>
@@ -105,9 +105,18 @@ export default function PricingPage() {
             <h2 className="mt-3 text-balance font-display text-3xl text-ink sm:text-4xl">The essentials for a website that works.</h2>
             <p className="mt-5 leading-relaxed text-muted">The standard package is designed for the marketing and content-driven websites most businesses, entrepreneurs, nonprofits, churches, and organizations need.</p>
           </div>
-          <ul className="grid gap-3 sm:grid-cols-2">
-            {included.map((item) => <li key={item} className="flex items-start gap-3 rounded-xl border border-border bg-surface p-4 text-sm leading-relaxed text-text"><Check className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />{item}</li>)}
-          </ul>
+          <div>
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {included.map((item) => <li key={item} className="flex items-start gap-3 rounded-xl border border-border bg-surface p-4 text-sm leading-relaxed text-text"><Check className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />{item}</li>)}
+            </ul>
+            <p className="mt-5 rounded-xl border border-accent/40 bg-accent/10 p-4 text-sm leading-relaxed text-text">
+              Unlimited updates apply only to websites hosted and managed by AJH Enterprises—not
+              websites built and handed off to a client or managed elsewhere. Updates are subject
+              to reasonable use and evaluated case by case. Substantial redesigns, new features,
+              large content additions, or unusually heavy request volume may require an additional
+              charge, which will be discussed before the work begins.
+            </p>
+          </div>
         </Container>
       </section>
 
@@ -122,7 +131,7 @@ export default function PricingPage() {
 
       <section className="border-y border-border bg-sand/50 py-16 sm:py-20">
         <Container className="grid gap-6 md:grid-cols-3">
-          <div className="rounded-2xl bg-surface p-6"><CircleDollarSign className="size-6 text-primary" /><h2 className="mt-5 font-display text-xl text-ink">Starting prices stay clear.</h2><p className="mt-2 text-sm leading-relaxed text-muted">$599 setup and $159/month are the standard starting point. Any scope adjustment is discussed before work begins.</p></div>
+          <div className="rounded-2xl bg-surface p-6"><CircleDollarSign className="size-6 text-primary" /><h2 className="mt-5 font-display text-xl text-ink">Starting prices stay clear.</h2><p className="mt-2 text-sm leading-relaxed text-muted">$499 setup and $159/month are the base starting point. Prices may change with or without notice, and your final scope and price are confirmed before work begins.</p></div>
           <div className="rounded-2xl bg-surface p-6"><SearchCheck className="size-6 text-primary" /><h2 className="mt-5 font-display text-xl text-ink">Custom work is reviewed honestly.</h2><p className="mt-2 text-sm leading-relaxed text-muted">Larger databases, e-commerce, APIs, and app-like features may be possible depending on scale and complexity.</p></div>
           <div className="rounded-2xl bg-surface p-6"><ShieldCheck className="size-6 text-primary" /><h2 className="mt-5 font-display text-xl text-ink">Third-party costs are separate.</h2><p className="mt-2 text-sm leading-relaxed text-muted">Domains, IDX/MLS, premium software, APIs, paid media, and outside platforms are included only when a proposal says so.</p></div>
         </Container>
