@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { withBrandMetadata } from "@/lib/social";
 import type { Metadata } from "next";
 import PageHero from "@/components/sections/PageHero";
@@ -48,9 +49,11 @@ export default function AboutPage() {
       <section className="py-16 sm:py-20 lg:py-24">
         <Container className="grid grid-cols-1 gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <Reveal>
-            <div className="relative mx-auto flex aspect-[4/5] w-full max-w-sm flex-col justify-between overflow-hidden rounded-2xl bg-ink p-8 text-background">
-              <span className="font-display text-7xl text-accent">AJH</span>
-              <div>
+            <div className="relative mx-auto flex w-full max-w-sm flex-col overflow-hidden rounded-2xl bg-ink text-background">
+              <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-ink to-primary/20">
+                <Image src="/images/about/aaron-cutout.webp" alt="Aaron Joseph Hall, founder of AJH Digital" fill sizes="(min-width: 1024px) 384px, 90vw" className="object-contain object-bottom" />
+              </div>
+              <div className="p-6 sm:p-8">
                 <p className="font-display text-2xl text-background">Aaron Joseph Hall</p>
                 <p className="mt-2 text-sm leading-relaxed text-background/65">Founder, writer, pastor, speaker, and builder of useful things.</p>
               </div>
