@@ -17,7 +17,9 @@ export const siteConfig = {
   // every CTA that starts the questionnaire (the /website-discovery page,
   // the header, footer, homepage, services, and websites pages) reads it
   // from here rather than hard-coding it.
-  questionnaireUrl: "https://crm.ajhenterprises.com/website-questionnaire",
+  // Keep the questionnaire on the verified Vercel URL until the CRM custom
+  // subdomain's DNS record is active, so public project links never break.
+  questionnaireUrl: "https://ajh-business-hq.vercel.app/website-questionnaire",
   social: {
     instagram: "https://instagram.com/ajhenterprises",
     linkedin: "https://linkedin.com/company/ajhenterprises",
