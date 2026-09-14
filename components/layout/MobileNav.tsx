@@ -1,13 +1,18 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
+import Logo from "@/components/ui/Logo";
+
+const subscribeToClient = () => () => {};
 
 export default function MobileNav({ pathname }: { pathname: string }) {
   const [open, setOpen] = useState(false);
+  const mounted = useSyncExternalStore(subscribeToClient, () => true, () => false);
   const [lastPathname, setLastPathname] = useState(pathname);
   const panelRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -71,53 +76,61 @@ export default function MobileNav({ pathname }: { pathname: string }) {
         <Menu className="size-5" aria-hidden="true" />
       </button>
 
-      <div
-        id="mobile-nav-panel"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Mobile navigation"
-        ref={panelRef}
-        className={cn(
-          "fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-ink text-background transition-opacity duration-300",
-          open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+      {mounted &&
+        createPortal(
+          <div
+            id="mobile-nav-panel"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile navigation"
+            aria-hidden={!open}
+            ref={panelRef}
+            className={cn(
+              "fixed inset-0 z-[100] flex h-[100dvh] flex-col overflow-y-auto overscroll-contain bg-ink text-background transition-opacity duration-300 lg:hidden",
+              open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+            )}
+          >
+            <div className="flex shrink-0 items-center justify-between border-b border-background/20 bg-ink px-6 py-4 sm:px-8">
+              <Logo light />
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                aria-label="Close menu"
+                className="flex size-11 items-center justify-center rounded-full border border-background/20 transition-colors hover:bg-white/10"
+              >
+                <X className="size-5" aria-hidden="true" />
+              </button>
+            </div>
+
+            <nav className="flex flex-1 flex-col px-6 py-4 sm:px-8" aria-label="Primary">
+              {siteConfig.nav.map((item, i) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className={cn(
+                    "flex min-h-16 shrink-0 items-center border-b border-background/15 py-4 font-display text-3xl leading-tight text-background transition-colors",
+                    pathname === item.href ? "text-accent" : "hover:text-accent"
+                  )}
+                  style={{ transitionDelay: `${i * 20}ms` }}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+
+            <div className="sticky bottom-0 flex shrink-0 flex-col border-t border-background/20 bg-ink px-6 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-5 sm:px-8">
+              <Link
+                href="/contact"
+                onClick={() => setOpen(false)}
+                className="flex w-full items-center justify-center rounded-xl bg-cta px-6 py-4 text-center font-medium text-cta-foreground transition-colors hover:bg-cta-hover"
+              >
+                Discuss Your Project
+              </Link>
+            </div>
+          </div>,
+          document.body
         )}
-      >
-        <div className="flex shrink-0 items-center justify-end border-b border-background/20 bg-ink px-6 py-4 sm:px-8">
-          <button
-            type="button"
-            onClick={() => setOpen(false)}
-            aria-label="Close menu"
-            className="flex size-10 items-center justify-center rounded-full transition-colors hover:bg-white/10"
-          >
-            <X className="size-5" aria-hidden="true" />
-          </button>
-        </div>
-
-        <nav className="flex shrink-0 flex-col px-6 py-4 sm:px-8" aria-label="Primary">
-          {siteConfig.nav.map((item, i) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "flex min-h-16 shrink-0 items-center border-b border-background/15 py-4 font-display text-3xl leading-tight text-background transition-colors",
-                pathname === item.href ? "text-accent" : "hover:text-accent"
-              )}
-              style={{ transitionDelay: `${i * 20}ms` }}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="flex shrink-0 flex-col gap-3 border-t border-background/20 bg-ink px-6 pb-[calc(2.5rem+env(safe-area-inset-bottom))] pt-5 sm:px-8">
-          <Link
-            href="/contact"
-            className="flex w-full items-center justify-center rounded-xl bg-cta px-6 py-4 text-center font-medium text-cta-foreground transition-colors hover:bg-cta-hover"
-          >
-            Discuss Your Project
-          </Link>
-        </div>
-      </div>
     </div>
   );
 }
