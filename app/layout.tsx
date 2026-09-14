@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import CookieNotice from "@/components/CookieNotice";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
@@ -113,6 +114,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <CookieNotice />
       </body>
     </html>
   );

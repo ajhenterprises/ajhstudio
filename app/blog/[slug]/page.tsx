@@ -119,6 +119,19 @@ export default async function BlogPostPage({
             <p className="mt-4 text-sm text-muted">By {post.author}</p>
           </header>
 
+          <aside className="mt-8 rounded-xl border border-accent/40 bg-accent/10 px-5 py-4 text-sm leading-relaxed text-text">
+            <strong>Affiliate disclosure:</strong> This post may contain affiliate links. If you
+            make a purchase through one, AJH Enterprises may earn a commission at no additional
+            cost to you.{" "}
+            <Link
+              href="/affiliate-disclosure"
+              className="font-semibold text-primary underline decoration-accent decoration-2 underline-offset-4"
+            >
+              Read the full Affiliate Disclosure
+            </Link>
+            .
+          </aside>
+
           <div className="relative mt-10 aspect-[16/9] overflow-hidden rounded-2xl border border-border">
             <Image
               src={post.image}
