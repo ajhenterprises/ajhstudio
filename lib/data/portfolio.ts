@@ -16,6 +16,17 @@ export type PortfolioProject = {
 // Add new projects here. Each project needs an image at /public/images/work/.
 export const portfolioProjects: PortfolioProject[] = [
   {
+    slug: "hall-bible-commentary",
+    name: "Hall Bible Commentary",
+    description:
+      "A growing Bible study and commentary platform with the World English Bible, verse-by-verse resources, articles, devotionals, sermons, topics, and search.",
+    category: "Publishing",
+    image: "/images/work/hall-bible-commentary.jpg",
+    url: "https://www.hallbiblecommentary.com/",
+    services: ["Website Design", "Development", "Content Architecture", "Search", "PWA"],
+    featured: true,
+  },
+  {
     slug: "jubilee-city-church",
     name: "Jubilee City Church",
     description:

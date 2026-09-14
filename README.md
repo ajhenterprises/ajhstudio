@@ -61,6 +61,7 @@ npm run typecheck  # TypeScript, no emit
 app/                     Routes (App Router)
   page.tsx                 Home
   services/page.tsx        Services (Communication, Websites & Technology)
+  pricing/page.tsx           Interactive pricing and project-request builder
   websites/page.tsx          Websites I've Built (portfolio)
   products/page.tsx           Products (The Ministry Study)
   about/page.tsx                About
@@ -71,6 +72,7 @@ app/                     Routes (App Router)
   contact/page.tsx                       Contact
   website-discovery/page.tsx              Website Questionnaire entry point
   api/contact/route.ts                      Contact form submit handler (Resend)
+  api/project-inquiry/route.ts                Project request email handler (Resend)
   sitemap.ts / robots.ts                    SEO metadata routes
 
 components/
@@ -159,6 +161,10 @@ Edit `lib/data/testimonials.ts` and add an entry to the `testimonials` array. **
 
 Edit `lib/data/services.ts`. Each service supports a short description (used in homepage cards), a longer description, "who it's for," and "what's included" bullet points.
 
+### Update pricing and project-builder services
+
+Edit `lib/data/pricing-services.ts`. This is the single source of truth for every service card on `/pricing`. Each item supports a category, display order, featured state, active/inactive state, one-time pricing, monthly pricing, custom pricing, descriptions, and a price note. The project summary and server-side email calculations both read this same catalog, so prices cannot drift between the page and inquiry email.
+
 ### Images
 
 Placeholder JPG graphics ship in `public/images/work/`, `public/images/blog/`, and `public/images/about/` so the design can be evaluated before real photography exists. Replace them with real photos or screenshots — keep the same file paths, or update the `image` field in the relevant data file / MDX frontmatter to point at your new file. Recommended: JPG/PNG/WebP, roughly 1200×900 for portfolio and blog images, 900×1100 for the About page photo.
@@ -176,13 +182,14 @@ The contact form is a real, working form — not a static mockup. Submissions ar
 | Variable | Description |
 | --- | --- |
 | `RESEND_API_KEY` | Your Resend API key. Create one at [resend.com/api-keys](https://resend.com/api-keys). |
-| `CONTACT_TO_EMAIL` | The inbox that should receive form submissions. |
 | `CONTACT_FROM_EMAIL` | The "from" address submissions are sent from. Must be on a domain you've verified in Resend. |
+
+Contact and project inquiries are delivered to `aaron@ajhenterprises.com`. The project-request route also sends the prospective client a branded confirmation receipt. Neither route exposes the Resend key to the browser.
 
 ### Configuring in Vercel
 
 1. In your Vercel project, go to **Settings → Environment Variables**.
-2. Add `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, and `CONTACT_FROM_EMAIL` (for Production, and Preview if you want previews to send real email).
+2. Add `RESEND_API_KEY` and `CONTACT_FROM_EMAIL` (for Production, and Preview if you want previews to send real email).
 3. In [Resend](https://resend.com/), verify the domain you intend to send from (e.g. `ajhenterprises.com`) and generate an API key.
 4. Redeploy so the new environment variables take effect.
 

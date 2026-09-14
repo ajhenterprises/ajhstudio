@@ -17,7 +17,7 @@ export const siteConfig = {
   // every CTA that starts the questionnaire (the /website-discovery page,
   // the header, footer, homepage, services, and websites pages) reads it
   // from here rather than hard-coding it.
-  questionnaireUrl: "https://ajh-business-hq.vercel.app/website-questionnaire",
+  questionnaireUrl: "https://crm.ajhenterprises.com/website-questionnaire",
   social: {
     instagram: "https://instagram.com/ajhenterprises",
     linkedin: "https://linkedin.com/company/ajhenterprises",
@@ -25,6 +25,7 @@ export const siteConfig = {
   nav: [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
+    { label: "Pricing", href: "/pricing" },
     { label: "Websites", href: "/websites" },
     { label: "Products", href: "/products" },
     { label: "Blog", href: "/blog" },

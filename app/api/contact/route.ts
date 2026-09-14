@@ -44,12 +44,12 @@ export async function POST(request: Request) {
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  const toEmail = process.env.CONTACT_TO_EMAIL;
+  const toEmail = "aaron@ajhenterprises.com";
   const fromEmail = process.env.CONTACT_FROM_EMAIL;
 
-  if (!apiKey || !toEmail || !fromEmail) {
+  if (!apiKey || !fromEmail) {
     console.error(
-      "Contact form is not fully configured. Missing RESEND_API_KEY, CONTACT_TO_EMAIL, or CONTACT_FROM_EMAIL."
+      "Contact form is not fully configured. Missing RESEND_API_KEY or CONTACT_FROM_EMAIL."
     );
     return NextResponse.json(
       { ok: false, error: "The contact form isn't configured yet. Please email me directly." },

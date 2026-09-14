@@ -90,9 +90,9 @@ export default function WebsitesPage() {
       <FinalCta
         eyebrow="Start Here"
         title="Want to talk about your website?"
-        description="Tell me a little about what you're building, what you need, and what you're hoping it accomplishes."
-        primaryLabel="Start the Website Questionnaire"
-        useQuestionnaire
+        description="See clear starting pricing, choose the services you need, and send your complete project request."
+        primaryLabel="Build Your Project"
+        primaryHref="/pricing#build-your-project"
         secondaryLabel="Send Me a Message"
         secondaryHref="/contact"
       />

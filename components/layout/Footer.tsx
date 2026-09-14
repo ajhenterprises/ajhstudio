@@ -12,6 +12,7 @@ const serviceLinks = [
 
 const companyLinks = [
   { label: "Services", href: "/services" },
+  { label: "Pricing", href: "/pricing" },
   { label: "Websites", href: "/websites" },
   { label: "Products", href: "/products" },
   { label: "Blog", href: "/blog" },
