@@ -9,7 +9,7 @@ import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = withBrandMetadata({
   title: "Website Pricing & Services",
-  description: "Start with a $599 website setup and $159/month website care plan, then build a project around the services your business or organization needs.",
+  description: "Start with a $499 website setup and $159/month website care plan, then build a project around the services your business or organization needs.",
   alternates: { canonical: "/pricing" },
   openGraph: {
     title: "Website Pricing & Services | AJH Digital",
@@ -19,7 +19,7 @@ export const metadata: Metadata = withBrandMetadata({
   twitter: {
     card: "summary_large_image",
     title: "Website Pricing & Services | AJH Digital",
-    description: "Start with a $599 website setup and $159/month website care plan, then build your project.",
+    description: "Start with a $499 website setup and $159/month website care plan, then build your project.",
   },
 });
 
@@ -43,9 +43,9 @@ const steps = [
 ];
 
 const faqs = [
-  ["What is included in the $599 setup fee?", "The standard setup covers strategy, content structure, custom design, responsive development, forms, foundational SEO setup, and launch support for a typical marketing or content-driven website. The final proposal confirms the exact page count and scope."],
+  ["What is included in the $499 setup fee?", "The standard setup covers strategy, content structure, custom design, responsive development, forms, foundational SEO setup, and launch support for a typical marketing or content-driven website. The final proposal confirms the exact page count and scope."],
   ["What does the $159/month cover?", "For websites hosted and managed by AJH Digital, it covers managed hosting, SSL, routine maintenance, website care, ongoing support, and unlimited routine content updates under a reasonable-use policy. This does not apply to websites that are built and handed off to a client or managed elsewhere. Update requests are evaluated case by case based on frequency, complexity, turnaround, and scope. Substantial redesigns, new functionality, large content additions, or unusually heavy request volume may require an additional charge, which will be discussed before the work begins."],
-  ["Can my price increase?", "Yes. $599 setup and $159/month are base starting prices, not guaranteed quotes. Pricing may change with or without notice and may increase when a project requires more pages, content, integrations, specialized functionality, or complexity. Your final scope and pricing will be confirmed in writing before work begins."],
+  ["Can my price increase?", "Yes. $499 setup and $159/month are base starting prices, not guaranteed quotes. Pricing may change with or without notice and may increase when a project requires more pages, content, integrations, specialized functionality, or complexity. Your final scope and pricing will be confirmed in writing before work begins."],
   ["Are there contracts?", "Every accepted project uses a written proposal and service agreement so scope, responsibilities, pricing, and ongoing service terms are clear before work begins."],
   ["Can you redesign an existing website?", "Yes. Select Website Redesign and share your current URL. I’ll review what should be kept, improved, rebuilt, or migrated."],
   ["Can you build custom functionality?", "Possibly. Database, e-commerce, CRM, API, and app-like projects are considered according to their scale, scope, and complexity. Share what you need so I can determine whether it is a good fit."],
@@ -65,7 +65,7 @@ const serviceJsonLd = {
   offers: {
     "@type": "Offer",
     priceSpecification: [
-      { "@type": "UnitPriceSpecification", price: "599", priceCurrency: "USD", name: "Website setup" },
+      { "@type": "UnitPriceSpecification", price: "499", priceCurrency: "USD", name: "Website setup" },
       { "@type": "UnitPriceSpecification", price: "159", priceCurrency: "USD", unitText: "MONTH", name: "Website care and hosting" },
     ],
   },
@@ -88,11 +88,11 @@ export default function PricingPage() {
           <div className="rounded-3xl border border-background/15 bg-background/[0.06] p-7 backdrop-blur-sm sm:p-9">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-background/60">Standard Website Package</p>
             <div className="mt-5 flex flex-wrap items-end gap-x-5 gap-y-2">
-              <div><span className="font-display text-5xl text-background sm:text-6xl">$599</span><span className="ml-2 text-background/65">setup</span></div>
+              <div><span className="font-display text-5xl text-background sm:text-6xl">$499</span><span className="ml-2 text-background/65">setup</span></div>
               <span className="pb-2 font-display text-3xl text-accent">+</span>
               <div><span className="font-display text-5xl text-background sm:text-6xl">$159</span><span className="ml-2 text-background/65">/month</span></div>
             </div>
-            <p className="mt-6 border-t border-background/15 pt-6 text-sm leading-relaxed text-background/70">$599 setup and $159/month are base starting prices and may change with or without notice. Final pricing may increase depending on scope, size, complexity, integrations, custom functionality, content requirements, or other project needs. Your final scope and pricing will be confirmed before work begins.</p>
+            <p className="mt-6 border-t border-background/15 pt-6 text-sm leading-relaxed text-background/70">$499 setup and $159/month are base starting prices and may change with or without notice. Final pricing may increase depending on scope, size, complexity, integrations, custom functionality, content requirements, or other project needs. Your final scope and pricing will be confirmed before work begins.</p>
           </div>
         </Container>
       </section>
@@ -130,7 +130,7 @@ export default function PricingPage() {
 
       <section className="border-y border-border bg-sand/50 py-16 sm:py-20">
         <Container className="grid gap-6 md:grid-cols-3">
-          <div className="rounded-2xl bg-surface p-6"><CircleDollarSign className="size-6 text-primary" /><h2 className="mt-5 font-display text-xl text-ink">Starting prices stay clear.</h2><p className="mt-2 text-sm leading-relaxed text-muted">$599 setup and $159/month are the base starting point. Prices may change with or without notice, and your final scope and price are confirmed before work begins.</p></div>
+          <div className="rounded-2xl bg-surface p-6"><CircleDollarSign className="size-6 text-primary" /><h2 className="mt-5 font-display text-xl text-ink">Starting prices stay clear.</h2><p className="mt-2 text-sm leading-relaxed text-muted">$499 setup and $159/month are the base starting point. Prices may change with or without notice, and your final scope and price are confirmed before work begins.</p></div>
           <div className="rounded-2xl bg-surface p-6"><SearchCheck className="size-6 text-primary" /><h2 className="mt-5 font-display text-xl text-ink">Custom work is reviewed honestly.</h2><p className="mt-2 text-sm leading-relaxed text-muted">Larger databases, e-commerce, APIs, and app-like features may be possible depending on scale and complexity.</p></div>
           <div className="rounded-2xl bg-surface p-6"><ShieldCheck className="size-6 text-primary" /><h2 className="mt-5 font-display text-xl text-ink">Third-party costs are separate.</h2><p className="mt-2 text-sm leading-relaxed text-muted">Domains, IDX/MLS, premium software, APIs, paid media, and outside platforms are included only when a proposal says so.</p></div>
         </Container>

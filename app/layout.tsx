@@ -57,8 +57,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [{ url: "/favicon.ico" }, { url: "/favicon.svg", type: "image/svg+xml" }],
-    apple: "/brand/icon-180.png",
+    icon: [{ url: "/favicon.ico?v=ajh-digital-20260914", sizes: "48x48" }, { url: "/favicon.svg?v=ajh-digital-20260914", type: "image/svg+xml" }],
+    apple: "/brand/icon-180.png?v=ajh-digital-20260914",
   },
 };
 

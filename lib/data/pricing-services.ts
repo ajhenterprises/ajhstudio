@@ -27,7 +27,7 @@ export const projectServices: ProjectService[] = [
     longDescription: "Includes strategy, content structure, design, development, forms, mobile optimization, and launch support for a standard website project.",
     category: "Websites",
     pricingType: "one-time",
-    oneTimePrice: 599,
+    oneTimePrice: 499,
     featured: true,
     active: true,
     displayOrder: 10,
