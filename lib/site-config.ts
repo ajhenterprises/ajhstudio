@@ -15,14 +15,7 @@ export const siteConfig = {
   // The CRM's branded custom domain. Keep this as the single source of truth
   // for the Internal Login link in the footer.
   crmUrl: "https://ajh-business-hq.vercel.app",
-  // The public Website Questionnaire — the first step for anyone exploring
-  // a website project. This is the ONLY place this URL should be defined;
-  // every CTA that starts the questionnaire (the /website-discovery page,
-  // the header, footer, homepage, services, and websites pages) reads it
-  // from here rather than hard-coding it.
-  // Keep the questionnaire on the verified Vercel URL until the CRM custom
-  // subdomain's DNS record is active, so public project links never break.
-  questionnaireUrl: "https://ajh-business-hq.vercel.app/website-questionnaire",
+  projectRequestUrl: "/pricing#build-your-project",
   social: {
     instagram: "https://instagram.com/ajhenterprises",
     linkedin: "https://linkedin.com/company/ajhenterprises",

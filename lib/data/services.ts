@@ -6,10 +6,7 @@ export type Service = {
   longDescription: string;
   whoItsFor: string[];
   included: string[];
-  // Either a normal internal href, or useQuestionnaire: true to point the
-  // CTA at siteConfig.questionnaireUrl (kept out of this file so the URL
-  // has one source of truth).
-  cta: { label: string; href?: string; useQuestionnaire?: boolean };
+  cta: { label: string; href?: string };
 };
 
 export const services: Service[] = [

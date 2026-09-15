@@ -1,10 +1,9 @@
 import { Check } from "lucide-react";
 import type { Service } from "@/lib/data/services";
 import Button from "@/components/ui/Button";
-import { siteConfig } from "@/lib/site-config";
 
 export default function ServiceCard({ service }: { service: Service }) {
-  const href = service.cta.useQuestionnaire ? siteConfig.questionnaireUrl : (service.cta.href ?? "/contact");
+  const href = service.cta.href ?? "/pricing#build-your-project";
 
   return (
     <div
@@ -29,7 +28,7 @@ export default function ServiceCard({ service }: { service: Service }) {
         </ul>
       </div>
       <div>
-        <Button href={href} variant="outline" external={service.cta.useQuestionnaire}>
+        <Button href={href} variant="outline">
           {service.cta.label}
         </Button>
       </div>
