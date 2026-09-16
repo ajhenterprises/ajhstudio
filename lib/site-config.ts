@@ -14,7 +14,7 @@ export const siteConfig = {
   email: "AJHDigitalLLC@gmail.com",
   // The CRM's branded custom domain. Keep this as the single source of truth
   // for the Internal Login link in the footer.
-  crmUrl: "https://ajh-business-hq.vercel.app",
+  crmUrl: "https://crm.ajhdigital.com",
   projectRequestUrl: "/pricing#build-your-project",
   social: {
     instagram: "https://instagram.com/ajhenterprises",
