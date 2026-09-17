@@ -157,7 +157,7 @@ export default function Footer() {
             <Link href="/affiliate-disclosure" className="transition-colors hover:text-background/80">
               Affiliate Disclosure
             </Link>
-            <a href={`${siteConfig.crmUrl}/portal`} className="transition-colors hover:text-background/80">Client Portal</a>
+            <a href="https://client.ajhdigital.com" className="transition-colors hover:text-background/80">Client Portal</a>
             <a
               href={siteConfig.crmUrl}
               target="_blank"
