@@ -140,6 +140,11 @@ export default function Footer() {
           </p>
         </div>
 
+        <div className="mt-8 border-t border-background/10 pt-8">
+          <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-background/60">Services Disclaimer</h3>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-background/70">If AJH Digital permanently ceases business, clients will be given access to their website source files and project assets through a private GitHub repository so they can download and retain a copy. Hosting, domains, and third-party services may require a separate transfer or setup. Please review this handoff policy before starting services.{" "}<Link href="/disclaimer#services-continuity" className="underline underline-offset-2 hover:text-accent">Read the Services Disclaimer</Link>.</p>
+        </div>
+
         <div className="mt-8 flex flex-col gap-4 border-t border-background/10 pt-8 text-xs text-background/50 sm:flex-row sm:items-center sm:justify-between">
           <p>
             &copy; {year} {siteConfig.name}. All rights reserved.
@@ -154,6 +159,7 @@ export default function Footer() {
             <Link href="/disclaimer" className="transition-colors hover:text-background/80">
               Disclaimer
             </Link>
+            <Link href="/disclaimer#services-continuity" className="transition-colors hover:text-background/80">Services Disclaimer</Link>
             <Link href="/affiliate-disclosure" className="transition-colors hover:text-background/80">
               Affiliate Disclosure
             </Link>
@@ -172,3 +178,4 @@ export default function Footer() {
     </footer>
   );
 }
+

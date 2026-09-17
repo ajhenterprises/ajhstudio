@@ -22,7 +22,14 @@ export default function DisclaimerPage() {
       <section className="py-16 sm:py-20">
         <div className="mx-auto w-full max-w-[760px] px-6 sm:px-8">
           <div className="prose-ajh">
-            <p><strong>Effective date:</strong> September 14, 2026</p>
+            <p><strong>Effective date:</strong> September 17, 2026</p>
+
+            <h2 id="services-continuity" className="scroll-mt-28">Services Disclaimer: website access if AJH Digital closes</h2>
+            <p>If AJH Digital permanently ceases business, we will provide each website client with access to a private GitHub repository containing their website source files and project assets held by AJH Digital, so the client can download and retain a copy for continued use or transfer to another provider.</p>
+            <p>Access is private to the client and authorized collaborators. A GitHub account may be needed. Once access is provided, the client can open the repository, select <strong>Code → Download ZIP</strong>, and save a copy. Downloading source files does not by itself keep a website online.</p>
+            <p>Hosting, domain registrations, email, databases, and third-party integrations may need separate exports, account transfers, subscriptions, or configuration. Third-party software and assets remain subject to their license terms. Passwords, private keys, and other clients’ information will not be included in a shared source-code archive.</p>
+            <p>Clients should keep their contact information current and retain their own downloaded backup. Please review this policy before beginning services and raise any questions during onboarding. Project-specific ownership and transfer terms remain governed by the written service agreement; this notice does not record or imply that an existing client has already accepted new terms.</p>
+            <p>See <a href="https://docs.github.com/en/repositories/working-with-files/using-files/downloading-source-code-archives" target="_blank" rel="noopener noreferrer">GitHub’s download instructions</a> for help saving the files.</p>
 
             <h2>General information</h2>
             <p>
@@ -90,3 +97,4 @@ export default function DisclaimerPage() {
     </>
   );
 }
+

@@ -1,115 +1,30 @@
 import { withBrandMetadata } from "@/lib/social";
 import type { Metadata } from "next";
-import { Check } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Check, Globe2, PenLine, Search, Compass } from "lucide-react";
 import PageHero from "@/components/sections/PageHero";
 import Container from "@/components/ui/Container";
-import SectionHeading from "@/components/ui/SectionHeading";
-import ServiceCard from "@/components/cards/ServiceCard";
 import FinalCta from "@/components/sections/FinalCta";
-import Reveal from "@/components/ui/Reveal";
 import { services } from "@/lib/data/services";
 
 export const metadata: Metadata = withBrandMetadata({
   title: "Services",
-  description:
-    "Communication, websites, and technology services that help businesses and organizations connect with the people they serve.",
+  description: "Websites, content, SEO, and digital guidance for a clearer, more useful online presence.",
   alternates: { canonical: "/services" },
-  openGraph: {
-    title: "Services | AJH Digital",
-    description:
-      "Communication, websites, and technology services that help businesses and organizations connect with the people they serve.",
-    url: "/services",
-  },
+  openGraph: {title:"Services | AJH Digital",description:"Websites, content, SEO, and personal digital guidance.",url:"/services"},
 });
-
-export default function ServicesPage() {
-  return (
-    <>
-      <PageHero
-        eyebrow="Services"
-        title="Clear communication. Websites that work."
-        description="AJH Digital combines thoughtful communication with practical websites and technology—so your message is clear and your next step is easier."
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
-      />
-
-      <section className="py-16 sm:py-20 lg:py-24">
-        <Container className="flex flex-col gap-8">
-          {services.map((service) => (
-            <ServiceCard key={service.slug} service={service} />
-          ))}
-        </Container>
-      </section>
-
-      {services.map((service) => (
-        <section key={`${service.slug}-detail`} className="border-t border-border py-16 sm:py-20">
-          <Container className="grid grid-cols-1 gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
-            <Reveal>
-              <SectionHeading eyebrow={service.tagline} title={service.name} description={service.longDescription} />
-            </Reveal>
-            <Reveal delay={100} className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-              <div>
-                <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-muted">
-                  Who it&apos;s for
-                </h3>
-                <ul className="mt-4 space-y-3">
-                  {service.whoItsFor.map((item) => (
-                    <li key={item} className="flex items-start gap-2.5 text-sm leading-relaxed text-text">
-                      <Check className="mt-0.5 size-4 shrink-0 text-secondary" aria-hidden="true" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-muted">
-                  What&apos;s included
-                </h3>
-                <ul className="mt-4 space-y-3">
-                  {service.included.map((item) => (
-                    <li key={item} className="flex items-start gap-2.5 text-sm leading-relaxed text-text">
-                      <Check className="mt-0.5 size-4 shrink-0 text-secondary" aria-hidden="true" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
-          </Container>
-        </section>
-      ))}
-
-      <section className="border-t border-border bg-surface-alt py-16 sm:py-20">
-        <Container className="grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-16">
-          <div className="flex flex-col gap-3">
-            <h2 className="text-balance font-display text-2xl text-ink">A proposal built around your project</h2>
-            <p className="text-muted">
-              Every project starts with a clear conversation about your goals, timeline, and
-              scope. You&apos;ll receive a straightforward proposal before work begins.
-            </p>
-          </div>
-          <div className="flex flex-col gap-3">
-            <h2 className="text-balance font-display text-2xl text-ink">
-              The kind of website projects I take on
-            </h2>
-            <p className="text-muted">
-              For websites specifically, I focus on marketing and content-driven sites — the
-              kind most businesses, entrepreneurs, nonprofits, churches, and organizations
-              need. Depending on the scale, scope, and complexity, I may also be able to take
-              on a more custom project, including work with databases, e-commerce, or
-              app-like features. Reach out with what you&apos;re envisioning so I can learn more
-              and determine whether it&apos;s a project I can build. If it falls outside my scope,
-              I&apos;ll gladly point you toward someone who specializes in that kind of work.
-            </p>
-          </div>
-        </Container>
-      </section>
-
-      <FinalCta
-        title="Ready to get started?"
-        description="Tell me what you're building and I'll follow up personally to discuss the next step."
-        primaryLabel="Discuss Your Project"
-        primaryHref="/contact"
-      />
-    </>
-  );
+const order=["websites-technology","communication","seo","digital-services"];
+const icons={"websites-technology":Globe2,communication:PenLine,seo:Search,"digital-services":Compass};
+export default function ServicesPage(){
+ return <>
+  <PageHero eyebrow="Built around your next step" title={<>A stronger website.<br/>A clearer message.</>} description="From your first website to the content and care that keep it growing, get practical support from one person who understands your project." breadcrumbs={[{label:"Home",href:"/"},{label:"Services"}]}/>
+  <section className="py-12 sm:py-16">
+   <Container>
+    <div className="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><p className="text-xs font-semibold uppercase tracking-[0.15em] text-secondary">How I can help</p><h2 className="mt-3 font-display text-3xl text-ink">Start where you need support.</h2></div><Link href="/pricing#build-your-project" className="inline-flex items-center gap-2 text-sm font-semibold text-primary">Explore pricing &amp; build your project <ArrowRight className="size-4"/></Link></div>
+    <div className="space-y-6">{order.map((slug,index)=>{const service=services.find(s=>s.slug===slug)!;const Icon=icons[service.slug];return <article id={service.slug} key={service.slug} className="scroll-mt-28 overflow-hidden rounded-3xl border border-border bg-surface shadow-sm"><div className="grid lg:grid-cols-[0.9fr_1.1fr]"><div className="bg-surface-alt p-7 sm:p-10"><div className="flex items-center justify-between"><span className="inline-flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary"><Icon className="size-6" aria-hidden="true"/></span><span className="font-display text-3xl text-ink/20">0{index+1}</span></div><h2 className="mt-6 font-display text-3xl text-ink sm:text-4xl">{service.name}</h2><p className="mt-3 font-medium text-ink">{service.tagline}</p><p className="mt-4 text-sm leading-7 text-muted">{service.longDescription}</p><Link href={service.cta.href??'/contact'} className="mt-6 inline-flex items-center gap-2 rounded-full bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground transition-colors hover:bg-cta-hover">{service.cta.label}<ArrowRight className="size-4" aria-hidden="true"/></Link></div><div className="p-7 sm:p-10"><h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-muted">Ways I can help</h3><ul className="mt-5 grid gap-3 sm:grid-cols-2">{service.included.map(item=><li key={item} className="flex items-start gap-2 text-sm leading-6"><Check className="mt-1 size-4 shrink-0 text-secondary" aria-hidden="true"/>{item}</li>)}</ul><details className="mt-7 border-t border-border pt-5"><summary className="cursor-pointer text-sm font-semibold text-ink">Is this a fit for you?</summary><ul className="mt-4 space-y-3 text-sm leading-6 text-muted">{service.whoItsFor.map(item=><li key={item}>{item}</li>)}</ul></details></div></div></article>;})}</div>
+   </Container>
+  </section>
+  <section className="border-y border-border bg-surface-alt py-14 sm:py-20"><Container><div className="max-w-2xl"><p className="text-xs font-semibold uppercase tracking-[0.15em] text-secondary">Simple from the start</p><h2 className="mt-3 font-display text-3xl text-ink">Clear scope. Personal support.</h2><p className="mt-4 leading-relaxed text-muted">Choose one service or combine what you need. Every project starts with a conversation and a written proposal, so you know what is included before work begins.</p></div><ol className="mt-9 grid gap-6 sm:grid-cols-3">{[['01','Tell me your goals','Share what you’re building, who it serves, and what needs to improve.'],['02','Choose a clear plan','Review the scope, price, and next steps in your proposal.'],['03','Build with confidence','Follow your project, share feedback, and get support along the way.']].map(([number,title,copy])=><li key={number} className="border-t border-border pt-5"><span className="text-sm font-semibold text-secondary">{number}</span><h3 className="mt-3 font-semibold text-ink">{title}</h3><p className="mt-2 text-sm leading-6 text-muted">{copy}</p></li>)}</ol><p className="mt-8 max-w-3xl text-sm leading-6 text-muted">My focus is marketing and content-driven websites. Databases, e-commerce, and custom integrations are considered based on scope and complexity. If your project needs a different specialist, I’ll help point you in the right direction.</p></Container></section>
+  <FinalCta title="Let’s find your next step." description="Tell me what you have in mind. I’ll follow up personally with a practical path forward." primaryLabel="Discuss Your Project" primaryHref="/contact"/>
+ </>;
 }
