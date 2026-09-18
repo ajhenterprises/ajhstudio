@@ -1,3 +1,4 @@
+import {normalizeWebsiteScope} from "@/lib/website-pricing";
 import { saveProjectInquiry, readStoredInquiry } from "@/lib/crm-intake";
 import { siteConfig } from "@/lib/site-config";
 import { NextResponse } from "next/server";
@@ -39,6 +40,7 @@ export async function POST(request: Request) {
       ? body.selectedServiceIds.map(text).slice(0, 30)
       : [],
     company: text(body.company),
+    websiteScope:normalizeWebsiteScope(body.websiteScope),
   };
 
   // Honeypot: silently accept automated submissions without sending email.
@@ -49,7 +51,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, errors }, { status: 422 });
   }
 
-  const estimate = calculateProjectEstimate(data.selectedServiceIds);
+  const estimate = calculateProjectEstimate(data.selectedServiceIds,data.websiteScope);
   if (estimate.services.length !== new Set(data.selectedServiceIds).size) {
     return NextResponse.json({ ok: false, error: "One or more selected services are unavailable." }, { status: 422 });
   }

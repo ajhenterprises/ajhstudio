@@ -27,7 +27,7 @@ export const projectServices: ProjectService[] = [
     longDescription: "Includes strategy, content structure, design, development, forms, mobile optimization, and launch support for a standard website project.",
     category: "Websites",
     pricingType: "one-time",
-    oneTimePrice: 499,
+    oneTimePrice: 999,
     featured: true,
     active: true,
     displayOrder: 10,
@@ -36,10 +36,10 @@ export const projectServices: ProjectService[] = [
   {
     id: "website-hosting-care",
     name: "Website Hosting & Care",
-    shortDescription: "Managed hosting, SSL, routine maintenance, support, and unlimited routine updates for websites managed by AJH Digital, subject to reasonable use.",
+    shortDescription: "Managed hosting, SSL, routine maintenance, support, and reasonable routine content updates under the applicable plan for websites managed by AJH Digital, subject to reasonable use.",
     category: "Websites",
     pricingType: "monthly",
-    monthlyPrice: 159,
+    monthlyPrice: 199,
     featured: true,
     active: true,
     displayOrder: 20,
@@ -151,8 +151,9 @@ export const projectServices: ProjectService[] = [
     name: "Content-Level SEO",
     shortDescription: "Search-aware page structure, headings, metadata, and content foundations without gimmicks.",
     category: "Content & Marketing",
-    pricingType: "custom",
-    customPricing: true,
+    pricingType: "monthly",
+    monthlyPrice: 249,
+    priceNote: "Separate SEO service; added only after scope review",
     active: true,
     displayOrder: 130,
     icon: "search",
@@ -254,3 +255,4 @@ export const activeProjectServices = projectServices
   .sort((a, b) => a.displayOrder - b.displayOrder);
 
 export const serviceCategories = ["Websites", "Content & Marketing", "Additional Services"] as const;
+

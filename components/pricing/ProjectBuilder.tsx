@@ -1,3 +1,5 @@
+import WebsiteScopeFields from "./WebsiteScopeFields";
+import {blankWebsiteScope,normalizeWebsiteScope,type WebsiteScope} from "@/lib/website-pricing";
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -28,6 +30,7 @@ const initialForm: ProjectInquiryData = {
   notes: "",
   selectedServiceIds: initialSelection,
   company: "",
+  websiteScope:blankWebsiteScope,
 };
 
 function money(value: number) {
@@ -65,7 +68,7 @@ export default function ProjectBuilder({ services }: { services: ProjectService[
     track("pricing_page_viewed");
   }, []);
 
-  const estimate = useMemo(() => calculateProjectEstimate(selectedIds), [selectedIds]);
+  const estimate = useMemo(() => calculateProjectEstimate(selectedIds,form.websiteScope), [selectedIds,form.websiteScope]);
 
   function toggleService(service: ProjectService) {
     setSelectedIds((current) => {
@@ -140,7 +143,7 @@ export default function ProjectBuilder({ services }: { services: ProjectService[
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-secondary">Build Your Project</p>
           <h2 className="mt-3 text-balance font-display text-3xl text-ink sm:text-4xl lg:text-5xl">Choose what your project needs.</h2>
           <p className="mt-5 text-lg leading-relaxed text-muted">
-            Start with the standard website package, add anything else you want to discuss, and send the complete project summary in one inquiry. Nothing here is a checkout or payment.
+            Start with the services you need, add anything else you want to discuss, and send the complete project summary in one inquiry. Nothing here is a checkout or payment.
           </p>
         </div>
 
@@ -167,7 +170,7 @@ export default function ProjectBuilder({ services }: { services: ProjectService[
           </div>
 
           <aside className="sticky top-28 hidden lg:block">
-            <ProjectSummary selectedIds={selectedIds} onRemove={(service) => toggleService(service)} onContinue={beginInquiry} />
+            <ProjectSummary scope={form.websiteScope} selectedIds={selectedIds} onRemove={(service) => toggleService(service)} onContinue={beginInquiry} />
           </aside>
         </div>
 
@@ -187,11 +190,12 @@ export default function ProjectBuilder({ services }: { services: ProjectService[
                   <Field label="Business / organization" required value={form.organization} error={errors.organization} autoComplete="organization" onChange={(value) => update("organization", value)} />
                   <Field label="Email" required type="email" value={form.email} error={errors.email} autoComplete="email" onChange={(value) => update("email", value)} />
                   <Field label="Phone number" type="tel" value={form.phone} autoComplete="tel" onChange={(value) => update("phone", value)} />
-                  <Field label="Existing website URL" type="url" value={form.website} placeholder="https://" autoComplete="url" onChange={(value) => update("website", value)} />
+                  {(!estimate.website||form.websiteScope?.buildType==="Redesign existing website"||form.websiteScope?.features.includes("migration"))&&<Field label="Existing website URL" type="url" value={form.website} placeholder="https://" autoComplete="url" onChange={(value) => update("website", value)} />}
                   <SelectField label="Type of business / organization" required value={form.organizationType} error={errors.organizationType} onChange={(value) => update("organizationType", value)} options={["Business", "Entrepreneur / personal brand", "Nonprofit", "Church / ministry", "Real estate agent / team", "Brokerage", "Community organization", "Other"]} />
                   <SelectField label="Desired launch timeframe" required value={form.timeframe} error={errors.timeframe} onChange={(value) => update("timeframe", value)} options={["As soon as practical", "Within 1 month", "1–3 months", "3–6 months", "More than 6 months", "I’m flexible / not sure"]} />
                   <SelectField label="Budget range (optional)" value={form.budget} onChange={(value) => update("budget", value)} options={["Under $1,000", "$1,000–$2,500", "$2,500–$5,000", "$5,000–$10,000", "$10,000+", "I’m not sure yet"]} />
                 </div>
+                {estimate.website&&<WebsiteScopeFields value={normalizeWebsiteScope(form.websiteScope)} onChange={value=>update("websiteScope",value)}/>}
                 <TextArea label="Project description" required value={form.projectDescription} error={errors.projectDescription} placeholder="What are you building, who is it for, and what do you want it to accomplish?" onChange={(value) => update("projectDescription", value)} />
                 <TextArea label="Additional notes" value={form.notes} placeholder="Share any helpful details, integrations, content needs, or questions." onChange={(value) => update("notes", value)} />
                 {errors.selectedServiceIds && <p className="mt-5 text-sm text-red-700">{errors.selectedServiceIds}</p>}
@@ -208,7 +212,7 @@ export default function ProjectBuilder({ services }: { services: ProjectService[
                 <p className="mt-4 text-xs leading-relaxed text-muted">Submitting this request does not obligate you to hire AJH Digital and does not guarantee final pricing.</p>
               </form>
               <div className="lg:sticky lg:top-28">
-                <ProjectSummary selectedIds={selectedIds} onRemove={(service) => toggleService(service)} compact />
+                <ProjectSummary scope={form.websiteScope} selectedIds={selectedIds} onRemove={(service) => toggleService(service)} compact />
               </div>
             </div>
           </div>
@@ -217,22 +221,22 @@ export default function ProjectBuilder({ services }: { services: ProjectService[
 
       <button type="button" onClick={() => { setMobileSummaryOpen(true); track("project_summary_opened", { selected_services: selectedIds.length }); }} className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] left-1/2 z-40 flex -translate-x-1/2 items-center gap-3 rounded-full bg-ink px-6 py-3.5 font-semibold text-background shadow-2xl lg:hidden">
         View Project ({selectedIds.length})
-        <span className="text-accent">{money(estimate.oneTimeTotal)} + {money(estimate.monthlyTotal)}/mo</span>
+        <span className="text-accent">{estimate.website?"Scope-based estimate":`${money(estimate.oneTimeTotal)} + ${money(estimate.monthlyTotal)}/mo`}</span>
       </button>
 
       <div role="dialog" aria-modal="true" aria-label="Your project summary" className={cn("fixed inset-0 z-[80] lg:hidden", mobileSummaryOpen ? "pointer-events-auto" : "pointer-events-none")}>
         <button type="button" aria-label="Close project summary" onClick={() => setMobileSummaryOpen(false)} className={cn("absolute inset-0 bg-ink/55 transition-opacity", mobileSummaryOpen ? "opacity-100" : "opacity-0")} />
         <div className={cn("absolute inset-x-0 bottom-0 max-h-[85vh] overflow-y-auto rounded-t-3xl bg-background p-6 pb-[calc(1.5rem+env(safe-area-inset-bottom))] shadow-2xl transition-transform", mobileSummaryOpen ? "translate-y-0" : "translate-y-full")}>
           <button type="button" onClick={() => setMobileSummaryOpen(false)} aria-label="Close summary" className="absolute right-5 top-5 flex size-10 items-center justify-center rounded-full bg-surface-alt text-ink"><X className="size-5" /></button>
-          <ProjectSummary selectedIds={selectedIds} onRemove={(service) => toggleService(service)} onContinue={beginInquiry} />
+          <ProjectSummary scope={form.websiteScope} selectedIds={selectedIds} onRemove={(service) => toggleService(service)} onContinue={beginInquiry} />
         </div>
       </div>
     </section>
   );
 }
 
-function ProjectSummary({ selectedIds, onRemove, onContinue, compact = false }: { selectedIds: string[]; onRemove: (service: ProjectService) => void; onContinue?: () => void; compact?: boolean }) {
-  const estimate = calculateProjectEstimate(selectedIds);
+function ProjectSummary({ scope, selectedIds, onRemove, onContinue, compact = false }: { scope?:WebsiteScope; selectedIds: string[]; onRemove: (service: ProjectService) => void; onContinue?: () => void; compact?: boolean }) {
+  const estimate = calculateProjectEstimate(selectedIds,scope);
   return (
     <div className={cn("rounded-2xl border border-border bg-background p-6 shadow-card", compact && "shadow-none")}>
       <p className="text-xs font-bold uppercase tracking-[0.18em] text-secondary">Your Project</p>
@@ -251,9 +255,11 @@ function ProjectSummary({ selectedIds, onRemove, onContinue, compact = false }: 
           ))}
         </ul>
       )}
+      {estimate.website&&<p className="mt-4 text-sm font-semibold">{estimate.website.level.name} · indicative only</p>}
+      {selectedIds.includes("content-seo")&&estimate.website&&<p className="mt-3 text-sm">Separate content-level SEO: $249/month, subject to review.</p>}
       <dl className="mt-6 space-y-3 border-t border-border pt-5">
-        <div className="flex items-baseline justify-between gap-4"><dt className="text-sm text-muted">One-time estimate</dt><dd className="font-display text-xl text-ink">{money(estimate.oneTimeTotal)}</dd></div>
-        <div className="flex items-baseline justify-between gap-4"><dt className="text-sm text-muted">Monthly estimate</dt><dd className="font-display text-xl text-ink">{money(estimate.monthlyTotal)}/mo</dd></div>
+        <div className="flex items-baseline justify-between gap-4"><dt className="text-sm text-muted">Setup starting range</dt><dd className="font-display text-xl text-ink">{estimate.website?.level.setup??money(estimate.oneTimeTotal)}</dd></div>
+        <div className="flex items-baseline justify-between gap-4"><dt className="text-sm text-muted">Website management</dt><dd className="font-display text-xl text-ink">{estimate.website?estimate.website.level.monthly:money(estimate.monthlyTotal)}{estimate.website?.level.id!=="complex"?"/mo":""}</dd></div>
         {estimate.customServices.length > 0 && <div className="flex items-start justify-between gap-4"><dt className="text-sm text-muted">Custom-price services</dt><dd className="text-right text-sm font-semibold text-ink">{estimate.customServices.length} selected</dd></div>}
       </dl>
       <p className="mt-5 text-xs leading-relaxed text-muted">This is a starting estimate, not a guaranteed final price. Scope, custom work, and third-party costs are confirmed before work begins.</p>

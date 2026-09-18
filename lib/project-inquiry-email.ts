@@ -59,7 +59,7 @@ export async function deliverInquiryNotification(inquiry: StoredInquiry): Promis
         <img src="${siteConfig.url}${siteConfig.logo.email}" alt="${siteConfig.name}" width="280" style="max-width:100%;height:auto"/><p style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:${brand.interactive};margin:0;">AJH Digital</p>
         <h1 style="font-family:Inter,Arial,sans-serif;color:${brand.navy};margin:8px 0 2px;">New project request</h1>
         <p style="color:${brand.gray};margin:0 0 24px;">Submitted ${escapeHtml(submittedAt)} CT</p>
-        <p><a href="${siteConfig.crmUrl}/inquiries#${receipt.id}">View request in AJH Digital CRM</a></p><h2 style="font-family:Inter,Arial,sans-serif;color:${brand.navy};">Contact</h2>
+        <p><a href="${siteConfig.crmUrl}/inquiries/${receipt.id}">View request in AJH Digital CRM</a></p><h2 style="font-family:Inter,Arial,sans-serif;color:${brand.navy};">Contact</h2>
         <p><strong>Name:</strong> ${escapeHtml(`${data.firstName} ${data.lastName}`)}<br>
         <strong>Business / organization:</strong> ${escapeHtml(data.organization)}<br>
         <strong>Type:</strong> ${escapeHtml(data.organizationType)}<br>
@@ -69,10 +69,11 @@ export async function deliverInquiryNotification(inquiry: StoredInquiry): Promis
         <h2 style="font-family:Inter,Arial,sans-serif;color:${brand.navy};">Selected services</h2>
         <table cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;">${serviceRows}</table>
         <div style="margin:20px 0;padding:18px;background:${brand.surfaceAlt};border-radius:10px;">
-          <strong>One-time estimate:</strong> ${price(estimate.oneTimeTotal)}<br>
-          <strong>Monthly estimate:</strong> ${price(estimate.monthlyTotal)}/month<br>
+          <strong>Setup starting range:</strong> ${data.websitePricing?escapeHtml(data.websitePricing.level.setup):price(estimate.oneTimeTotal)}<br>
+          <strong>Monthly starting range:</strong> ${data.websitePricing?escapeHtml(data.websitePricing.level.monthly):price(estimate.monthlyTotal)}<br>
           <strong>Custom-price services:</strong> ${escapeHtml(customNames)}
         </div>
+        ${data.websitePricing?`<h2>Website scope — not a final quote</h2><p>Client-selected category: ${escapeHtml(data.websitePricing.clientCategory)}<br>Suggested category: ${escapeHtml(data.websitePricing.suggestion.category)}<br>Setup range: ${escapeHtml(data.websitePricing.level.setup)}<br>Monthly management range: ${escapeHtml(data.websitePricing.level.monthly)}</p><p>${escapeHtml(JSON.stringify(data.websiteScope))}</p>`:''}
         <h2 style="font-family:Inter,Arial,sans-serif;color:${brand.navy};">Project details</h2>
         <p><strong>Desired timeframe:</strong> ${escapeHtml(data.timeframe)}<br><strong>Budget:</strong> ${escapeHtml(data.budget || "Not provided")}</p>
         <p><strong>Description</strong><br>${escapeHtml(data.projectDescription).replace(/\n/g, "<br>")}</p>

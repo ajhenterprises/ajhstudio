@@ -69,8 +69,8 @@ export default function ServiceOptionCard({
 }) {
   const Icon = icons[service.icon] ?? Globe2;
   const prices = [
-    service.oneTimePrice != null ? `${formatPrice(service.oneTimePrice)} one-time` : null,
-    service.monthlyPrice != null ? `${formatPrice(service.monthlyPrice)}/month` : null,
+    service.oneTimePrice != null ? `Starting at ${formatPrice(service.oneTimePrice)}+ one-time` : null,
+    service.monthlyPrice != null ? `${service.category === "Websites" ? "Starting at " : ""}${formatPrice(service.monthlyPrice)}${service.category === "Websites" ? "+" : ""}/month` : null,
   ].filter(Boolean);
 
   return (

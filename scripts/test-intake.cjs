@@ -89,3 +89,19 @@ test('customer email failure does not undo successful owner notification; retry 
   assert.equal(await api.deliverInquiryNotification({...inquiry, notification_status:'sent'}), true);
   assert.equal(messages.length, before);
 });
+test('website categories remain advisory and SEO stays separate', () => {
+ const pricing=load('lib/website-pricing.ts');
+ const scope=features=>pricing.normalizeWebsiteScope({features,category:'unsure'});
+ assert.equal(pricing.suggestWebsiteCategory(scope([])).category,'standard');
+ assert.equal(pricing.suggestWebsiteCategory(scope(['idx'])).category,'integration');
+ assert.equal(pricing.suggestWebsiteCategory(scope(['portal','accounts','database'])).category,'complex');
+ assert.equal(pricing.suggestWebsiteCategory(scope(['portal'])).category,'larger');
+ assert.equal(pricing.suggestWebsiteCategory(scope(['blog'])).category,'larger');
+ assert.equal(pricing.normalizeWebsiteScope({category:'hacked',features:['idx','unknown']}).category,'unsure');
+ const inquiry=load('lib/project-inquiry.ts');
+ const estimate=inquiry.calculateProjectEstimate(['website-design-development','website-hosting-care'],scope([]));
+ assert.equal(estimate.oneTimeTotal,999);assert.equal(estimate.monthlyTotal,199);
+ const seo=inquiry.calculateProjectEstimate(['website-design-development','website-hosting-care','content-seo'],scope([]));
+ assert.equal(seo.monthlyTotal,448);
+ assert.equal(estimate.website.level.monthly,'$199+');
+});

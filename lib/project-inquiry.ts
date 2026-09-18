@@ -1,3 +1,4 @@
+import {normalizeWebsiteScope,websitePricing,type WebsiteScope} from "./website-pricing";
 import { activeProjectServices } from "@/lib/data/pricing-services";
 
 export type ProjectInquiryData = {
@@ -14,6 +15,8 @@ export type ProjectInquiryData = {
   notes: string;
   selectedServiceIds: string[];
   company: string;
+  websiteScope?: WebsiteScope;
+  websitePricing?: ReturnType<typeof websitePricing> & {version:string;clientCategory:string};
 };
 
 export type ProjectInquiryErrors = Partial<Record<keyof ProjectInquiryData, string>>;
@@ -35,12 +38,14 @@ export function getSelectedServices(ids: string[]) {
   return activeProjectServices.filter((service) => uniqueIds.has(service.id));
 }
 
-export function calculateProjectEstimate(ids: string[]) {
+export function calculateProjectEstimate(ids: string[], scope?: WebsiteScope) {
   const services = getSelectedServices(ids);
+  const website=services.some(s=>s.category==="Websites")?websitePricing(normalizeWebsiteScope(scope)):null;
   return {
+    website,
     services,
-    oneTimeTotal: services.reduce((total, service) => total + (service.oneTimePrice ?? 0), 0),
-    monthlyTotal: services.reduce((total, service) => total + (service.monthlyPrice ?? 0), 0),
+    oneTimeTotal: website ? website.level.setupMin : services.reduce((total, service) => total + (service.oneTimePrice ?? 0), 0),
+    monthlyTotal: website ? website.level.monthlyMin + services.filter(s=>s.category!=="Websites").reduce((total,s)=>total+(s.monthlyPrice??0),0) : services.reduce((total, service) => total + (service.monthlyPrice ?? 0), 0),
     customServices: services.filter((service) => service.customPricing),
   };
 }
