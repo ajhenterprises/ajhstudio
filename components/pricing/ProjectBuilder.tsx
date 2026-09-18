@@ -1,6 +1,6 @@
+"use client";
 import WebsiteScopeFields from "./WebsiteScopeFields";
 import {blankWebsiteScope,normalizeWebsiteScope,type WebsiteScope} from "@/lib/website-pricing";
-"use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AlertCircle, ArrowRight, CheckCircle2, Loader2, Minus, X } from "lucide-react";
