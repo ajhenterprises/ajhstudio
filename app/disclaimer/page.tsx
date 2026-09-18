@@ -1,3 +1,4 @@
+import SeoDisclaimer from "@/components/SeoDisclaimer";
 import { withBrandMetadata } from "@/lib/social";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -22,7 +23,7 @@ export default function DisclaimerPage() {
       <section className="py-16 sm:py-20">
         <div className="mx-auto w-full max-w-[760px] px-6 sm:px-8">
           <div className="prose-ajh">
-            <p><strong>Effective date:</strong> September 17, 2026</p>
+            <p><strong>Effective date:</strong> September 18, 2026</p>
 
             <h2 id="services-continuity" className="scroll-mt-28">Services Disclaimer: website access if AJH Digital closes</h2>
             <p>If AJH Digital permanently ceases business, we will provide each website client with access to a private GitHub repository containing their website source files and project assets held by AJH Digital, so the client can download and retain a copy for continued use or transfer to another provider.</p>
@@ -31,7 +32,7 @@ export default function DisclaimerPage() {
             <p>Clients should keep their contact information current and retain their own downloaded backup. Please review this policy before beginning services and raise any questions during onboarding. Project-specific ownership and transfer terms remain governed by the written service agreement; this notice does not record or imply that an existing client has already accepted new terms.</p>
             <p>See <a href="https://docs.github.com/en/repositories/working-with-files/using-files/downloading-source-code-archives" target="_blank" rel="noopener noreferrer">GitHub’s download instructions</a> for help saving the files.</p>
 
-            <h2>General information</h2>
+            <h2 id="seo-results" className="scroll-mt-28">SEO results and timing</h2><SeoDisclaimer/><h2>General information</h2>
             <p>
               Content published by {siteConfig.legalName} is provided for general informational
               and educational purposes. Although we aim to be clear and accurate, information may

@@ -1,3 +1,4 @@
+import SeoDisclaimer from "@/components/SeoDisclaimer";
 import InstallApp from "@/components/InstallApp";
 import Link from "next/link";
 import { Mail } from "lucide-react";
@@ -141,7 +142,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 border-t border-background/10 pt-8">
-          <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-background/60">Services Disclaimer</h3>
+          <SeoDisclaimer className="mb-6 max-w-3xl text-sm leading-relaxed text-background/70"/><h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-background/60">Services Disclaimer</h3>
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-background/70">If AJH Digital permanently ceases business, clients will be given access to their website source files and project assets through a private GitHub repository so they can download and retain a copy. Hosting, domains, and third-party services may require a separate transfer or setup. Please review this handoff policy before starting services.{" "}<Link href="/disclaimer#services-continuity" className="underline underline-offset-2 hover:text-accent">Read the Services Disclaimer</Link>.</p>
         </div>
 

@@ -1,4 +1,6 @@
 "use client";
+import SeoDisclaimer from "@/components/SeoDisclaimer";
+
 
 import {
   BarChart3,
@@ -82,6 +84,7 @@ export default function ServiceOptionCard({
           : "border-border hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-card"
       )}
     >
+      {service.id==='content-seo'&&<SeoDisclaimer/>}
       {service.featured && (
         <span className="absolute right-5 top-5 rounded-full bg-sand px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-ink">
           Standard package
