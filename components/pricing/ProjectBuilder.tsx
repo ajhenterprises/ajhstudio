@@ -171,7 +171,7 @@ export default function ProjectBuilder({ services }: { services: ProjectService[
           </div>
 
           <aside className="sticky top-28 hidden lg:block">
-            <ProjectSummary billingTerm={form.billingTerm} scope={form.websiteScope} selectedIds={selectedIds} onRemove={(service) => toggleService(service)} onContinue={beginInquiry} />
+            <ProjectSummary onBillingChange={value=>update("billingTerm",value)} billingTerm={form.billingTerm} scope={form.websiteScope} selectedIds={selectedIds} onRemove={(service) => toggleService(service)} onContinue={beginInquiry} />
           </aside>
         </div>
 
@@ -214,7 +214,7 @@ export default function ProjectBuilder({ services }: { services: ProjectService[
                 <p className="mt-4 text-xs leading-relaxed text-muted">Submitting this request does not obligate you to hire AJH Digital and does not guarantee final pricing.</p>
               </form>
               <div className="lg:sticky lg:top-28">
-                <ProjectSummary billingTerm={form.billingTerm} scope={form.websiteScope} selectedIds={selectedIds} onRemove={(service) => toggleService(service)} compact />
+                <ProjectSummary onBillingChange={value=>update("billingTerm",value)} billingTerm={form.billingTerm} scope={form.websiteScope} selectedIds={selectedIds} onRemove={(service) => toggleService(service)} compact />
               </div>
             </div>
           </div>
@@ -230,14 +230,14 @@ export default function ProjectBuilder({ services }: { services: ProjectService[
         <button type="button" aria-label="Close project summary" onClick={() => setMobileSummaryOpen(false)} className={cn("absolute inset-0 bg-ink/55 transition-opacity", mobileSummaryOpen ? "opacity-100" : "opacity-0")} />
         <div className={cn("absolute inset-x-0 bottom-0 max-h-[85vh] overflow-y-auto rounded-t-3xl bg-background p-6 pb-[calc(1.5rem+env(safe-area-inset-bottom))] shadow-2xl transition-transform", mobileSummaryOpen ? "translate-y-0" : "translate-y-full")}>
           <button type="button" onClick={() => setMobileSummaryOpen(false)} aria-label="Close summary" className="absolute right-5 top-5 flex size-10 items-center justify-center rounded-full bg-surface-alt text-ink"><X className="size-5" /></button>
-          <ProjectSummary billingTerm={form.billingTerm} scope={form.websiteScope} selectedIds={selectedIds} onRemove={(service) => toggleService(service)} onContinue={beginInquiry} />
+          <ProjectSummary onBillingChange={value=>update("billingTerm",value)} billingTerm={form.billingTerm} scope={form.websiteScope} selectedIds={selectedIds} onRemove={(service) => toggleService(service)} onContinue={beginInquiry} />
         </div>
       </div>
     </section>
   );
 }
 
-function ProjectSummary({ billingTerm, scope, selectedIds, onRemove, onContinue, compact = false }: { billingTerm?:"monthly"|"annual"; scope?:WebsiteScope; selectedIds: string[]; onRemove: (service: ProjectService) => void; onContinue?: () => void; compact?: boolean }) {
+function ProjectSummary({ onBillingChange, billingTerm, scope, selectedIds, onRemove, onContinue, compact = false }: { onBillingChange:(value:"monthly"|"annual")=>void; billingTerm?:"monthly"|"annual"; scope?:WebsiteScope; selectedIds: string[]; onRemove: (service: ProjectService) => void; onContinue?: () => void; compact?: boolean }) {
   const estimate = calculateProjectEstimate(selectedIds,scope);
   return (
     <div className={cn("rounded-2xl border border-border bg-background p-6 shadow-card", compact && "shadow-none")}>
@@ -259,9 +259,11 @@ function ProjectSummary({ billingTerm, scope, selectedIds, onRemove, onContinue,
       )}
       {estimate.website&&<p className="mt-4 text-sm font-semibold">{estimate.website.level.name} · indicative only</p>}
       {selectedIds.includes("content-seo")&&estimate.website&&<p className="mt-3 text-sm">Separate content-level SEO: $249/month, subject to review.</p>}
+      <label className="mt-5 block text-sm font-semibold">Payment schedule<select value={billingTerm??"monthly"} onChange={e=>onBillingChange(e.target.value==="annual"?"annual":"monthly")} className="mt-2 w-full rounded-lg border border-border bg-surface p-3"><option value="monthly">Monthly</option><option value="annual">Yearly upfront — save 15%</option></select></label>
       <dl className="mt-6 space-y-3 border-t border-border pt-5">
         <div className="flex items-baseline justify-between gap-4"><dt className="text-sm text-muted">Setup starting range</dt><dd className="font-display text-xl text-ink">{estimate.website?.level.setup??money(estimate.oneTimeTotal)}</dd></div>
         <div className="flex items-baseline justify-between gap-4"><dt className="text-sm text-muted">Website management</dt><dd className="font-display text-xl text-ink">{estimate.website?estimate.website.level.monthly:money(estimate.monthlyTotal)}{estimate.website?.level.id!=="complex"?"/mo":""}</dd></div>
+        <div className="flex items-baseline justify-between gap-4"><dt className="text-sm text-muted">{billingTerm==="annual"?"Selected plans / year":"Selected plans / month"}</dt><dd className="font-display text-xl text-ink">{estimate.monthlyTotal===0&&estimate.customServices.length?"Quote required":`${money(billingTerm==="annual"?annualPlan(estimate.monthlyTotal).total:estimate.monthlyTotal)}${estimate.website?"+":""}`}</dd></div>
         {estimate.customServices.length > 0 && <div className="flex items-start justify-between gap-4"><dt className="text-sm text-muted">Custom-price services</dt><dd className="text-right text-sm font-semibold text-ink">{estimate.customServices.length} selected</dd></div>}
       </dl>
       <p className="mt-4 rounded-lg bg-surface-alt p-3 text-sm">{billingTerm==="annual"?"Yearly upfront selected":"Yearly upfront option"}: {estimate.monthlyTotal>0?`${money(annualPlan(estimate.monthlyTotal).total)}/year starting estimate for selected monthly services; save ${money(annualPlan(estimate.monthlyTotal).savings)} per year.`:"Save 15% on your quoted monthly plans."} Setup and third-party fees are separate and not discounted. Custom services are quoted separately.</p>
