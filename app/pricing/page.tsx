@@ -121,6 +121,7 @@ export default function PricingPage() {
       </section>
 
       <WebsiteLevels/>
+      <div className="mx-auto max-w-6xl px-6 py-5 text-sm">Full setup payment is required before work begins. <Link href="/refund-policy" className="underline">Review setup, monthly and annual refund rules</Link>.</div>
       <ProjectBuilder services={activeProjectServices} />
 
       <section className="py-16 sm:py-20 lg:py-24">

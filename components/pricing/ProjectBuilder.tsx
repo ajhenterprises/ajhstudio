@@ -258,6 +258,7 @@ function ProjectSummary({ onBillingChange, billingTerm, scope, selectedIds, onRe
         </ul>
       )}
       {estimate.website&&<p className="mt-4 text-sm font-semibold">{estimate.website.level.name} · indicative only</p>}
+      <p className="mt-3 text-sm">Full setup payment is required before work begins. <a href="/refund-policy" className="underline" target="_blank" rel="noopener noreferrer">Refund &amp; cancellation rules</a> apply separately to setup, monthly and annual services.</p>
       {selectedIds.includes("content-seo")&&estimate.website&&<p className="mt-3 text-sm">Separate content-level SEO: $249/month, subject to review.</p>}
       <label className="mt-5 block text-sm font-semibold">Payment schedule<select value={billingTerm??"monthly"} onChange={e=>onBillingChange(e.target.value==="annual"?"annual":"monthly")} className="mt-2 w-full rounded-lg border border-border bg-surface p-3"><option value="monthly">Monthly</option><option value="annual">Yearly upfront — save 15%</option></select></label>
       <dl className="mt-6 space-y-3 border-t border-border pt-5">
