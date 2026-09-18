@@ -80,7 +80,7 @@ export async function deliverInquiryNotification(inquiry: StoredInquiry): Promis
         <p><strong>Desired timeframe:</strong> ${escapeHtml(data.timeframe)}<br><strong>Budget:</strong> ${escapeHtml(data.budget || "Not provided")}</p>
         <p><strong>Description</strong><br>${escapeHtml(data.projectDescription).replace(/\n/g, "<br>")}</p>
         <p><strong>Additional notes</strong><br>${escapeHtml(data.notes || "—").replace(/\n/g, "<br>")}</p>
-        <p style="font-size:12px;color:${brand.gray};margin-top:28px;">Displayed amounts are starting estimates. Final scope and pricing must be confirmed before work begins.</p>
+        <p style="font-size:12px;color:${brand.gray};margin-top:28px;">Displayed amounts are starting estimates. Final pricing may increase or decrease based on the project’s requirements and must be confirmed before work begins.</p>
       </div>
     </div>`;
 
@@ -92,7 +92,7 @@ export async function deliverInquiryNotification(inquiry: StoredInquiry): Promis
         <p>Your project request has been received. I&apos;ll review your selections and contact you to discuss your project, confirm scope, and provide final pricing.</p>
         <h2 style="font-family:Inter,Arial,sans-serif;color:${brand.navy};margin-top:28px;">Your selections</h2>
         <table cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;">${serviceRows}</table>${billingHtml}
-        <p style="font-size:12px;color:${brand.gray};margin-top:24px;">This summary is a starting estimate and is not a contract or guaranteed final price. Third-party costs and custom work are confirmed separately when applicable.</p>
+        <p style="font-size:12px;color:${brand.gray};margin-top:24px;">This summary is a starting estimate and is not a contract or guaranteed final price. Final pricing may increase or decrease based on the project’s requirements. Third-party costs and custom work are confirmed separately when applicable.</p>
         <p style="margin-top:28px;">Aaron Joseph Hall<br><strong>AJH Digital</strong><br><a href="mailto:${siteConfig.email}" style="color:${brand.interactive};">${siteConfig.email}</a></p>
       </div>
     </div>`;

@@ -265,7 +265,7 @@ function ProjectSummary({ billingTerm, scope, selectedIds, onRemove, onContinue,
         {estimate.customServices.length > 0 && <div className="flex items-start justify-between gap-4"><dt className="text-sm text-muted">Custom-price services</dt><dd className="text-right text-sm font-semibold text-ink">{estimate.customServices.length} selected</dd></div>}
       </dl>
       <p className="mt-4 rounded-lg bg-surface-alt p-3 text-sm">{billingTerm==="annual"?"Yearly upfront selected":"Yearly upfront option"}: {estimate.monthlyTotal>0?`${money(annualPlan(estimate.monthlyTotal).total)}/year starting estimate for selected monthly services; save ${money(annualPlan(estimate.monthlyTotal).savings)} per year.`:"Save 15% on your quoted monthly plans."} Setup and third-party fees are separate and not discounted. Custom services are quoted separately.</p>
-      <p className="mt-5 text-xs leading-relaxed text-muted">This is a starting estimate, not a guaranteed final price. Scope, custom work, and third-party costs are confirmed before work begins.</p>
+      <p className="mt-5 text-xs leading-relaxed text-muted">This is a starting estimate, not a guaranteed final price. Final pricing can increase or decrease based on your project’s requirements. Scope, custom work, and third-party costs are confirmed before work begins.</p>
       {onContinue && (
         <button type="button" disabled={selectedIds.length === 0} onClick={onContinue} className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-cta px-5 py-3.5 font-semibold text-cta-foreground transition-colors hover:bg-cta-hover disabled:cursor-not-allowed disabled:opacity-50">
           Continue to Project Request <ArrowRight className="size-4" aria-hidden="true" />
