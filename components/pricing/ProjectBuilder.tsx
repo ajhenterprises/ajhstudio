@@ -170,7 +170,7 @@ export default function ProjectBuilder({ services }: { services: ProjectService[
             })}
           </div>
 
-          <aside className="sticky top-28 hidden lg:block">
+          <aside aria-label="Project summary — scroll for totals and next step" tabIndex={0} className="sticky top-28 hidden max-h-[calc(100dvh-8rem)] self-start overflow-y-auto rounded-2xl [scrollbar-gutter:stable] focus-visible:outline-2 focus-visible:outline-primary lg:block">
             <ProjectSummary onBillingChange={value=>update("billingTerm",value)} billingTerm={form.billingTerm} scope={form.websiteScope} selectedIds={selectedIds} onRemove={(service) => toggleService(service)} onContinue={beginInquiry} />
           </aside>
         </div>
@@ -213,7 +213,7 @@ export default function ProjectBuilder({ services }: { services: ProjectService[
                 </button>
                 <p className="mt-4 text-xs leading-relaxed text-muted">Submitting this request does not obligate you to hire AJH Digital and does not guarantee final pricing.</p>
               </form>
-              <div className="lg:sticky lg:top-28">
+              <div role="region" aria-label="Request summary — scroll for totals" tabIndex={0} className="rounded-2xl focus-visible:outline-2 focus-visible:outline-primary lg:sticky lg:top-28 lg:max-h-[calc(100dvh-8rem)] lg:self-start lg:overflow-y-auto lg:[scrollbar-gutter:stable]">
                 <ProjectSummary onBillingChange={value=>update("billingTerm",value)} billingTerm={form.billingTerm} scope={form.websiteScope} selectedIds={selectedIds} onRemove={(service) => toggleService(service)} compact />
               </div>
             </div>
