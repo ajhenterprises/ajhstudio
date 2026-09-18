@@ -7,7 +7,7 @@ export const siteConfig = {
     "AJH Digital helps businesses, churches, organizations, entrepreneurs, and professionals grow their online presence with websites, content, SEO, and personal digital support.",
   coreMessage:
     "Clear strategy, thoughtful design, and practical support for the work that matters to you.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://ajhdigital.com",
+  url: "https://ajhdigital.com",
   productionUrl: "https://ajhdigital.com",
   domain: "AJHDigital.com",
   logo: { primary: "/brand/logo.webp", light: "/brand/logo-light.webp", email: "/brand/logo.png", icon: "/brand/monogram.webp" },

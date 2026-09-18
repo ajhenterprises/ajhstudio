@@ -10,7 +10,7 @@ import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = withBrandMetadata({
   title: "Website Pricing & Services",
-  description: "Start with a $999 website setup and $149/month website care plan, then build a project around the services your business or organization needs.",
+  description: "Website pricing from $999 setup and $149/month, adjusted to your scope. Prepay yearly to save 15% on monthly plans only; setup fees are excluded.",
   alternates: { canonical: "/pricing" },
   openGraph: {
     title: "Website Pricing & Services | AJH Digital",

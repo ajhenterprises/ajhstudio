@@ -1,3 +1,4 @@
+import { socialImage } from "@/lib/social";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -46,13 +47,13 @@ export async function generateMetadata({
       publishedTime: post.date,
       authors: [post.author],
       tags: post.tags,
-      images: [{ url: post.image, width: 1200, height: 630, alt: post.imageAlt }],
+      images: [{ url: socialImage(post.title, description, "AJH Digital Insights", url), width: 1200, height: 630, alt: post.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description,
-      images: [post.image],
+      images: [socialImage(post.title, description, "AJH Digital Insights", url)],
     },
   };
 }
