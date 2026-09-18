@@ -40,6 +40,7 @@ export async function POST(request: Request) {
       ? body.selectedServiceIds.map(text).slice(0, 30)
       : [],
     company: text(body.company),
+    billingTerm: body.billingTerm === "annual" ? "annual" : "monthly",
     websiteScope:normalizeWebsiteScope(body.websiteScope),
   };
 

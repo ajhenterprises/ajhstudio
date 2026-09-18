@@ -1,6 +1,6 @@
 "use client";
 import WebsiteScopeFields from "./WebsiteScopeFields";
-import {blankWebsiteScope,normalizeWebsiteScope,type WebsiteScope} from "@/lib/website-pricing";
+import {annualPlan,blankWebsiteScope,normalizeWebsiteScope,type WebsiteScope} from "@/lib/website-pricing";
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AlertCircle, ArrowRight, CheckCircle2, Loader2, Minus, X } from "lucide-react";
@@ -30,6 +30,7 @@ const initialForm: ProjectInquiryData = {
   notes: "",
   selectedServiceIds: initialSelection,
   company: "",
+  billingTerm:"monthly",
   websiteScope:blankWebsiteScope,
 };
 
@@ -37,7 +38,7 @@ function money(value: number) {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
-    maximumFractionDigits: 0,
+    maximumFractionDigits: 2,
   }).format(value);
 }
 
@@ -170,7 +171,7 @@ export default function ProjectBuilder({ services }: { services: ProjectService[
           </div>
 
           <aside className="sticky top-28 hidden lg:block">
-            <ProjectSummary scope={form.websiteScope} selectedIds={selectedIds} onRemove={(service) => toggleService(service)} onContinue={beginInquiry} />
+            <ProjectSummary billingTerm={form.billingTerm} scope={form.websiteScope} selectedIds={selectedIds} onRemove={(service) => toggleService(service)} onContinue={beginInquiry} />
           </aside>
         </div>
 
@@ -196,6 +197,7 @@ export default function ProjectBuilder({ services }: { services: ProjectService[
                   <SelectField label="Budget range (optional)" value={form.budget} onChange={(value) => update("budget", value)} options={["Under $1,000", "$1,000–$2,500", "$2,500–$5,000", "$5,000–$10,000", "$10,000+", "I’m not sure yet"]} />
                 </div>
                 {estimate.website&&<WebsiteScopeFields value={normalizeWebsiteScope(form.websiteScope)} onChange={value=>update("websiteScope",value)}/>}
+                <label className="mt-6 block text-sm font-semibold">Payment preference<select className="mt-2 w-full rounded-xl border border-border bg-background p-3" value={form.billingTerm??"monthly"} onChange={e=>update("billingTerm",e.target.value==="annual"?"annual":"monthly")}><option value="monthly">Pay monthly</option><option value="annual">Pay yearly upfront — save 15% on monthly plans</option></select><span className="mt-2 block font-normal text-muted">Setup fees are paid separately at full price. Your final quote will confirm all amounts.</span></label>
                 <TextArea label="Project description" required value={form.projectDescription} error={errors.projectDescription} placeholder="What are you building, who is it for, and what do you want it to accomplish?" onChange={(value) => update("projectDescription", value)} />
                 <TextArea label="Additional notes" value={form.notes} placeholder="Share any helpful details, integrations, content needs, or questions." onChange={(value) => update("notes", value)} />
                 {errors.selectedServiceIds && <p className="mt-5 text-sm text-red-700">{errors.selectedServiceIds}</p>}
@@ -212,7 +214,7 @@ export default function ProjectBuilder({ services }: { services: ProjectService[
                 <p className="mt-4 text-xs leading-relaxed text-muted">Submitting this request does not obligate you to hire AJH Digital and does not guarantee final pricing.</p>
               </form>
               <div className="lg:sticky lg:top-28">
-                <ProjectSummary scope={form.websiteScope} selectedIds={selectedIds} onRemove={(service) => toggleService(service)} compact />
+                <ProjectSummary billingTerm={form.billingTerm} scope={form.websiteScope} selectedIds={selectedIds} onRemove={(service) => toggleService(service)} compact />
               </div>
             </div>
           </div>
@@ -228,14 +230,14 @@ export default function ProjectBuilder({ services }: { services: ProjectService[
         <button type="button" aria-label="Close project summary" onClick={() => setMobileSummaryOpen(false)} className={cn("absolute inset-0 bg-ink/55 transition-opacity", mobileSummaryOpen ? "opacity-100" : "opacity-0")} />
         <div className={cn("absolute inset-x-0 bottom-0 max-h-[85vh] overflow-y-auto rounded-t-3xl bg-background p-6 pb-[calc(1.5rem+env(safe-area-inset-bottom))] shadow-2xl transition-transform", mobileSummaryOpen ? "translate-y-0" : "translate-y-full")}>
           <button type="button" onClick={() => setMobileSummaryOpen(false)} aria-label="Close summary" className="absolute right-5 top-5 flex size-10 items-center justify-center rounded-full bg-surface-alt text-ink"><X className="size-5" /></button>
-          <ProjectSummary scope={form.websiteScope} selectedIds={selectedIds} onRemove={(service) => toggleService(service)} onContinue={beginInquiry} />
+          <ProjectSummary billingTerm={form.billingTerm} scope={form.websiteScope} selectedIds={selectedIds} onRemove={(service) => toggleService(service)} onContinue={beginInquiry} />
         </div>
       </div>
     </section>
   );
 }
 
-function ProjectSummary({ scope, selectedIds, onRemove, onContinue, compact = false }: { scope?:WebsiteScope; selectedIds: string[]; onRemove: (service: ProjectService) => void; onContinue?: () => void; compact?: boolean }) {
+function ProjectSummary({ billingTerm, scope, selectedIds, onRemove, onContinue, compact = false }: { billingTerm?:"monthly"|"annual"; scope?:WebsiteScope; selectedIds: string[]; onRemove: (service: ProjectService) => void; onContinue?: () => void; compact?: boolean }) {
   const estimate = calculateProjectEstimate(selectedIds,scope);
   return (
     <div className={cn("rounded-2xl border border-border bg-background p-6 shadow-card", compact && "shadow-none")}>
@@ -262,6 +264,7 @@ function ProjectSummary({ scope, selectedIds, onRemove, onContinue, compact = fa
         <div className="flex items-baseline justify-between gap-4"><dt className="text-sm text-muted">Website management</dt><dd className="font-display text-xl text-ink">{estimate.website?estimate.website.level.monthly:money(estimate.monthlyTotal)}{estimate.website?.level.id!=="complex"?"/mo":""}</dd></div>
         {estimate.customServices.length > 0 && <div className="flex items-start justify-between gap-4"><dt className="text-sm text-muted">Custom-price services</dt><dd className="text-right text-sm font-semibold text-ink">{estimate.customServices.length} selected</dd></div>}
       </dl>
+      <p className="mt-4 rounded-lg bg-surface-alt p-3 text-sm">{billingTerm==="annual"?"Yearly upfront selected":"Yearly upfront option"}: {estimate.monthlyTotal>0?`${money(annualPlan(estimate.monthlyTotal).total)}/year starting estimate for selected monthly services; save ${money(annualPlan(estimate.monthlyTotal).savings)} per year.`:"Save 15% on your quoted monthly plans."} Setup and third-party fees are separate and not discounted. Custom services are quoted separately.</p>
       <p className="mt-5 text-xs leading-relaxed text-muted">This is a starting estimate, not a guaranteed final price. Scope, custom work, and third-party costs are confirmed before work begins.</p>
       {onContinue && (
         <button type="button" disabled={selectedIds.length === 0} onClick={onContinue} className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-cta px-5 py-3.5 font-semibold text-cta-foreground transition-colors hover:bg-cta-hover disabled:cursor-not-allowed disabled:opacity-50">

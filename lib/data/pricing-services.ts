@@ -39,7 +39,7 @@ export const projectServices: ProjectService[] = [
     shortDescription: "Managed hosting, SSL, routine maintenance, support, and reasonable routine content updates under the applicable plan for websites managed by AJH Digital, subject to reasonable use.",
     category: "Websites",
     pricingType: "monthly",
-    monthlyPrice: 199,
+    monthlyPrice: 149,
     featured: true,
     active: true,
     displayOrder: 20,

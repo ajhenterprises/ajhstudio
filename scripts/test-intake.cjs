@@ -100,10 +100,10 @@ test('website categories remain advisory and SEO stays separate', () => {
  assert.equal(pricing.normalizeWebsiteScope({category:'hacked',features:['idx','unknown']}).category,'unsure');
  const inquiry=load('lib/project-inquiry.ts');
  const estimate=inquiry.calculateProjectEstimate(['website-design-development','website-hosting-care'],scope([]));
- assert.equal(estimate.oneTimeTotal,999);assert.equal(estimate.monthlyTotal,199);
+ assert.equal(estimate.oneTimeTotal,999);assert.equal(estimate.monthlyTotal,149);
  const seo=inquiry.calculateProjectEstimate(['website-design-development','website-hosting-care','content-seo'],scope([]));
- assert.equal(seo.monthlyTotal,448);
- assert.equal(estimate.website.level.monthly,'$199+');
+ assert.equal(seo.monthlyTotal,398);
+ assert.equal(estimate.website.level.monthly,'$149+');
 });
 test('document notification rendering escapes context and uses secure portal links',()=>{
  const mod=load('lib/crm-notification-email.ts',{resend:{Resend:class{}}});
@@ -113,4 +113,13 @@ test('document notification rendering escapes context and uses secure portal lin
 test('invalid notification token cannot send mail',async()=>{
  let sent=false;const route=load('app/api/crm-notifications/route.ts',{'@/lib/crm-notification-email':{deliverDocumentEmail:async()=>{sent=true;}}});
  const result=await route.POST(request({id:'bad',token:'bad'}));assert.equal(result.status,400);assert.equal(sent,false);
+});
+
+test('annual savings apply only to recurring costs and round to cents',()=>{
+ const {annualPlan}=load('lib/website-pricing.ts');
+ assert.deepEqual({...annualPlan(149)},{total:1519.8,savings:268.2});
+ assert.deepEqual({...annualPlan(249)},{total:2539.8,savings:448.2});
+ assert.equal(999+annualPlan(149).total,2518.8);
+ assert.equal(annualPlan(0).total,0);
+ assert.deepEqual({...annualPlan(19.99)},{total:203.9,savings:35.98});
 });

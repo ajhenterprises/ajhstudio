@@ -15,6 +15,7 @@ export type ProjectInquiryData = {
   notes: string;
   selectedServiceIds: string[];
   company: string;
+  billingTerm?: "monthly" | "annual";
   websiteScope?: WebsiteScope;
   websitePricing?: ReturnType<typeof websitePricing> & {version:string;clientCategory:string};
 };
