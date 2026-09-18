@@ -105,3 +105,12 @@ test('website categories remain advisory and SEO stays separate', () => {
  assert.equal(seo.monthlyTotal,448);
  assert.equal(estimate.website.level.monthly,'$199+');
 });
+test('document notification rendering escapes context and uses secure portal links',()=>{
+ const mod=load('lib/crm-notification-email.ts',{resend:{Resend:class{}}});
+ const result=mod.documentEmail({id:'test',event:'agreement_sent',recipient:'client',email:'test@example.com',client:'<script>bad</script>',recordId:'abc',invoiceNumber:null,balance:null,dueDate:null});
+ assert.ok(result.html.includes('&lt;script&gt;'));assert.ok(!result.html.includes('<script>'));assert.ok(result.html.includes('https://client.ajhdigital.com/portal/agreements/abc'));
+});
+test('invalid notification token cannot send mail',async()=>{
+ let sent=false;const route=load('app/api/crm-notifications/route.ts',{'@/lib/crm-notification-email':{deliverDocumentEmail:async()=>{sent=true;}}});
+ const result=await route.POST(request({id:'bad',token:'bad'}));assert.equal(result.status,400);assert.equal(sent,false);
+});

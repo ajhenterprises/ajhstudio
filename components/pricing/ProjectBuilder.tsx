@@ -219,9 +219,9 @@ export default function ProjectBuilder({ services }: { services: ProjectService[
         )}
       </div>
 
-      <button type="button" onClick={() => { setMobileSummaryOpen(true); track("project_summary_opened", { selected_services: selectedIds.length }); }} className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] left-1/2 z-40 flex -translate-x-1/2 items-center gap-3 rounded-full bg-ink px-6 py-3.5 font-semibold text-background shadow-2xl lg:hidden">
+      <button type="button" onClick={() => { setMobileSummaryOpen(true); track("project_summary_opened", { selected_services: selectedIds.length }); }} className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] left-1/2 z-40 flex -translate-x-1/2 items-center gap-3 rounded-full bg-ink px-4 py-3 text-xs font-semibold whitespace-nowrap text-background shadow-2xl lg:hidden">
         View Project ({selectedIds.length})
-        <span className="text-accent">{estimate.website?"Scope-based estimate":`${money(estimate.oneTimeTotal)} + ${money(estimate.monthlyTotal)}/mo`}</span>
+        <span className="text-accent">{estimate.website?"Scope estimate":`${money(estimate.oneTimeTotal)} + ${money(estimate.monthlyTotal)}/mo`}</span>
       </button>
 
       <div role="dialog" aria-modal="true" aria-label="Your project summary" className={cn("fixed inset-0 z-[80] lg:hidden", mobileSummaryOpen ? "pointer-events-auto" : "pointer-events-none")}>
