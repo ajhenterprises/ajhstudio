@@ -9,6 +9,10 @@ export type ProjectService = {
   pricingType: PricingType;
   oneTimePrice?: number;
   monthlyPrice?: number;
+  annualPrice?: number;
+  projectType?: string;
+  includedPages?: number;
+  additionalPagePrice?: number;
   customPricing?: boolean;
   priceNote?: string;
   featured?: boolean;

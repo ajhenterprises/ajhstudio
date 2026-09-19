@@ -9,6 +9,8 @@ import {
   type ProjectInquiryData,
 } from "@/lib/project-inquiry";
 
+import {getPublicServices} from "@/lib/service-catalog";
+
 export const runtime = "nodejs";
 
 function text(value: unknown) {
@@ -42,6 +44,7 @@ export async function POST(request: Request) {
     company: text(body.company),
     billingTerm: body.billingTerm === "annual" ? "annual" : "monthly",
     websiteScope:normalizeWebsiteScope(body.websiteScope),
+    contentRefresh:body.selectedServiceIds?.includes('website-content-refresh')?{pages:Number(body.contentRefresh?.pages),pageList:text(body.contentRefresh?.pageList),goal:text(body.contentRefresh?.goal),audience:text(body.contentRefresh?.audience),preserve:text(body.contentRefresh?.preserve)}:undefined,
   };
 
   // Honeypot: silently accept automated submissions without sending email.
@@ -52,14 +55,16 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, errors }, { status: 422 });
   }
 
-  const estimate = calculateProjectEstimate(data.selectedServiceIds,data.websiteScope);
+  let catalog;
+  try {catalog=await getPublicServices();}catch{return NextResponse.json({ok:false,error:"Service prices are temporarily unavailable. Please try again."},{status:503});}
+  const estimate = calculateProjectEstimate(data.selectedServiceIds,data.websiteScope,catalog,data.contentRefresh);
   if (estimate.services.length !== new Set(data.selectedServiceIds).size) {
     return NextResponse.json({ ok: false, error: "One or more selected services are unavailable." }, { status: 422 });
   }
 
   let receipt;
   try {
-    receipt = await saveProjectInquiry(data, request);
+    receipt = await saveProjectInquiry(data, request,catalog);
   } catch (error) {
     const limited = error instanceof Error && error.message === "RATE_LIMIT";
     console.error(limited ? "Project intake rate limited" : "Project intake storage unavailable");

@@ -57,7 +57,7 @@ function formatPrice(value: number) {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
-    maximumFractionDigits: 0,
+    maximumFractionDigits: 2,
   }).format(value);
 }
 export default function ServiceOptionCard({
@@ -73,6 +73,7 @@ export default function ServiceOptionCard({
   const prices = [
     service.oneTimePrice != null ? `Starting at ${formatPrice(service.oneTimePrice)}+ one-time` : null,
     service.monthlyPrice != null ? `${service.category === "Websites" ? "Starting at " : ""}${formatPrice(service.monthlyPrice)}${service.category === "Websites" ? "+" : ""}/month` : null,
+    service.annualPrice != null ? `${formatPrice(service.annualPrice)}/year` : null,
   ].filter(Boolean);
 
   return (
@@ -84,7 +85,7 @@ export default function ServiceOptionCard({
           : "border-border hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-card"
       )}
     >
-      {service.id==='content-seo'&&<SeoDisclaimer/>}
+      {(service.id==='content-seo'||service.id==='website-content-refresh'||/seo/i.test(service.name))&&<SeoDisclaimer/>}
       {service.featured && (
         <span className="absolute right-5 top-5 rounded-full bg-sand px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-ink">
           Standard package
@@ -98,6 +99,7 @@ export default function ServiceOptionCard({
       {service.longDescription && (
         <p className="mt-3 text-sm leading-relaxed text-text/80">{service.longDescription}</p>
       )}
+      {service.id==='website-content-refresh'&&<p className="mt-3 text-sm">Up to {service.includedPages} pages included. Additional pages: {formatPrice(service.additionalPagePrice??50)}/page.</p>}
       <div className="mt-auto pt-6">
         <div className="mb-4 min-h-11">
           {prices.length > 0 ? (

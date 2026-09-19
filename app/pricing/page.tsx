@@ -5,7 +5,8 @@ import Link from "next/link";
 import { ArrowDown, Check, CircleDollarSign, MessageCircle, SearchCheck, ShieldCheck } from "lucide-react";
 import Container from "@/components/ui/Container";
 import ProjectBuilder from "@/components/pricing/ProjectBuilder";
-import { activeProjectServices } from "@/lib/data/pricing-services";
+import { getPublicServices } from "@/lib/service-catalog";
+import ContentRefreshOffer from "@/components/pricing/ContentRefreshOffer";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = withBrandMetadata({
@@ -72,7 +73,10 @@ const serviceJsonLd = {
   },
 };
 
-export default function PricingPage() {
+export default async function PricingPage({searchParams}:{searchParams:Promise<{service?:string}>}) {
+  const activeProjectServices=await getPublicServices();
+  const selected=(await searchParams).service;
+  const initialService=activeProjectServices.some(s=>s.id===selected)?selected:undefined;
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
@@ -120,9 +124,10 @@ export default function PricingPage() {
         </Container>
       </section>
 
-      <WebsiteLevels/>
+      <WebsiteLevels seoPrice={activeProjectServices.find(s=>s.id==="content-seo")?.monthlyPrice}/>
+      <ContentRefreshOffer service={activeProjectServices.find(s=>s.id==="website-content-refresh")}/>
       <div className="mx-auto max-w-6xl px-6 py-5 text-sm">Full setup payment is required before work begins. <Link href="/refund-policy" className="underline">Review setup, monthly and annual refund rules</Link>.</div>
-      <ProjectBuilder services={activeProjectServices} />
+      <ProjectBuilder key={initialService??"default"} initialService={initialService} services={activeProjectServices} />
 
       <section className="py-16 sm:py-20 lg:py-24">
         <Container>

@@ -46,6 +46,7 @@ export async function deliverInquiryNotification(inquiry: StoredInquiry): Promis
     .map((service) => {
       const servicePrice = [
         service.oneTimePrice != null ? `${price(service.oneTimePrice)} one-time` : "",
+        service.annualPrice != null ? `${price(service.annualPrice)}/year` : "",
         service.monthlyPrice != null ? `${price(service.monthlyPrice)}/month` : "",
         service.customPricing ? service.priceNote ?? "Custom pricing" : "",
       ].filter(Boolean).join(" · ");
@@ -54,6 +55,7 @@ export async function deliverInquiryNotification(inquiry: StoredInquiry): Promis
     .join("");
   const customNames = estimate.customServices.map((service) => service.name).join(", ") || "None";
 
+  const refreshHtml=data.contentRefresh&&data.contentRefreshEstimate?`<h2>Website Content Refresh</h2><p>${data.contentRefreshEstimate.pages} pages · Estimated project price: ${price(data.contentRefreshEstimate.total)}. Subject to scope review.</p><p>Pages: ${escapeHtml(data.contentRefresh.pageList)}<br>Goal: ${escapeHtml(data.contentRefresh.goal)}<br>Audience: ${escapeHtml(data.contentRefresh.audience)}<br>Keep this wording: ${escapeHtml(data.contentRefresh.preserve||"Not specified")}</p>`:'';
   const billingHtml = `<p><strong>Payment preference:</strong> ${data.billingTerm === "annual" ? `Yearly upfront — 15% savings on monthly plans. Known recurring estimate: ${price(annualPlan(estimate.monthlyTotal).total)}/year.` : "Monthly"} Setup fees and third-party charges are separate, at full price. Final scope and pricing require review.</p>`;
   const ownerHtml = `
     <div style="font-family:Inter,Arial,sans-serif;line-height:1.6;color:${brand.navy};max-width:720px;margin:auto;">
@@ -69,7 +71,7 @@ export async function deliverInquiryNotification(inquiry: StoredInquiry): Promis
         <strong>Phone:</strong> ${escapeHtml(data.phone || "—")}<br>
         <strong>Existing website:</strong> ${escapeHtml(data.website || "—")}</p>
         <h2 style="font-family:Inter,Arial,sans-serif;color:${brand.navy};">Selected services</h2>
-        <table cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;">${serviceRows}</table>${billingHtml}
+        <table cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;">${serviceRows}</table>${billingHtml}${refreshHtml}
         <div style="margin:20px 0;padding:18px;background:${brand.surfaceAlt};border-radius:10px;">
           <strong>Setup starting range:</strong> ${data.websitePricing?escapeHtml(data.websitePricing.level.setup):price(estimate.oneTimeTotal)}<br>
           <strong>Monthly starting range:</strong> ${data.websitePricing?escapeHtml(data.websitePricing.level.monthly):price(estimate.monthlyTotal)}<br>
@@ -91,7 +93,7 @@ export async function deliverInquiryNotification(inquiry: StoredInquiry): Promis
         <h1 style="font-family:Inter,Arial,sans-serif;color:${brand.navy};margin:8px 0 12px;">Thanks for reaching out, ${escapeHtml(data.firstName)}.</h1>
         <p>Your project request has been received. I&apos;ll review your selections and contact you to discuss your project, confirm scope, and provide final pricing.</p>
         <h2 style="font-family:Inter,Arial,sans-serif;color:${brand.navy};margin-top:28px;">Your selections</h2>
-        <table cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;">${serviceRows}</table>${billingHtml}
+        <table cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;">${serviceRows}</table>${billingHtml}${refreshHtml}
         <p style="font-size:12px;color:${brand.gray};margin-top:24px;">This summary is a starting estimate and is not a contract or guaranteed final price. Final pricing may increase or decrease based on the project’s requirements. Third-party costs and custom work are confirmed separately when applicable.</p>
         <p style="margin-top:28px;">Aaron Joseph Hall<br><strong>AJH Digital</strong><br><a href="mailto:${siteConfig.email}" style="color:${brand.interactive};">${siteConfig.email}</a></p>
       </div>

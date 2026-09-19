@@ -1,5 +1,6 @@
 import {normalizeWebsiteScope,websitePricing} from "./website-pricing";
 import "server-only";
+import type {ProjectService} from "./data/pricing-services";
 import { createHash, createHmac } from "node:crypto";
 import type { ProjectInquiryData } from "./project-inquiry";
 import { calculateProjectEstimate } from "./project-inquiry";
@@ -11,17 +12,17 @@ function connection() {
  if(!url||!key||!owner) throw new Error("CRM intake is not configured");
  return {url,key,owner};
 }
-export async function saveProjectInquiry(data: ProjectInquiryData, request: Request): Promise<Receipt> {
+export async function saveProjectInquiry(data: ProjectInquiryData, request: Request, catalog:ProjectService[]): Promise<Receipt> {
  const {url,key,owner}=connection();
  const submission={...data,email:data.email.trim().toLowerCase(),selectedServiceIds:[...new Set(data.selectedServiceIds)].sort()};
- const estimate=calculateProjectEstimate(submission.selectedServiceIds,submission.websiteScope);
+ const estimate=calculateProjectEstimate(submission.selectedServiceIds,submission.websiteScope,catalog,submission.contentRefresh);
  const scope=normalizeWebsiteScope(submission.websiteScope);
  const pricing=estimate.website?{version:"2026-09",clientCategory:scope.category,...websitePricing(scope)}:null;
  const fingerprint=createHash("sha256").update(owner+JSON.stringify(submission)).digest("hex");
  // Vercel replaces this header; do not trust arbitrary client forwarding headers.
  const source=request.headers.get("x-vercel-forwarded-for")?.split(",")[0]?.trim()||"unknown";
  const sourceHash=createHmac("sha256",key).update(source).digest("hex");
- const result=await fetch(`${url}/rest/v1/rpc/receive_project_inquiry`,{method:"POST",headers:{apikey:key,Authorization:`Bearer ${key}`,"Content-Type":"application/json"},body:JSON.stringify({owner_id:owner,submission:{...submission,websitePricing:pricing},selected_services:estimate.services,setup_total:estimate.oneTimeTotal,monthly_total:estimate.monthlyTotal,request_fingerprint:fingerprint,source_fingerprint:sourceHash}),cache:"no-store",signal:AbortSignal.timeout(15000)});
+ const result=await fetch(`${url}/rest/v1/rpc/receive_project_inquiry`,{method:"POST",headers:{apikey:key,Authorization:`Bearer ${key}`,"Content-Type":"application/json"},body:JSON.stringify({owner_id:owner,submission:{...submission,websitePricing:pricing,contentRefreshEstimate:estimate.contentRefresh,annualEstimate:estimate.annualTotal},selected_services:estimate.services,setup_total:estimate.oneTimeTotal,monthly_total:estimate.monthlyTotal,request_fingerprint:fingerprint,source_fingerprint:sourceHash}),cache:"no-store",signal:AbortSignal.timeout(15000)});
  if(!result.ok) { const detail=await result.json().catch(()=>({})); throw new Error(detail.code==="P0002"?"RATE_LIMIT":"CRM storage failed"); }
  const receipt=await result.json();
  if(!receipt.id||!receipt.projectId) throw new Error("Invalid CRM response");
