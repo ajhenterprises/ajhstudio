@@ -57,7 +57,7 @@ export default function TermsPage() {
               engagement.
             </p>
 
-            <h2>Refunds and cancellation</h2><p>Full setup payment is required before work begins. Setup, monthly and annual services have different cancellation and refund rules. Read our <Link href="/refund-policy">Refund &amp; Cancellation Policy</Link>. Refunds are not automatic or guaranteed; applicable legal rights and existing accepted agreements remain respected.</p><h2>Pricing and third-party costs</h2>
+            <h2>Refunds and cancellation</h2><p>Full setup payment is required before work begins. Setup fees, one-time services, monthly and annual services have different cancellation and refund rules. Read our <Link href="/refund-policy">Refund &amp; Cancellation Policy</Link>. Refunds are not automatic or guaranteed; applicable legal rights and existing accepted agreements remain respected.</p><h2>Pricing and third-party costs</h2>
             <p>
               Public prices are base starting prices and may change with or without notice.
               Domains, premium software, plugins, stock media, email platforms, APIs, IDX or MLS
