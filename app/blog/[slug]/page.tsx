@@ -77,7 +77,7 @@ export default async function BlogPostPage({
     description: post.seoDescription ?? post.excerpt,
     datePublished: post.date,
     dateModified: post.date,
-    author: { "@type": "Organization", name: post.author },
+    author: { "@type": "Person", name: post.author },
     publisher: { "@type": "Organization", name: siteConfig.name },
     image: `${siteConfig.url}${post.image}`,
     mainEntityOfPage: `${siteConfig.url}/blog/${post.slug}`,
