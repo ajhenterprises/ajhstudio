@@ -1,3 +1,4 @@
+import EntryOffers from "@/components/sections/EntryOffers";
 import WebsiteLevels from "@/components/pricing/WebsiteLevels";
 import { withBrandMetadata } from "@/lib/social";
 import type { Metadata } from "next";
@@ -11,7 +12,7 @@ import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = withBrandMetadata({
   title: "Website Pricing & Services",
-  description: "Website pricing from $999 setup and $149/month, adjusted to your scope. Prepay yearly to save 15% on monthly plans only; setup fees are excluded.",
+  description: "Church websites from $25/month + $99 setup or $49/month with $0 setup. Content Refresh from $99. Custom websites from $999 setup + $149/month.",
   alternates: { canonical: "/pricing" },
   openGraph: {
     title: "Website Pricing & Services | AJH Digital",
@@ -80,6 +81,7 @@ export default async function PricingPage({searchParams}:{searchParams:Promise<{
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <EntryOffers title="Clear Pricing. Simple Ways to Get Started."/>
       <section className="relative overflow-hidden border-b border-border bg-ink py-20 text-background sm:py-24 lg:py-28">
         <div className="absolute -right-20 -top-32 size-96 rounded-full border border-background/10" />
         <div className="absolute -right-4 -top-16 size-64 rounded-full border border-accent/20" />
@@ -91,7 +93,7 @@ export default async function PricingPage({searchParams}:{searchParams:Promise<{
             <a href="#build-your-project" className="mt-9 inline-flex items-center gap-2 rounded-full bg-cta px-7 py-4 font-semibold text-cta-foreground transition-colors hover:bg-cta-hover">Request a Project <ArrowDown className="size-4" aria-hidden="true" /></a>
           </div>
           <div className="rounded-3xl border border-background/15 bg-background/[0.06] p-7 backdrop-blur-sm sm:p-9">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-background/60">Website projects start here</p>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-background/60">Custom website projects start here</p>
             <div className="mt-5 flex flex-wrap items-end gap-x-5 gap-y-2">
               <div><span className="font-display text-5xl text-background sm:text-6xl">$999+</span><span className="ml-2 text-background/65">setup</span></div>
               <span className="pb-2 font-display text-3xl text-accent">+</span>
@@ -126,7 +128,7 @@ export default async function PricingPage({searchParams}:{searchParams:Promise<{
 
       <WebsiteLevels seoPrice={activeProjectServices.find(s=>s.id==="content-seo")?.monthlyPrice}/>
       <ContentRefreshOffer service={activeProjectServices.find(s=>s.id==="website-content-refresh")}/>
-      <div className="mx-auto max-w-6xl px-6 py-5 text-sm">Full setup payment is required before work begins. <Link href="/refund-policy" className="underline">Review setup, monthly and annual refund rules</Link>.</div>
+      <div className="mx-auto max-w-6xl px-6 py-5 text-sm">Where a setup fee applies, it is due before work begins. <Link href="/refund-policy" className="underline">Read our service approach</Link>.</div>
       <ProjectBuilder key={initialService??"default"} initialService={initialService} services={activeProjectServices} />
 
       <section className="py-16 sm:py-20 lg:py-24">

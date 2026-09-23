@@ -2,6 +2,7 @@ import { socialImage } from "@/lib/social";
 import brand from "@/lib/brand.json";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieNotice from "@/components/CookieNotice";
@@ -108,6 +109,7 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
+        <aside aria-label="Church website plans" className="bg-ink px-5 py-3 text-center text-sm text-background"><Link href="/church-websites" className="inline-flex flex-wrap items-center justify-center gap-x-4 gap-y-1 rounded font-semibold"><span>Church Websites Starting at Just $25/Month</span><span className="text-accent">See Church Website Plans →</span></Link></aside>
         <Header />
         <main id="main-content" className="flex-1">
           {children}

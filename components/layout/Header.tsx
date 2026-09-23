@@ -43,7 +43,7 @@ export default function Header() {
                 href={item.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "rounded-lg px-3.5 py-2 text-[0.92rem] font-medium transition-colors duration-150",
+                  "rounded-lg px-2 py-2 text-[0.86rem] font-medium transition-colors duration-150",
                   active
                     ? "bg-surface-alt text-ink"
                     : "text-muted hover:bg-surface-alt/70 hover:text-ink"

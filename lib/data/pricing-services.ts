@@ -1,3 +1,5 @@
+import {entryServices} from "../entry-offers";
+
 export type PricingType = "one-time" | "monthly" | "mixed" | "custom";
 
 export type ProjectService = {
@@ -24,6 +26,7 @@ export type ProjectService = {
 // This is the single source of truth for the public project builder. Add, edit,
 // reorder, activate, or deactivate an offering here without rebuilding the UI.
 export const projectServices: ProjectService[] = [
+  ...entryServices,
   {
     id: "website-design-development",
     name: "Website Design & Development",
@@ -85,7 +88,7 @@ export const projectServices: ProjectService[] = [
   },
   {
     id: "church-websites",
-    name: "Church Websites",
+    name: "Custom Church Websites",
     shortDescription: "Welcoming church websites that help people plan a visit, connect, give, and take a next step.",
     category: "Websites",
     pricingType: "custom",

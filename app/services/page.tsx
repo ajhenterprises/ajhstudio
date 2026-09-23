@@ -1,3 +1,4 @@
+import EntryOffers from "@/components/sections/EntryOffers";
 import {getPublicServices} from "@/lib/service-catalog";
 import ContentRefreshOffer from "@/components/pricing/ContentRefreshOffer";
 import SeoDisclaimer from "@/components/SeoDisclaimer";
@@ -22,6 +23,7 @@ export default async function ServicesPage(){
  const catalog=await getPublicServices();
  return <>
   <PageHero eyebrow="Built around your next step" title={<>A stronger website.<br/>A clearer message.</>} description="From your first website to the content and care that keep it growing, get practical support from one person who understands your project." breadcrumbs={[{label:"Home",href:"/"},{label:"Services"}]}/>
+  <EntryOffers title="Popular Ways to Get Started"/>
   <section className="py-12 sm:py-16">
    <Container>
     <div className="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><p className="text-xs font-semibold uppercase tracking-[0.15em] text-secondary">How I can help</p><h2 className="mt-3 font-display text-3xl text-ink">Start where you need support.</h2></div><Link href="/pricing#build-your-project" className="inline-flex items-center gap-2 text-sm font-semibold text-primary">Explore pricing &amp; build your project <ArrowRight className="size-4"/></Link></div>

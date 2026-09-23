@@ -1,4 +1,5 @@
 import "server-only";
+import {entryServices} from "./entry-offers";
 import {serviceProjectTypes} from "./service-project-types";
 import {activeProjectServices,type ProjectService} from "./data/pricing-services";
 export async function getPublicServices():Promise<ProjectService[]> {
@@ -8,5 +9,6 @@ export async function getPublicServices():Promise<ProjectService[]> {
  if(!response.ok)throw new Error("Service catalog unavailable");
  const rows=await response.json() as {id:string;project_type:string;name:string;description:string;amount:number;interval:string;active:boolean;website_visible:boolean;website_key:string|null;website_category:ProjectService['category'];included_pages:number|null;additional_page_price:number|null}[];
  const linked=new Set(rows.map(r=>r.website_key).filter(Boolean));
- return [...activeProjectServices.filter(s=>!linked.has(s.id)).map(s=>({...s,projectType:serviceProjectTypes[s.id]??"other"})),...rows.filter(r=>r.active&&r.website_visible).map((r,i):ProjectService=>({id:r.website_key||`catalog-${r.id}`,projectType:r.project_type,name:r.name,shortDescription:r.description,category:r.website_category,pricingType:r.interval==='monthly'?'monthly':'one-time',...(r.interval==='monthly'?{monthlyPrice:Number(r.amount)}:r.interval==='annual'?{annualPrice:Number(r.amount)}:{oneTimePrice:Number(r.amount)}),includedPages:r.included_pages??undefined,additionalPagePrice:r.additional_page_price==null?undefined:Number(r.additional_page_price),active:true,displayOrder:100+i,icon:r.website_key==='website-content-refresh'?'pen':'file'}))].sort((a,b)=>a.displayOrder-b.displayOrder);
+ const offerIds=new Set(entryServices.map(s=>s.id));
+ return [...entryServices,...activeProjectServices.filter(s=>!linked.has(s.id)&&!offerIds.has(s.id)).map(s=>({...s,projectType:serviceProjectTypes[s.id]??"other"})),...rows.filter(r=>r.active&&r.website_visible&&!offerIds.has(r.website_key??"")).map((r,i):ProjectService=>({id:r.website_key||`catalog-${r.id}`,projectType:r.project_type,name:r.name,shortDescription:r.description,category:r.website_category,pricingType:r.interval==='monthly'?'monthly':'one-time',...(r.interval==='monthly'?{monthlyPrice:Number(r.amount)}:r.interval==='annual'?{annualPrice:Number(r.amount)}:{oneTimePrice:Number(r.amount)}),includedPages:r.included_pages??undefined,additionalPagePrice:r.additional_page_price==null?undefined:Number(r.additional_page_price),active:true,displayOrder:100+i,icon:r.website_key==='website-content-refresh'?'pen':'file'}))].sort((a,b)=>a.displayOrder-b.displayOrder);
 }

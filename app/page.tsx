@@ -1,5 +1,6 @@
 import { withBrandMetadata } from "@/lib/social";
 import type { Metadata } from "next";
+import EntryOffers from "@/components/sections/EntryOffers";
 import Hero from "@/components/sections/Hero";
 import WhatIDo from "@/components/sections/WhatIDo";
 import FeaturedWork from "@/components/sections/FeaturedWork";
@@ -11,7 +12,7 @@ import WebsiteOffer from "@/components/sections/WebsiteOffer";
 export const metadata: Metadata = withBrandMetadata({
   title: "AJH Digital | Websites. Content. Digital Growth.",
   description:
-    "Websites, content, SEO, and practical digital support for businesses, churches, organizations, entrepreneurs, and professionals.",
+    "Affordable church websites from $25/month and website content refresh from $99. Personal website, content, SEO and digital support for churches and businesses.",
   alternates: { canonical: "/" },
 });
 
@@ -19,6 +20,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <EntryOffers />
       <WhatIDo />
       <WebsiteOffer />
       <FeaturedWork />

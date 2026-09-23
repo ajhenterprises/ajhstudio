@@ -22,7 +22,7 @@ export async function saveProjectInquiry(data: ProjectInquiryData, request: Requ
  // Vercel replaces this header; do not trust arbitrary client forwarding headers.
  const source=request.headers.get("x-vercel-forwarded-for")?.split(",")[0]?.trim()||"unknown";
  const sourceHash=createHmac("sha256",key).update(source).digest("hex");
- const result=await fetch(`${url}/rest/v1/rpc/receive_project_inquiry`,{method:"POST",headers:{apikey:key,Authorization:`Bearer ${key}`,"Content-Type":"application/json"},body:JSON.stringify({owner_id:owner,submission:{...submission,websitePricing:pricing,contentRefreshEstimate:estimate.contentRefresh,annualEstimate:estimate.annualTotal},selected_services:estimate.services,setup_total:estimate.oneTimeTotal,monthly_total:estimate.monthlyTotal,request_fingerprint:fingerprint,source_fingerprint:sourceHash}),cache:"no-store",signal:AbortSignal.timeout(15000)});
+ const result=await fetch(`${url}/rest/v1/rpc/receive_project_inquiry`,{method:"POST",headers:{apikey:key,Authorization:`Bearer ${key}`,"Content-Type":"application/json"},body:JSON.stringify({owner_id:owner,submission:{...submission,websitePricing:pricing,selectedPlan:estimate.plan,contentRefreshEstimate:estimate.contentRefresh,annualEstimate:estimate.annualTotal},selected_services:estimate.services,setup_total:estimate.oneTimeTotal,monthly_total:estimate.monthlyTotal,request_fingerprint:fingerprint,source_fingerprint:sourceHash}),cache:"no-store",signal:AbortSignal.timeout(15000)});
  if(!result.ok) { const detail=await result.json().catch(()=>({})); throw new Error(detail.code==="P0002"?"RATE_LIMIT":"CRM storage failed"); }
  const receipt=await result.json();
  if(!receipt.id||!receipt.projectId) throw new Error("Invalid CRM response");

@@ -55,7 +55,7 @@ export async function deliverInquiryNotification(inquiry: StoredInquiry): Promis
     .join("");
   const customNames = estimate.customServices.map((service) => service.name).join(", ") || "None";
 
-  const refreshHtml=data.contentRefresh&&data.contentRefreshEstimate?`<h2>Website Content Refresh</h2><p>${data.contentRefreshEstimate.pages} pages · Estimated project price: ${price(data.contentRefreshEstimate.total)}. Subject to scope review.</p><p>Pages: ${escapeHtml(data.contentRefresh.pageList)}<br>Goal: ${escapeHtml(data.contentRefresh.goal)}<br>Audience: ${escapeHtml(data.contentRefresh.audience)}<br>Keep this wording: ${escapeHtml(data.contentRefresh.preserve||"Not specified")}</p>`:'';
+  const refreshHtml=data.contentRefresh&&data.contentRefreshEstimate?`<h2>Website Content Refresh</h2><p>${data.contentRefreshEstimate.pages} pages · Estimated project price: ${data.contentRefreshEstimate.customQuote?"Custom quote required (more than 10 pages)":price(data.contentRefreshEstimate.total)}. Subject to scope review.</p><p>Pages: ${escapeHtml(data.contentRefresh.pageList)}<br>Goal: ${escapeHtml(data.contentRefresh.goal)}<br>Audience: ${escapeHtml(data.contentRefresh.audience)}<br>Keep this wording: ${escapeHtml(data.contentRefresh.preserve||"Not specified")}</p>`:'';
   const billingHtml = `<p><strong>Payment preference:</strong> ${data.billingTerm === "annual" ? `Yearly upfront — 15% savings on monthly plans. Known recurring estimate: ${price(annualPlan(estimate.monthlyTotal).total)}/year.` : "Monthly"} Setup fees and third-party charges are separate, at full price. Final scope and pricing require review.</p>`;
   const ownerHtml = `
     <div style="font-family:Inter,Arial,sans-serif;line-height:1.6;color:${brand.navy};max-width:720px;margin:auto;">
@@ -73,7 +73,7 @@ export async function deliverInquiryNotification(inquiry: StoredInquiry): Promis
         <h2 style="font-family:Inter,Arial,sans-serif;color:${brand.navy};">Selected services</h2>
         <table cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;">${serviceRows}</table>${billingHtml}${refreshHtml}
         <div style="margin:20px 0;padding:18px;background:${brand.surfaceAlt};border-radius:10px;">
-          <strong>Setup starting range:</strong> ${data.websitePricing?escapeHtml(data.websitePricing.level.setup):price(estimate.oneTimeTotal)}<br>
+          <strong>Setup starting range:</strong> ${data.websitePricing?escapeHtml(data.websitePricing.level.setup):data.contentRefreshEstimate?.customQuote?"Custom quote required":price(estimate.oneTimeTotal)}<br>
           <strong>Monthly starting range:</strong> ${data.websitePricing?escapeHtml(data.websitePricing.level.monthly):price(estimate.monthlyTotal)}<br>
           <strong>Custom-price services:</strong> ${escapeHtml(customNames)}
         </div>

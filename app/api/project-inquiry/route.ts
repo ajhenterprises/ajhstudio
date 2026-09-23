@@ -1,3 +1,4 @@
+import {normalizeChurchDetails,churchPlan} from "@/lib/entry-offers";
 import {normalizeWebsiteScope} from "@/lib/website-pricing";
 import { saveProjectInquiry, readStoredInquiry } from "@/lib/crm-intake";
 import { siteConfig } from "@/lib/site-config";
@@ -44,7 +45,8 @@ export async function POST(request: Request) {
     company: text(body.company),
     billingTerm: body.billingTerm === "annual" ? "annual" : "monthly",
     websiteScope:normalizeWebsiteScope(body.websiteScope),
-    contentRefresh:body.selectedServiceIds?.includes('website-content-refresh')?{pages:Number(body.contentRefresh?.pages),pageList:text(body.contentRefresh?.pageList),goal:text(body.contentRefresh?.goal),audience:text(body.contentRefresh?.audience),preserve:text(body.contentRefresh?.preserve)}:undefined,
+    churchDetails:normalizeChurchDetails(body.churchDetails),
+    contentRefresh:Array.isArray(body.selectedServiceIds)&&body.selectedServiceIds.includes('website-content-refresh')?{pages:Number(body.contentRefresh?.pages),pageList:text(body.contentRefresh?.pageList),goal:text(body.contentRefresh?.goal),audience:text(body.contentRefresh?.audience),preserve:text(body.contentRefresh?.preserve)}:undefined,
   };
 
   // Honeypot: silently accept automated submissions without sending email.
@@ -57,6 +59,8 @@ export async function POST(request: Request) {
 
   let catalog;
   try {catalog=await getPublicServices();}catch{return NextResponse.json({ok:false,error:"Service prices are temporarily unavailable. Please try again."},{status:503});}
+  const plan=churchPlan(data.selectedServiceIds);
+  if(plan && catalog.some(s=>data.selectedServiceIds.includes(s.id)&&!s.id.startsWith("church-")&&["website","website_redesign","landing_pages","business_websites","church_websites","nonprofit_websites","real_estate_websites","website_hosting"].includes(s.projectType??""))) return NextResponse.json({ok:false,error:"Church plans include a website and hosting. Request custom website work separately."},{status:422});
   const estimate = calculateProjectEstimate(data.selectedServiceIds,data.websiteScope,catalog,data.contentRefresh);
   if (estimate.services.length !== new Set(data.selectedServiceIds).size) {
     return NextResponse.json({ ok: false, error: "One or more selected services are unavailable." }, { status: 422 });
