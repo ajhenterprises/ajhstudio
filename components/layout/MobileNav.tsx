@@ -63,7 +63,7 @@ export default function MobileNav({ pathname }: { pathname: string }) {
   }, [open]);
 
   return (
-    <div className="2xl:hidden">
+    <div className="md:hidden">
       <button
         ref={toggleRef}
         type="button"
@@ -87,7 +87,7 @@ export default function MobileNav({ pathname }: { pathname: string }) {
             inert={!open}
             ref={panelRef}
             className={cn(
-              "fixed inset-0 z-[100] flex h-[100dvh] flex-col overflow-y-auto overscroll-contain bg-ink text-background transition-opacity duration-300 2xl:hidden",
+              "fixed inset-0 z-[100] flex h-[100dvh] flex-col overflow-y-auto overscroll-contain bg-ink text-background transition-opacity duration-300 md:hidden",
               open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
             )}
           >
@@ -120,15 +120,7 @@ export default function MobileNav({ pathname }: { pathname: string }) {
               ))}
             </nav>
 
-            <div className="sticky bottom-0 flex shrink-0 flex-col border-t border-background/20 bg-ink px-6 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-5 sm:px-8">
-              <Link
-                href="/contact"
-                onClick={() => setOpen(false)}
-                className="flex w-full items-center justify-center rounded-xl bg-cta px-6 py-4 text-center font-medium text-cta-foreground transition-colors hover:bg-cta-hover"
-              >
-                Discuss Your Project
-              </Link>
-            </div>
+
           </div>,
           document.body
         )}

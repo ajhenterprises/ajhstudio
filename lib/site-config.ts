@@ -22,9 +22,9 @@ export const siteConfig = {
   },
   nav: [
     { label: "Church & Ministry Websites", href: "/church-websites" },
+    { label: "Small Business Websites", href: "/small-business-websites" },
     { label: "Services", href: "/services" },
     { label: "Pricing", href: "/pricing" },
-    { label: "Small Business Websites", href: "/small-business-websites" },
     { label: "Websites", href: "/websites" },
     { label: "Products", href: "/products" },
     { label: "Blog", href: "/blog" },
