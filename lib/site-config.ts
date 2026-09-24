@@ -21,9 +21,10 @@ export const siteConfig = {
     linkedin: "https://linkedin.com/company/ajhenterprises",
   },
   nav: [
-    { label: "Church Websites", href: "/church-websites" },
+    { label: "Church & Ministry Websites", href: "/church-websites" },
     { label: "Services", href: "/services" },
     { label: "Pricing", href: "/pricing" },
+    { label: "Small Business Websites", href: "/small-business-websites" },
     { label: "Websites", href: "/websites" },
     { label: "Products", href: "/products" },
     { label: "Blog", href: "/blog" },

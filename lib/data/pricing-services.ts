@@ -88,7 +88,7 @@ export const projectServices: ProjectService[] = [
   },
   {
     id: "church-websites",
-    name: "Custom Church Websites",
+    name: "Custom Church & Ministry Websites",
     shortDescription: "Welcoming church websites that help people plan a visit, connect, give, and take a next step.",
     category: "Websites",
     pricingType: "custom",

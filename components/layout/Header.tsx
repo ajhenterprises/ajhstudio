@@ -29,12 +29,12 @@ export default function Header() {
           : "border-transparent bg-background"
       )}
     >
-      <div className="mx-auto flex w-full max-w-[1240px] items-center justify-between px-6 py-4 sm:px-8 lg:px-10">
+      <div className="mx-auto flex w-full max-w-[1600px] items-center justify-between px-6 py-4 sm:px-8 lg:px-10">
         <Link href="/" className="rounded-xl" aria-label={`${siteConfig.name} home`}>
           <Logo />
         </Link>
 
-        <nav className="hidden items-center gap-1 xl:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-1 2xl:flex" aria-label="Primary">
           {siteConfig.nav.map((item) => {
             const active = pathname === item.href;
             return (
@@ -55,7 +55,7 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 xl:flex">
+        <div className="hidden items-center gap-3 2xl:flex">
           <Button href="/contact" size="md">
             Start Your Project
           </Button>

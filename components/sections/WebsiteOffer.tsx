@@ -25,12 +25,12 @@ export default function WebsiteOffer() {
       <Container>
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-20">
           <Reveal>
-            <Eyebrow className="text-accent">Website Design &amp; Support</Eyebrow>
+            <Eyebrow className="text-accent">Custom Website Design &amp; Support</Eyebrow>
             <h2 className="mt-4 max-w-2xl text-balance font-display text-3xl text-background sm:text-4xl lg:text-5xl">
-              Your website should make the next step obvious.
+              Need something more custom?
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-background/70">
-              I build clear, professional websites for small businesses, entrepreneurs,
+              For projects beyond the standard small business or church package, I build custom websites for businesses, entrepreneurs,
               nonprofits, professional services, community groups, churches, and other
               organizations that need to be understood, trusted, and easy to contact.
             </p>

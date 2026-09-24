@@ -1,4 +1,4 @@
-import {churchPlan, churchPlans, type ChurchDetails} from "./entry-offers";
+import {managedWebsitePlan, managedWebsitePlans, type ChurchDetails} from "./entry-offers";
 import {serviceProjectTypes,websiteBuildTypes} from "./service-project-types";
 import {normalizeWebsiteScope,websitePricing,type WebsiteScope} from "./website-pricing";
 import { activeProjectServices, type ProjectService } from "@/lib/data/pricing-services";
@@ -31,10 +31,10 @@ export type ProjectInquiryErrors = Partial<Record<keyof ProjectInquiryData, stri
 
 export function validateProjectInquiry(data: ProjectInquiryData): ProjectInquiryErrors {
   const errors: ProjectInquiryErrors = {};
-  const plan=churchPlan(data.selectedServiceIds);
-  if(churchPlans.filter(p=>data.selectedServiceIds.includes(p.id)).length>1) errors.selectedServiceIds="Choose one church website plan.";
-  if(plan && data.selectedServiceIds.some(id=>websiteBuildTypes.has(serviceProjectTypes[id]) || id==='website-hosting-care')) errors.selectedServiceIds="Choose a church plan or a custom website project, not both. Church plans already include hosting.";
-  if(plan && data.billingTerm==='annual') errors.billingTerm="Church plans are billed monthly.";
+  const plan=managedWebsitePlan(data.selectedServiceIds);
+  if(managedWebsitePlans.filter(p=>data.selectedServiceIds.includes(p.id)).length>1) errors.selectedServiceIds="Choose one managed website plan.";
+  if(plan && data.selectedServiceIds.some(id=>websiteBuildTypes.has(serviceProjectTypes[id]) || id==='website-hosting-care')) errors.selectedServiceIds="Choose a managed website plan or a custom website project, not both. Managed website plans already include hosting.";
+  if(plan && data.billingTerm==='annual') errors.billingTerm="Managed website plans are billed monthly.";
 
   if (data.firstName.trim().length < 2) errors.firstName = "Please enter your first name.";
   if (data.lastName.trim().length < 2) errors.lastName = "Please enter your last name.";
@@ -54,8 +54,8 @@ export function validateProjectInquiry(data: ProjectInquiryData): ProjectInquiry
 export function getSelectedServices(ids:string[],catalog:ProjectService[]=activeProjectServices){const unique=new Set(ids);return catalog.filter(s=>unique.has(s.id));}
 export function calculateProjectEstimate(ids:string[],scope?:WebsiteScope,catalog:ProjectService[]=activeProjectServices,refresh?:ProjectInquiryData['contentRefresh']) {
  const services=getSelectedServices(ids,catalog);
- const plan=churchPlan(ids);
- const website=services.some(s=>!churchPlans.some(p=>p.id===s.id)&&websiteBuildTypes.has(s.projectType??serviceProjectTypes[s.id]??"other"))?websitePricing(normalizeWebsiteScope(scope)):null;
+ const plan=managedWebsitePlan(ids);
+ const website=services.some(s=>!managedWebsitePlans.some(p=>p.id===s.id)&&websiteBuildTypes.has(s.projectType??serviceProjectTypes[s.id]??"other"))?websitePricing(normalizeWebsiteScope(scope)):null;
  const service=services.find(s=>s.id==='website-content-refresh');
  const contentRefresh=service?{pages:refresh?.pages||1,includedPages:service.includedPages??5,basePrice:service.oneTimePrice??99,additionalPagePrice:service.additionalPagePrice??55,customQuote:(refresh?.pages??1)>10,total:(refresh?.pages??1)>10?0:Math.round(((service.oneTimePrice??99)+Math.max(0,(refresh?.pages||1)-(service.includedPages??5))*(service.additionalPagePrice??55))*100)/100}:undefined;
  const extras=services.filter(s=>!website||(!websiteBuildTypes.has(s.projectType??serviceProjectTypes[s.id]??"other")&&s.id!=="website-hosting-care"));

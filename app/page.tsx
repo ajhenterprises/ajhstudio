@@ -12,7 +12,7 @@ import WebsiteOffer from "@/components/sections/WebsiteOffer";
 export const metadata: Metadata = withBrandMetadata({
   title: "AJH Digital | Websites. Content. Digital Growth.",
   description:
-    "Affordable church websites from $25/month and website content refresh from $99. Personal website, content, SEO and digital support for churches and businesses.",
+    "Managed small business websites from $49/month + $199 setup or $99/month with no setup fee. Church & Ministry Websites from $25/month. Custom websites and content services.",
   alternates: { canonical: "/" },
 });
 

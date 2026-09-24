@@ -109,7 +109,7 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <aside aria-label="Church website plans" className="bg-ink px-5 py-3 text-center text-sm text-background"><Link href="/church-websites" className="inline-flex flex-wrap items-center justify-center gap-x-4 gap-y-1 rounded font-semibold"><span>Church Websites Starting at Just $25/Month</span><span className="text-accent">See Church Website Plans →</span></Link></aside>
+        <aside aria-label="Affordable website plans" className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 bg-ink px-5 py-3 text-center text-sm text-background"><Link href="/church-websites" className="inline-flex flex-wrap items-center justify-center gap-x-4 gap-y-1 rounded font-semibold"><span>Church & Ministry Websites Starting at Just $25/Month</span><span className="text-accent">See Church & Ministry Website Plans →</span></Link><Link href="/small-business-websites" className="rounded font-semibold">Small Business Websites from $49/month <span className="text-accent">See Plans →</span></Link></aside>
         <Header />
         <main id="main-content" className="flex-1">
           {children}

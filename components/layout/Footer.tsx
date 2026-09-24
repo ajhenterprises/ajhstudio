@@ -154,7 +154,8 @@ export default function Footer() {
             <Link href="/privacy" className="transition-colors hover:text-background/80">
               Privacy Policy
             </Link>
-            <Link href="/church-websites" className="transition-colors hover:text-background/80">Church Websites</Link>
+            <Link href="/church-websites" className="transition-colors hover:text-background/80">Church & Ministry Websites</Link>
+            <Link href="/small-business-websites" className="transition-colors hover:text-background/80">Small Business Websites</Link>
             <Link href="/content-refresh" className="transition-colors hover:text-background/80">Website Content Refresh</Link>
             <Link href="/refund-policy" className="transition-colors hover:text-background/80">Our Service Approach</Link>
             <Link href="/terms" className="transition-colors hover:text-background/80">

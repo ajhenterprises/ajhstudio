@@ -63,7 +63,7 @@ export default function MobileNav({ pathname }: { pathname: string }) {
   }, [open]);
 
   return (
-    <div className="xl:hidden">
+    <div className="2xl:hidden">
       <button
         ref={toggleRef}
         type="button"
@@ -87,7 +87,7 @@ export default function MobileNav({ pathname }: { pathname: string }) {
             inert={!open}
             ref={panelRef}
             className={cn(
-              "fixed inset-0 z-[100] flex h-[100dvh] flex-col overflow-y-auto overscroll-contain bg-ink text-background transition-opacity duration-300 xl:hidden",
+              "fixed inset-0 z-[100] flex h-[100dvh] flex-col overflow-y-auto overscroll-contain bg-ink text-background transition-opacity duration-300 2xl:hidden",
               open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
             )}
           >

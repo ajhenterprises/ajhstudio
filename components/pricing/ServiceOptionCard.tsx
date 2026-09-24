@@ -70,9 +70,9 @@ export default function ServiceOptionCard({
   onToggle: () => void;
 }) {
   const Icon = icons[service.icon] ?? Globe2;
-  const fixed=service.id.startsWith("church-")&&service.id!=="church-websites"||service.id==="website-content-refresh";
+  const fixed=service.id.startsWith("small-business-")||service.id.startsWith("church-")&&service.id!=="church-websites"||service.id==="website-content-refresh";
   const prices = [
-    service.oneTimePrice != null ? `${fixed?"":"Starting at "}${formatPrice(service.oneTimePrice)}${fixed?"":"+"} ${service.id.startsWith("church-")?"setup":"one-time"}` : null,
+    service.oneTimePrice != null ? `${fixed?"":"Starting at "}${formatPrice(service.oneTimePrice)}${fixed?"":"+"} ${(service.id.startsWith("church-")||service.id.startsWith("small-business-"))?"setup":"one-time"}` : null,
     service.monthlyPrice != null ? `${service.category === "Websites" && !fixed ? "Starting at " : ""}${formatPrice(service.monthlyPrice)}${service.category === "Websites" && !fixed ? "+" : ""}/month` : null,
     service.annualPrice != null ? `${formatPrice(service.annualPrice)}/year` : null,
   ].filter(Boolean);

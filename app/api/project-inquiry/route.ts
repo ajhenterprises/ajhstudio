@@ -1,4 +1,4 @@
-import {normalizeChurchDetails,churchPlan} from "@/lib/entry-offers";
+import {normalizeChurchDetails,managedWebsitePlan,managedWebsitePlans} from "@/lib/entry-offers";
 import {normalizeWebsiteScope} from "@/lib/website-pricing";
 import { saveProjectInquiry, readStoredInquiry } from "@/lib/crm-intake";
 import { siteConfig } from "@/lib/site-config";
@@ -59,8 +59,8 @@ export async function POST(request: Request) {
 
   let catalog;
   try {catalog=await getPublicServices();}catch{return NextResponse.json({ok:false,error:"Service prices are temporarily unavailable. Please try again."},{status:503});}
-  const plan=churchPlan(data.selectedServiceIds);
-  if(plan && catalog.some(s=>data.selectedServiceIds.includes(s.id)&&!s.id.startsWith("church-")&&["website","website_redesign","landing_pages","business_websites","church_websites","nonprofit_websites","real_estate_websites","website_hosting"].includes(s.projectType??""))) return NextResponse.json({ok:false,error:"Church plans include a website and hosting. Request custom website work separately."},{status:422});
+  const plan=managedWebsitePlan(data.selectedServiceIds);
+  if(plan && catalog.some(s=>data.selectedServiceIds.includes(s.id)&&!managedWebsitePlans.some(p=>p.id===s.id)&&["website","website_redesign","landing_pages","business_websites","church_websites","nonprofit_websites","real_estate_websites","website_hosting"].includes(s.projectType??""))) return NextResponse.json({ok:false,error:"Managed website plans include a website and hosting. Request custom website work separately."},{status:422});
   const estimate = calculateProjectEstimate(data.selectedServiceIds,data.websiteScope,catalog,data.contentRefresh);
   if (estimate.services.length !== new Set(data.selectedServiceIds).size) {
     return NextResponse.json({ ok: false, error: "One or more selected services are unavailable." }, { status: 422 });

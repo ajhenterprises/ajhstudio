@@ -14,6 +14,7 @@ AJH Digital provides website design and development, hosting and website care, c
 
 - [Home](https://ajhdigital.com/)
 - [Services](https://ajhdigital.com/services)
+- [Small Business Websites](https://ajhdigital.com/small-business-websites)
 - [Church & Ministry Websites](https://ajhdigital.com/church-websites)
 - [Website Content Refresh](https://ajhdigital.com/content-refresh)
 - [Pricing and Project Request](https://ajhdigital.com/pricing)
@@ -29,6 +30,8 @@ AJH Digital provides website design and development, hosting and website care, c
 - [Affiliate Disclosure](https://ajhdigital.com/affiliate-disclosure)
 
 ## Services
+
+- Small Business Websites: professionally designed standard small business websites with hosting and ongoing management. Essential starts at $199 one-time setup plus $49/month; Simple Start starts at $0 setup plus $99/month. No long-term contract; cancel anytime. Custom functionality, advanced integrations, e-commerce, booking systems, extensive development and third-party services are quoted separately based on project requirements.
 
 - Church & Ministry Websites: professionally managed church websites with hosting, maintenance, and routine content updates. Essential starts at $99 setup plus $25/month; Simple Start starts at $0 setup plus $49/month. Both offer the same standard service, with no long-term contract. Custom work and premium third-party services require separate approval and pricing.
 - Website Content Refresh: improve existing website messaging, readability, calls to action, and content-level SEO. Starts at $99 for up to five pages, plus $55 per additional page through ten total pages. More than ten pages requires a custom quote. This is content work, not a website redesign or development package.

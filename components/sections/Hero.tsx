@@ -12,10 +12,10 @@ export default function Hero() {
           <p className="text-sm font-bold uppercase tracking-[0.18em] text-primary">Your next chapter starts online.</p>
           <h1 className="mt-5 text-balance text-[3.25rem] leading-[1.04] sm:text-7xl lg:text-[5.25rem]">{siteConfig.name}</h1>
           <p className="mt-5 max-w-xl text-balance text-2xl font-semibold leading-snug text-ink sm:text-3xl">{siteConfig.tagline}</p>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">A stronger online presence, built around you. Websites, content, and practical digital support for businesses, churches, organizations, entrepreneurs, and professionals.</p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Button href="/pricing#build-your-project" size="lg">Start Your Project</Button>
-            <Button href="/websites" variant="outline" size="lg">View Our Work</Button>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">Simple websites. Professional results. Affordable monthly pricing. Managed websites for small businesses and churches, plus custom development, content, and personal digital support as your needs grow.</p>
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <Button href="/small-business-websites" size="lg">Small Business Websites</Button>
+            <Button href="/church-websites" variant="outline" size="lg">Church & Ministry Websites</Button>
           </div>
           <div className="mt-7 flex flex-wrap gap-x-5 gap-y-3 text-sm text-muted">
             {["Personal guidance", "Mobile-first design", "Ongoing support"].map(item => <span key={item} className="flex items-center gap-2"><Check className="size-4 text-primary" aria-hidden="true" />{item}</span>)}

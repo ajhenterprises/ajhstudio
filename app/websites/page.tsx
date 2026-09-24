@@ -2,6 +2,7 @@ import { withBrandMetadata } from "@/lib/social";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Check } from "lucide-react";
+import EntryOffers from "@/components/sections/EntryOffers";
 import PageHero from "@/components/sections/PageHero";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -36,6 +37,8 @@ export default function WebsitesPage() {
         description="I build modern websites for businesses, entrepreneurs, nonprofits, professional services, community groups, churches, and other organizations that need a website that's clear, useful, and easy to manage."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Websites" }]}
       />
+
+      <EntryOffers />
 
       {service && (
         <section className="py-16 sm:py-20 lg:py-24">

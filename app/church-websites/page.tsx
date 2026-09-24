@@ -5,14 +5,14 @@ import { churchPlans } from "@/lib/entry-offers";
 export const metadata=withBrandMetadata({title:"Affordable Church & Ministry Websites",description:"Church website design starting at $25/month + $99 setup or $49/month with $0 setup. Hosting, maintenance and routine content updates. No long-term contracts.",alternates:{canonical:"/church-websites"}});
 const included=["Professionally built church/ministry website","Mobile-friendly responsive design","AJH Digital church website template/design system","Hosting","Routine maintenance and technical upkeep","Reasonable routine content updates","Core church website pages/features","No long-term contract — cancel anytime"];
 const faqs=[
- ["Is there a contract?","Church Website plans are month-to-month with no long-term contract commitment. A service agreement records your selected plan and scope."],
+ ["Is there a contract?","Church & Ministry Website plans are month-to-month with no long-term contract commitment. A service agreement records your selected plan and scope."],
  ["Can we cancel anytime?","Yes. You can cancel the recurring service at any time. Cancellation stops future renewals."],
  ["What’s the difference between the $25 and $49 plans?","The $25/month Essential plan requires a $99 one-time setup fee. The $49/month Simple Start plan has no setup fee. Both currently include the same core church website service."],
  ["Why would we choose the $49 plan?","It allows your church to launch without paying an upfront setup fee."],
  ["Can you use our existing domain?","Generally yes, assuming your church owns or controls the domain and provides the necessary access."],
  ["Can you connect Planning Center?","Standard links and supported connections can generally be included. Advanced/custom integrations may require additional charges."],
  ["Can you update the website for us?","Yes. Reasonable routine content updates are included, such as service times, existing text, staff details, links, basic events and provided images. Major redesigns, new functionality, custom development, or unusually extensive changes may require a separate quote."],
- ["Do you build larger custom church websites?","Yes. Churches needing functionality beyond the streamlined Church Website program can request a custom project quote."],
+ ["Do you build larger custom church websites?","Yes. Churches needing functionality beyond the streamlined Church & Ministry Website program can request a custom project quote."],
  ["What happens if we need something outside the standard plan?","AJH Digital will review your request and communicate any additional cost for your approval before performing work outside the included service scope."]
 ];
 const button="inline-flex justify-center rounded-full bg-cta px-6 py-3 font-semibold text-cta-foreground hover:bg-cta-hover";

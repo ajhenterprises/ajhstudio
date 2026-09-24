@@ -12,7 +12,7 @@ import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = withBrandMetadata({
   title: "Website Pricing & Services",
-  description: "Church websites from $25/month + $99 setup or $49/month with $0 setup. Content Refresh from $99. Custom websites from $999 setup + $149/month.",
+  description: "Small business websites from $49/month + $199 setup or $99/month with no setup fee. Church & Ministry Websites, Content Refresh and separately scoped custom websites.",
   alternates: { canonical: "/pricing" },
   openGraph: {
     title: "Website Pricing & Services | AJH Digital",
@@ -22,7 +22,7 @@ export const metadata: Metadata = withBrandMetadata({
   twitter: {
     card: "summary_large_image",
     title: "Website Pricing & Services | AJH Digital",
-    description: "Start with a $999 website setup and $149/month website care plan, then build your project.",
+    description: "Explore small business and church plans, Content Refresh, or separately scoped custom website development.",
   },
 });
 
@@ -46,9 +46,9 @@ const steps = [
 ];
 
 const faqs = [
-  ["What is included in the $999 setup fee?", "The standard setup covers strategy, content structure, custom design, responsive development, forms, foundational SEO setup, and launch support for a typical marketing or content-driven website. The final proposal confirms the exact page count and scope."],
+  ["What is included in the custom website $999 setup fee?", "Custom website setup covers strategy, content structure, custom design, responsive development, forms, foundational SEO setup, and launch support for a typical marketing or content-driven website. The final proposal confirms the exact page count and scope."],
   ["What does the $149/month cover?", "For websites hosted and managed by AJH Digital, it covers managed hosting, SSL, routine maintenance, website care, ongoing support, and reasonable routine content updates under the applicable management plan. This does not apply to websites that are built and handed off to a client or managed elsewhere. Update requests are evaluated case by case based on frequency, complexity, turnaround, and scope. Substantial redesigns, new functionality, large content additions, or unusually heavy request volume may require an additional charge, which will be discussed before the work begins."],
-  ["Can my price be higher or lower?", "Yes. $999 setup and $149/month are base starting prices, not guaranteed quotes. New-project pricing may increase or decrease depending on what the project requires. Simpler projects may cost less; more extensive content, integrations, functionality, or ongoing support may cost more. Your final scope and pricing will be confirmed in writing before work begins."],
+  ["Can my price be higher or lower?", "Yes. $999 setup and $149/month are custom website starting prices, not guaranteed quotes. New-project pricing may increase or decrease depending on what the project requires. Simpler projects may cost less; more extensive content, integrations, functionality, or ongoing support may cost more. Your final scope and pricing will be confirmed in writing before work begins."],
   ["Are there contracts?", "Every accepted project uses a written proposal and service agreement so scope, responsibilities, pricing, and ongoing service terms are clear before work begins."],
   ["Can you redesign an existing website?", "Yes. Select Website Redesign and share your current URL. I’ll review what should be kept, improved, rebuilt, or migrated."],
   ["Can you build custom functionality?", "Possibly. Database, e-commerce, CRM, API, and app-like projects are considered according to their scale, scope, and complexity. Share what you need so I can determine whether it is a good fit."],
@@ -99,7 +99,7 @@ export default async function PricingPage({searchParams}:{searchParams:Promise<{
               <span className="pb-2 font-display text-3xl text-accent">+</span>
               <div><span className="font-display text-5xl text-background sm:text-6xl">$149+</span><span className="ml-2 text-background/65">/month</span></div>
             </div>
-            <p className="mt-6 border-t border-background/15 pt-6 text-sm leading-relaxed text-background/70">$999 setup and $149/month are starting points, not guaranteed quotes. Final pricing may increase or decrease depending on scope, size, complexity, integrations, custom functionality, content requirements, ongoing management, or other project needs. Simpler projects may cost less; more involved projects may cost more. Your final scope and pricing will be confirmed before work begins.</p>
+            <p className="mt-6 border-t border-background/15 pt-6 text-sm leading-relaxed text-background/70">$999 setup and $149/month are custom website starting points, not guaranteed quotes. Final pricing may increase or decrease depending on scope, size, complexity, integrations, custom functionality, content requirements, ongoing management, or other project needs. Simpler projects may cost less; more involved projects may cost more. Your final scope and pricing will be confirmed before work begins.</p>
           </div>
         </Container>
       </section>
@@ -109,7 +109,7 @@ export default async function PricingPage({searchParams}:{searchParams:Promise<{
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-secondary">What’s Included</p>
             <h2 className="mt-3 text-balance font-display text-3xl text-ink sm:text-4xl">The essentials for a website that works.</h2>
-            <p className="mt-5 leading-relaxed text-muted">The standard package is designed for the marketing and content-driven websites most businesses, entrepreneurs, nonprofits, churches, and organizations need.</p>
+            <p className="mt-5 leading-relaxed text-muted">Custom development is available for businesses and organizations whose needs go beyond the standard Small Business or Church & Ministry Website package. We confirm the exact scope and features in your proposal.</p>
           </div>
           <div>
             <ul className="grid gap-3 sm:grid-cols-2">
@@ -140,7 +140,7 @@ export default async function PricingPage({searchParams}:{searchParams:Promise<{
 
       <section className="border-y border-border bg-sand/50 py-16 sm:py-20">
         <Container className="grid gap-6 md:grid-cols-3">
-          <div className="rounded-2xl bg-surface p-6"><CircleDollarSign className="size-6 text-primary" /><h2 className="mt-5 font-display text-xl text-ink">Starting prices stay clear.</h2><p className="mt-2 text-sm leading-relaxed text-muted">$999 setup and $149/month are the base starting point. Final pricing may be higher or lower based on your project’s requirements and is confirmed before work begins. Existing clients retain their agreed pricing unless changed by agreement.</p></div>
+          <div className="rounded-2xl bg-surface p-6"><CircleDollarSign className="size-6 text-primary" /><h2 className="mt-5 font-display text-xl text-ink">Starting prices stay clear.</h2><p className="mt-2 text-sm leading-relaxed text-muted">$999 setup and $149/month are the starting point for custom website development, separate from the standard Small Business and Church & Ministry Website plans. Final pricing may be higher or lower based on your project’s requirements and is confirmed before work begins. Existing clients retain their agreed pricing unless changed by agreement.</p></div>
           <div className="rounded-2xl bg-surface p-6"><SearchCheck className="size-6 text-primary" /><h2 className="mt-5 font-display text-xl text-ink">Custom work is reviewed honestly.</h2><p className="mt-2 text-sm leading-relaxed text-muted">Larger databases, e-commerce, APIs, and app-like features may be possible depending on scale and complexity.</p></div>
           <div className="rounded-2xl bg-surface p-6"><ShieldCheck className="size-6 text-primary" /><h2 className="mt-5 font-display text-xl text-ink">Third-party costs are separate.</h2><p className="mt-2 text-sm leading-relaxed text-muted">Domains, IDX/MLS, premium software, APIs, paid media, and outside platforms are included only when a proposal says so.</p></div>
         </Container>
