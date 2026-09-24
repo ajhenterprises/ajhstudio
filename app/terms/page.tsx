@@ -22,7 +22,7 @@ export default function TermsPage() {
       <section className="py-16 sm:py-20">
         <div className="mx-auto w-full max-w-[760px] px-6 sm:px-8">
           <div className="prose-ajh">
-            <p><strong>Effective date:</strong> September 14, 2026</p>
+            <p><strong>Effective date:</strong> September 24, 2026</p>
             <p>
               These Terms of Service (“Terms”) govern your access to and use of{" "}
               <a href={siteConfig.url}>{siteConfig.url.replace("https://www.", "")}</a>, operated
@@ -57,7 +57,19 @@ export default function TermsPage() {
               engagement.
             </p>
 
-            <h2>Refunds and cancellation</h2><p>Full setup payment is required before work begins. Setup fees, one-time services, monthly and annual services have different cancellation and refund rules. Read our <Link href="/refund-policy">Refund &amp; Cancellation Policy</Link>. Refunds are not automatic or guaranteed; applicable legal rights and existing accepted agreements remain respected.</p><h2>Pricing and third-party costs</h2>
+            <h2>Payments, cancellation, and refunds</h2>
+            <p>
+              Where a setup fee applies, it is due before setup or build work begins. Plans
+              advertised with no setup fee do not require a setup payment. Standard monthly
+              services have no long-term contract commitment and may be canceled at any time;
+              cancellation stops future renewals. Payment and refund terms for your specific
+              engagement are governed by its accepted written terms. Refunds are not automatic
+              or guaranteed; applicable legal rights and existing accepted agreements remain
+              respected. Read <Link href="/refund-policy">Our Service Approach</Link> for how
+              we work, review public-facing work, and communicate pricing and scope.
+            </p>
+
+            <h2>Pricing and third-party costs</h2>
             <p>
               Public prices are base starting prices and may change with or without notice.
               Domains, premium software, plugins, stock media, email platforms, APIs, IDX or MLS
